@@ -1,0 +1,1752 @@
+[gd_scene load_steps=81 format=3 uid="uid://bpnc1i6pnpudx"]
+
+[ext_resource type="Theme" uid="uid://djspq8kbiyss5" path="res://Resources/Fonts/Default_theme.tres" id="1_e75uv"]
+[ext_resource type="Script" uid="uid://htnjqtajw2uv" path="res://Scripts/user_interface.gd" id="1_sdud1"]
+[ext_resource type="PackedScene" uid="uid://c8jf4rb8ba3o0" path="res://Scenes/UI/user_interface_building.tscn" id="2_sccpa"]
+[ext_resource type="PackedScene" uid="uid://do4pt6r262bia" path="res://Scenes/UI/player_upgrades.tscn" id="3_mb4ol"]
+[ext_resource type="Texture2D" uid="uid://r3og6vfxc3er" path="res://Assets/GUI/PNG/Double/panel_brown_dark_corners_a.png" id="3_sccpa"]
+[ext_resource type="Texture2D" uid="uid://bww1ld6eargi3" path="res://Assets/GUI/PNG/Default/progress_green_Hor.png" id="4_oyyxn"]
+[ext_resource type="Texture2D" uid="uid://dsfs5oerqf8d1" path="res://Assets/GUI/PNG/Default/panel_brown_dark_corners_b.png" id="4_uaobn"]
+[ext_resource type="Texture2D" uid="uid://desqvs31vw7x6" path="res://Assets/GUI/PNG/Double/progress_red_small.png" id="5_oyyxn"]
+[ext_resource type="FontFile" uid="uid://b6uuvkcdwghv4" path="res://Assets/fonts/DungeonFont.ttf" id="6_33h6l"]
+[ext_resource type="Texture2D" uid="uid://dikrw2hkxdgsv" path="res://Assets/GUI/PNG/Double/button_brown.png" id="6_uaobn"]
+[ext_resource type="Texture2D" uid="uid://ckc5q5b04fnej" path="res://Assets/GUI/wood.png" id="8_5kqoc"]
+[ext_resource type="Texture2D" uid="uid://bjp8m23xqbvuf" path="res://Assets/GUI/PNG/Double/banner_classic_curtain.png" id="9_ecxsd"]
+[ext_resource type="Texture2D" uid="uid://su24evkncbyu" path="res://Assets/GUI/PNG/Double/banner_hanging.png" id="10_0hkrk"]
+[ext_resource type="PackedScene" uid="uid://d3hshv12metye" path="res://Scenes/UI/user_interface_upgrade_hub.tscn" id="11_3vwkw"]
+[ext_resource type="FontFile" uid="uid://drgujvxy82f6u" path="res://Assets/fonts/antiquity-print.ttf" id="13_xtkfc"]
+[ext_resource type="Texture2D" uid="uid://gurt3mq7xcb3" path="res://Assets/GUI/Day & Night Cycle/Full/2 Day/1.png" id="14_ccd12"]
+[ext_resource type="Texture2D" uid="uid://b4jrj2twwfkcs" path="res://Assets/GUI/Day & Night Cycle/Full/1 Dawn/1.png" id="14_r6mo4"]
+[ext_resource type="Texture2D" uid="uid://bg1fi03ewfpnd" path="res://Assets/GUI/Day & Night Cycle/Full/2 Day/2.png" id="15_6tjke"]
+[ext_resource type="Texture2D" uid="uid://cpv33fue063nk" path="res://Assets/GUI/Day & Night Cycle/Full/1 Dawn/2.png" id="15_tqhba"]
+[ext_resource type="Texture2D" uid="uid://8834qixek4ay" path="res://Assets/GUI/Day & Night Cycle/Full/2 Day/3.png" id="16_bmppa"]
+[ext_resource type="Texture2D" uid="uid://e03lpey6636" path="res://Assets/GUI/Day & Night Cycle/Full/1 Dawn/3.png" id="16_gbc4y"]
+[ext_resource type="Texture2D" uid="uid://dr48cjrdm8pp0" path="res://Assets/GUI/Day & Night Cycle/Full/2 Day/4.png" id="17_71t3w"]
+[ext_resource type="Texture2D" uid="uid://cbsmojmfqweg7" path="res://Assets/GUI/Day & Night Cycle/Full/1 Dawn/4.png" id="17_t0bpt"]
+[ext_resource type="Texture2D" uid="uid://ch4h7h2k5qudm" path="res://Assets/GUI/Day & Night Cycle/Full/2 Day/5.png" id="18_mj1tr"]
+[ext_resource type="Texture2D" uid="uid://cvwbayepm2gaa" path="res://Assets/GUI/Day & Night Cycle/Full/1 Dawn/5.png" id="18_u7eyx"]
+[ext_resource type="Texture2D" uid="uid://cx8li1dpx4uob" path="res://Assets/GUI/Day & Night Cycle/Full/1 Dawn/6.png" id="19_7xmtb"]
+[ext_resource type="Texture2D" uid="uid://dvpeutqnyibe7" path="res://Assets/GUI/Day & Night Cycle/Full/2 Day/6.png" id="19_xcov1"]
+[ext_resource type="Texture2D" uid="uid://u4bgrjc61n3j" path="res://Assets/GUI/Day & Night Cycle/Full/2 Day/7.png" id="20_38tdq"]
+[ext_resource type="Texture2D" uid="uid://cqeox2ac0oa5x" path="res://Assets/GUI/Day & Night Cycle/Full/1 Dawn/7.png" id="20_hvkcv"]
+[ext_resource type="Texture2D" uid="uid://bnq7hn4cgw44k" path="res://Assets/GUI/Day & Night Cycle/Full/1 Dawn/8.png" id="21_8qdos"]
+[ext_resource type="Texture2D" uid="uid://b5sbnypq4etbt" path="res://Assets/GUI/Day & Night Cycle/Full/2 Day/8.png" id="21_ireyu"]
+[ext_resource type="Texture2D" uid="uid://dxfypm3quut5w" path="res://Assets/GUI/Day & Night Cycle/Full/2 Day/9.png" id="22_88f3h"]
+[ext_resource type="Texture2D" uid="uid://ii64dwx7li0k" path="res://Assets/GUI/Day & Night Cycle/Full/1 Dawn/9.png" id="22_brrqj"]
+[ext_resource type="Texture2D" uid="uid://hod25vpkkaww" path="res://Assets/GUI/Day & Night Cycle/Full/1 Dawn/10.png" id="23_1qlia"]
+[ext_resource type="Texture2D" uid="uid://32hh3bxi3xhn" path="res://Assets/GUI/Day & Night Cycle/Full/2 Day/10.png" id="23_jgnql"]
+[ext_resource type="Texture2D" uid="uid://dbua3f7n4ghfj" path="res://Assets/GUI/Day & Night Cycle/Full/4 Night/1.png" id="34_mgs6w"]
+[ext_resource type="Texture2D" uid="uid://bg35tsr0nbig3" path="res://Assets/GUI/Day & Night Cycle/Full/4 Night/2.png" id="35_h4f2p"]
+[ext_resource type="Texture2D" uid="uid://bxh0b7hb4mcr4" path="res://Assets/GUI/Day & Night Cycle/Full/4 Night/3.png" id="36_u5pbn"]
+[ext_resource type="Texture2D" uid="uid://bftwtbdtiekpg" path="res://Assets/GUI/Day & Night Cycle/Full/4 Night/4.png" id="37_eguw1"]
+[ext_resource type="Texture2D" uid="uid://cixrfdd4ejqyd" path="res://Assets/GUI/Day & Night Cycle/Full/4 Night/5.png" id="38_evyfx"]
+[ext_resource type="Texture2D" uid="uid://bh2q6u6p8c4qh" path="res://Assets/GUI/Day & Night Cycle/Full/4 Night/6.png" id="39_fd6ft"]
+[ext_resource type="Texture2D" uid="uid://c8ss05c1wqdyr" path="res://Assets/GUI/Day & Night Cycle/Full/4 Night/7.png" id="40_8cnl6"]
+[ext_resource type="Texture2D" uid="uid://cc5duvl6nruyf" path="res://Assets/GUI/Day & Night Cycle/Full/4 Night/8.png" id="41_mk61c"]
+[ext_resource type="Texture2D" uid="uid://dew5ptpq073b8" path="res://Assets/GUI/Day & Night Cycle/Full/4 Night/9.png" id="42_d0udr"]
+[ext_resource type="Texture2D" uid="uid://blgalewwhxj2n" path="res://Assets/GUI/Day & Night Cycle/Full/4 Night/10.png" id="43_26bab"]
+[ext_resource type="Texture2D" uid="uid://b3rw8cx3ojgy1" path="res://Assets/GUI/Day & Night Cycle/Full/3 Noon/1.png" id="44_jqchk"]
+[ext_resource type="Texture2D" uid="uid://clpnf66d1cs1c" path="res://Assets/GUI/Day & Night Cycle/Full/3 Noon/2.png" id="45_vn0qi"]
+[ext_resource type="Texture2D" uid="uid://b0vnv2farfyah" path="res://Assets/GUI/Day & Night Cycle/Full/3 Noon/3.png" id="46_m4pkl"]
+[ext_resource type="Texture2D" uid="uid://d3jvuvwra83do" path="res://Assets/GUI/Day & Night Cycle/Full/3 Noon/4.png" id="47_5y0t2"]
+[ext_resource type="Texture2D" uid="uid://btelal0ifxadb" path="res://Assets/GUI/Day & Night Cycle/Full/3 Noon/5.png" id="48_15gyq"]
+[ext_resource type="Texture2D" uid="uid://o7qeuk4gw15f" path="res://Assets/GUI/Day & Night Cycle/Full/3 Noon/6.png" id="49_f2ajn"]
+[ext_resource type="Texture2D" uid="uid://bahqbutxohchv" path="res://Assets/GUI/Day & Night Cycle/Full/3 Noon/7.png" id="50_4ar43"]
+[ext_resource type="Texture2D" uid="uid://dtkge0udnh2el" path="res://Assets/GUI/Day & Night Cycle/Full/3 Noon/8.png" id="51_w314q"]
+[ext_resource type="Texture2D" uid="uid://d01exyhmjh673" path="res://Assets/GUI/Day & Night Cycle/Full/3 Noon/9.png" id="52_lrw0y"]
+[ext_resource type="Texture2D" uid="uid://ni7w5qkb88p" path="res://Assets/GUI/Day & Night Cycle/Full/3 Noon/10.png" id="53_e2mnh"]
+
+[sub_resource type="FontVariation" id="FontVariation_e75uv"]
+base_font = ExtResource("6_33h6l")
+spacing_glyph = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_mb4ol"]
+font = SubResource("FontVariation_e75uv")
+font_size = 18
+outline_size = 8
+outline_color = Color(0.117647, 0.0705882, 0.0196078, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_33h6l"]
+base_font = ExtResource("6_33h6l")
+spacing_glyph = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_ew5ma"]
+font = SubResource("FontVariation_33h6l")
+outline_size = 8
+outline_color = Color(0.117647, 0.0705882, 0.0196078, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_r6mo4"]
+base_font = ExtResource("13_xtkfc")
+spacing_glyph = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_tqhba"]
+font = SubResource("FontVariation_r6mo4")
+font_size = 18
+outline_size = 8
+outline_color = Color(0.301961, 0.203922, 0.0980392, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_xtkfc"]
+base_font = ExtResource("6_33h6l")
+variation_face_index = -1
+spacing_glyph = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_5a06e"]
+font = SubResource("FontVariation_xtkfc")
+font_size = 18
+outline_size = 11
+outline_color = Color(0.117647, 0.0705882, 0.0196078, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_65agd"]
+base_font = ExtResource("13_xtkfc")
+
+[sub_resource type="LabelSettings" id="LabelSettings_uaobn"]
+font = SubResource("FontVariation_65agd")
+font_size = 14
+outline_size = 8
+outline_color = Color(0.302806, 0.203198, 0.0974598, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_4b8j4"]
+base_font = ExtResource("6_33h6l")
+
+[sub_resource type="FontVariation" id="FontVariation_4qc4p"]
+base_font = SubResource("FontVariation_4b8j4")
+
+[sub_resource type="LabelSettings" id="LabelSettings_oyyxn"]
+font = SubResource("FontVariation_4qc4p")
+font_size = 32
+outline_size = 8
+outline_color = Color(0.188852, 0.120726, 0.0483156, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_doxfr"]
+font = ExtResource("13_xtkfc")
+font_size = 32
+outline_size = 18
+outline_color = Color(0.296964, 0.0826106, 0.0690059, 1)
+
+[sub_resource type="Animation" id="Animation_oyyxn"]
+resource_name = "Building"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("expBar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(248, -85)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hubHPBar:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(183, 754)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wood:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(920, 9.995)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("showDay:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(79, 8)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("skipDay:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(79, 69)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Pausebutton:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, 31)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1175, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Respawn:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(274, -201)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("night:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(955, 5)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("DayAndNight:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.03333),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1109, 31)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("UserInterface:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, -58)]
+}
+
+[sub_resource type="Animation" id="Animation_tki8o"]
+resource_name = "Farming"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("expBar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(248, 17)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hubHPBar:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(183, 754)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wood:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(920, 10)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("showDay:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(79, 8)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("skipDay:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(79, 69)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Pausebutton:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, 31)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1175, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Respawn:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(274, -201)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("night:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(955, 5)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("DayAndNight:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1109, 31)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("UserInterface:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 122)]
+}
+
+[sub_resource type="Animation" id="Animation_vwxol"]
+resource_name = "Game over"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1152, 648)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("expBar:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1476, 17)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("hubHPBar:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1386.5, 598)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("wood:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2099, 10)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("showDay:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1307, 8)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("skipDay:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1307, 8)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Pausebutton:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-58, 31)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Respawn:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(274, -201)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("night:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(955, 5)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("DayAndNight:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2000, 31)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("UserInterface:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 122)]
+}
+
+[sub_resource type="Animation" id="Animation_sccpa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Respawn:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(274, -201)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("night:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(955, 5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1175, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UserInterfaceUpgradeHub:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(269, 124)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("expBar:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(248, 17)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("hubHPBar:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(183, 754)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("wood:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(920, 10)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("showDay:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(79, 8)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("skipDay:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(79, 69)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Pausebutton:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, 31)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("DayAndNight:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1109, 31)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("UserInterface:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 125)]
+}
+
+[sub_resource type="Animation" id="Animation_ydax5"]
+resource_name = "Respawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("expBar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1476, 17)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hubHPBar:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(183, 754)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wood:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2099, 10)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("showDay:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1307, 8)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("skipDay:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1307, 8)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Pausebutton:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-58, 31)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1158, -2)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Respawn:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(320, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("night:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(955, 5)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("DayAndNight:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2000, 31)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("UserInterface:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 125)]
+}
+
+[sub_resource type="Animation" id="Animation_uaobn"]
+resource_name = "fighting"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("expBar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(248, 17)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hubHPBar:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(183, 754)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("wood:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(920, 10)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("showDay:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(79, 8)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("skipDay:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(79, 8)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Pausebutton:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, 31)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Respawn:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(320, -152)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("night:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.0333334, 1.4, 2.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1000, 0), Vector2(0, 0), Vector2(0, 0), Vector2(-1000, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("DayAndNight:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1109, 31)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("UserInterface:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 125)]
+}
+
+[sub_resource type="Animation" id="Animation_3vwkw"]
+resource_name = "wake up"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1175, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Respawn:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(274, -201)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UserInterfaceUpgradeHub:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(269, 124)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("expBar:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(248, 17)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("hubHPBar:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(183, 754)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("wood:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(920, 10)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("showDay:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(79, 8)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("skipDay:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(79, 69)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Pausebutton:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, 31)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("night:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1, 2.07, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1171, 18), Vector2(0, 0), Vector2(0, 0), Vector2(1251, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("UserInterface:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 125)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ecxsd"]
+_data = {
+&"Building": SubResource("Animation_oyyxn"),
+&"Farming": SubResource("Animation_tki8o"),
+&"Game over": SubResource("Animation_vwxol"),
+&"RESET": SubResource("Animation_sccpa"),
+&"Respawn": SubResource("Animation_ydax5"),
+&"fighting": SubResource("Animation_uaobn"),
+&"wake up": SubResource("Animation_3vwkw")
+}
+
+[sub_resource type="FontVariation" id="FontVariation_ew5ma"]
+base_font = ExtResource("6_33h6l")
+
+[sub_resource type="LabelSettings" id="LabelSettings_3vwkw"]
+font = SubResource("FontVariation_ew5ma")
+font_size = 112
+outline_size = 32
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 0.658824)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vjkj2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_r6mo4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_tqhba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_gbc4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_t0bpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_u7eyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_7xmtb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hvkcv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_8qdos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_brrqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_1qlia")
+}],
+"loop": true,
+"name": &"Dawn",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ccd12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_6tjke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bmppa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_71t3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_mj1tr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_xcov1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_38tdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ireyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_88f3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_jgnql")
+}],
+"loop": true,
+"name": &"Day",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_mgs6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_h4f2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_u5pbn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_eguw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_evyfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_fd6ft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_8cnl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_mk61c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_d0udr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_26bab")
+}],
+"loop": true,
+"name": &"Night",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_jqchk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_vn0qi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_m4pkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_5y0t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_15gyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_f2ajn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_4ar43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_w314q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_lrw0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_e2mnh")
+}],
+"loop": true,
+"name": &"Noon",
+"speed": 5.0
+}]
+
+[node name="UserInterface" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_e75uv")
+script = ExtResource("1_sdud1")
+
+[node name="UserInterface" parent="." instance=ExtResource("2_sccpa")]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 125.0
+offset_right = 8.0
+offset_bottom = 125.0
+scale = Vector2(1.00275, 0.983614)
+mouse_filter = 2
+
+[node name="player_upgrades" parent="." instance=ExtResource("3_mb4ol")]
+z_index = 1
+layout_mode = 1
+mouse_filter = 2
+
+[node name="expBar" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -328.0
+offset_top = 17.0
+offset_right = 304.0
+offset_bottom = 50.0
+grow_horizontal = 2
+expand_mode = 3
+
+[node name="background" type="TextureProgressBar" parent="expBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.011
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 0.0479994
+offset_top = -1.0
+offset_right = 340.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 6.0
+rounded = true
+nine_patch_stretch = true
+stretch_margin_left = 47
+stretch_margin_top = 7
+stretch_margin_right = 36
+stretch_margin_bottom = 7
+texture_under = ExtResource("3_sccpa")
+texture_progress_offset = Vector2(16.78, 0)
+
+[node name="ProgressBar2" type="TextureProgressBar" parent="expBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -301.0
+offset_top = -7.5
+offset_right = 329.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+value = 6.0
+rounded = true
+nine_patch_stretch = true
+stretch_margin_left = 6
+stretch_margin_right = 6
+texture_progress = ExtResource("4_oyyxn")
+texture_progress_offset = Vector2(16.78, 0)
+
+[node name="Label" type="Label" parent="expBar/ProgressBar2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -10.5
+offset_right = -24.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Experience "
+label_settings = SubResource("LabelSettings_mb4ol")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="exp_amount" type="Label" parent="expBar/ProgressBar2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.5
+offset_top = -10.5
+offset_right = 66.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "100/100"
+label_settings = SubResource("LabelSettings_ew5ma")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hubHPBar" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -393.0
+offset_top = 106.0
+offset_right = 442.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 0
+expand_mode = 3
+
+[node name="Backround" type="TextureProgressBar" parent="hubHPBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.501
+anchor_top = 1.0
+anchor_right = 0.501
+anchor_bottom = 1.0
+offset_left = -398.335
+offset_top = -216.0
+offset_right = 404.665
+offset_bottom = -166.0
+value = 50.0
+rounded = true
+nine_patch_stretch = true
+stretch_margin_left = 25
+stretch_margin_top = 12
+stretch_margin_right = 25
+stretch_margin_bottom = 12
+texture_under = ExtResource("4_uaobn")
+
+[node name="Progress" type="TextureProgressBar" parent="hubHPBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.501
+anchor_top = 1.0
+anchor_right = 0.501
+anchor_bottom = 1.0
+offset_left = -386.335
+offset_top = -207.0
+offset_right = 382.665
+offset_bottom = -175.0
+value = 50.0
+rounded = true
+nine_patch_stretch = true
+stretch_margin_left = 15
+stretch_margin_top = 15
+stretch_margin_right = 15
+stretch_margin_bottom = 15
+texture_progress = ExtResource("5_oyyxn")
+
+[node name="Label" type="Label" parent="hubHPBar/Progress"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.5
+offset_top = -10.0
+offset_right = 52.5
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+text = "Hub HP"
+label_settings = SubResource("LabelSettings_tqhba")
+
+[node name="wood" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.798
+anchor_top = 0.012
+anchor_right = 0.928
+anchor_bottom = 0.088
+offset_left = 0.704041
+offset_top = 2.224
+offset_right = 0.944092
+offset_bottom = 2.97599
+grow_horizontal = 0
+texture = ExtResource("6_uaobn")
+expand_mode = 3
+
+[node name="Wood_label" type="Label" parent="wood"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43
+anchor_top = 0.5
+anchor_right = 0.43
+anchor_bottom = 0.5
+offset_left = 0.0599976
+offset_top = -10.298
+offset_right = 42.06
+offset_bottom = 12.702
+grow_horizontal = 0
+grow_vertical = 2
+text = "1000"
+label_settings = SubResource("LabelSettings_5a06e")
+
+[node name="Wood" type="Sprite2D" parent="wood"]
+position = Vector2(35, 24)
+scale = Vector2(0.117647, 0.125)
+texture = ExtResource("8_5kqoc")
+
+[node name="showDay" type="TextureRect" parent="."]
+z_index = 2
+layout_mode = 1
+offset_left = 79.0
+offset_top = 8.0
+offset_right = 239.0
+offset_bottom = 60.0
+texture = ExtResource("6_uaobn")
+expand_mode = 3
+
+[node name="DayWeek" type="Label" parent="showDay"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 9.0
+offset_right = 151.0
+offset_bottom = 43.0
+text = "Day: 1 Week: 1"
+label_settings = SubResource("LabelSettings_uaobn")
+vertical_alignment = 1
+
+[node name="skipDay" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 79.0
+offset_top = 69.0
+offset_right = 216.0
+offset_bottom = 118.0
+texture = ExtResource("6_uaobn")
+expand_mode = 3
+
+[node name="SkipDayButton" type="Button" parent="skipDay"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.746
+anchor_right = -0.746
+offset_left = 106.202
+offset_top = 2.0
+offset_right = 237.202
+offset_bottom = 48.0
+
+[node name="Label" type="Label" parent="skipDay"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 7.0
+offset_right = 124.0
+offset_bottom = 41.0
+text = "End Day"
+label_settings = SubResource("LabelSettings_uaobn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pausebutton" type="Sprite2D" parent="."]
+position = Vector2(34, 31)
+scale = Vector2(0.65625, 0.958333)
+texture = ExtResource("6_uaobn")
+
+[node name="Button" type="Button" parent="Pausebutton"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_left = -6.4406
+anchor_top = -13.4904
+anchor_right = -6.4406
+anchor_bottom = -13.4904
+offset_left = -61.7024
+offset_top = -34.4613
+offset_right = 666.298
+offset_bottom = 671.539
+toggle_mode = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Pausebutton"]
+offset_left = -19.0476
+offset_top = -20.8695
+offset_right = 20.9524
+offset_bottom = 24.1305
+text = "II"
+label_settings = SubResource("LabelSettings_oyyxn")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1175.0
+offset_right = -1175.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.231373, 0.231373, 0.231373, 0.741176)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -64.0
+offset_right = 256.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_ecxsd")
+
+[node name="Label" type="Label" parent="ColorRect/TextureRect"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -24.5
+offset_right = 125.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game    Over"
+label_settings = SubResource("LabelSettings_doxfr")
+
+[node name="Try again" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -107.0
+offset_top = -267.0
+offset_right = -10.9999
+offset_bottom = -219.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2.25125, 1.47764)
+texture = ExtResource("6_uaobn")
+
+[node name="Retry" type="Button" parent="ColorRect/Try again"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/Try again"]
+layout_mode = 0
+offset_left = 8.44418
+offset_top = 7.0
+offset_right = 88.4442
+offset_bottom = 41.0
+text = "Retry"
+label_settings = SubResource("LabelSettings_uaobn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -107.0
+offset_top = -173.0
+offset_right = -10.9999
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2.25125, 1.47764)
+texture = ExtResource("6_uaobn")
+
+[node name="Quit" type="Button" parent="ColorRect/Quit"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect/Quit"]
+layout_mode = 0
+offset_left = 8.44418
+offset_top = 7.0
+offset_right = 88.4442
+offset_bottom = 41.0
+text = "Exit"
+label_settings = SubResource("LabelSettings_uaobn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Respawn" type="TextureRect" parent="."]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -302.0
+offset_top = -201.0
+offset_right = 210.0
+offset_bottom = -73.0
+grow_horizontal = 2
+texture = ExtResource("10_0hkrk")
+
+[node name="Label" type="Label" parent="Respawn"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -21.0
+offset_right = 125.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Respawn in: 4"
+label_settings = SubResource("LabelSettings_doxfr")
+
+[node name="UserInterfaceUpgradeHub" parent="." node_paths=PackedStringArray("main_ui") instance=ExtResource("11_3vwkw")]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 269.0
+offset_top = 124.0
+offset_right = 269.0
+offset_bottom = 124.0
+scale = Vector2(0.516938, 0.584695)
+mouse_filter = 2
+main_ui = NodePath("..")
+hp_per_lvl = 100.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ecxsd")
+}
+autoplay = "Farming"
+
+[node name="wave_delay" type="Timer" parent="."]
+
+[node name="night" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 955.0
+offset_top = 5.0
+offset_right = 955.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Night: 1 Week: 1"
+label_settings = SubResource("LabelSettings_3vwkw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DayAndNight" type="AnimatedSprite2D" parent="."]
+position = Vector2(1109, 31)
+scale = Vector2(0.614583, 0.614583)
+sprite_frames = SubResource("SpriteFrames_vjkj2")
+animation = &"Day"
+
+[connection signal="pressed" from="Pausebutton/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ColorRect/Try again/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="ColorRect/Quit/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="wave_delay" to="." method="_on_wave_delay_timeout"]

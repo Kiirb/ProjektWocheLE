@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=6 format=3 uid="uid://ba0uoikl4pqh6"]
+
+[ext_resource type="Script" uid="uid://6xglwmmidv34" path="res://Resources/Attacks/Debuffs/Debuff_data.gd" id="1_1gkjp"]
+[ext_resource type="PackedScene" uid="uid://mbim0lxo31bb" path="res://Scenes/Attack/AutoAttack/Yeti_snow_ball_projectie.tscn" id="1_gp6gt"]
+[ext_resource type="Script" uid="uid://b1l4s28r3yii2" path="res://Resources/Attacks/Attack_data.gd" id="2_1gkjp"]
+[ext_resource type="Script" uid="uid://cre8cv3widdiw" path="res://Resources/Attacks/Debuffs/Slow_effect.gd" id="2_wpbrg"]
+
+[sub_resource type="Resource" id="Resource_ws6m2"]
+script = ExtResource("2_wpbrg")
+slow_percent = 1.0
+duration = 10.0
+metadata/_custom_type_script = "uid://cre8cv3widdiw"
+
+[resource]
+script = ExtResource("2_1gkjp")
+scene = ExtResource("1_gp6gt")
+is_range = true
+name = "Yeti Range Attack"
+cool_down = 1.0
+prj_range = 30.0
+prj_speed = 4.0
+basic_dmg = 15
+effects = Array[ExtResource("1_1gkjp")]([SubResource("Resource_ws6m2")])
+metadata/_custom_type_script = "uid://b1l4s28r3yii2"

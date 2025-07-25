@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=4 format=3 uid="uid://dg55i06rojtdv"]
+
+[ext_resource type="Script" uid="uid://b1l4s28r3yii2" path="res://Resources/Attacks/Attack_data.gd" id="1_gi54n"]
+[ext_resource type="Script" uid="uid://6xglwmmidv34" path="res://Resources/Attacks/Debuffs/Debuff_data.gd" id="1_nmbts"]
+[ext_resource type="PackedScene" uid="uid://d04vk2v6ufe5s" path="res://Scenes/Attack/AutoAttack/Melee/Melee_attack_scene.tscn" id="1_s4iru"]
+
+[resource]
+script = ExtResource("1_gi54n")
+scene = ExtResource("1_s4iru")
+is_range = false
+name = "Zombie Melee"
+cool_down = 2.0
+prj_range = 10.0
+prj_speed = 4.0
+basic_dmg = 15
+effects = Array[ExtResource("1_nmbts")]([])
+metadata/_custom_type_script = "uid://b1l4s28r3yii2"

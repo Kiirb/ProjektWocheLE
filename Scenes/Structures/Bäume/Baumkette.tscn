@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://defkbgffi81pw"]
+
+[ext_resource type="PackedScene" uid="uid://bltciarcooawa" path="res://Scenes/structures/Bäume/Many_Trees2.tscn" id="1_hb4g5"]
+[ext_resource type="PackedScene" uid="uid://ccckb2mdjh8h0" path="res://Scenes/structures/Bäume/Many_Trees.tscn" id="2_3u40f"]
+
+[node name="Baumkette" type="Node3D"]
+
+[node name="ManyTrees2" parent="." instance=ExtResource("1_hb4g5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.967159, 0, -0.966949)
+
+[node name="ManyTrees" parent="." instance=ExtResource("2_3u40f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)

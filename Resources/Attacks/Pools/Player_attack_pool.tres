@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AttackPoolData" load_steps=7 format=3 uid="uid://by10yi703mpku"]
+
+[ext_resource type="Resource" uid="uid://eso3rf2dn7yp" path="res://Resources/Attacks/AutoAttack/Range/Range_auto_attack.tres" id="1_pualc"]
+[ext_resource type="Script" uid="uid://cx3s048w3no4f" path="res://Resources/Attacks/Pools/Attack_pool_data.gd" id="2_0or2c"]
+[ext_resource type="Script" uid="uid://b1l4s28r3yii2" path="res://Resources/Attacks/Attack_data.gd" id="2_ofox1"]
+[ext_resource type="Resource" uid="uid://pbvn7rdj33mo" path="res://Resources/Attacks/Moves/Energy_drain_attack.tres" id="3_pualc"]
+[ext_resource type="Resource" uid="uid://tatonj6u1und" path="res://Resources/Attacks/Moves/Fire_ball.tres" id="4_ofox1"]
+[ext_resource type="Resource" uid="uid://bq4hp5ydpduee" path="res://Resources/Attacks/Moves/Magic_word_attack.tres" id="5_f3vx2"]
+
+[resource]
+script = ExtResource("2_0or2c")
+auto_attack = ExtResource("1_pualc")
+pool = Array[ExtResource("2_ofox1")]([ExtResource("3_pualc"), ExtResource("4_ofox1"), ExtResource("5_f3vx2")])
+metadata/_custom_type_script = "uid://cx3s048w3no4f"

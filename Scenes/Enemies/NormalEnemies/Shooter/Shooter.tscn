@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://cx230js0udgl4"]
+
+[ext_resource type="Script" uid="uid://c2vxrdbtk2kb" path="res://Scripts/Enemies/NormalEnemies/Shooter/Shooter.gd" id="1_kidnd"]
+[ext_resource type="PackedScene" uid="uid://xmccmn55yy4w" path="res://Assets/Models/Enemies/Normal Enemies/Rogue.glb" id="2_gk4wi"]
+[ext_resource type="Resource" uid="uid://bk0focwwt72pa" path="res://Resources/Stats/Enemies/NormalEnemies/Shooter_stats.tres" id="2_uryxe"]
+[ext_resource type="PackedScene" uid="uid://dq7ndfqs5ik6k" path="res://Scenes/Attack/AutoAttack/Auto_attack_manager.tscn" id="3_kidnd"]
+[ext_resource type="Resource" uid="uid://dcobyo7ke8god" path="res://Resources/Attacks/Pools/Shooter_attack_pool.tres" id="5_uryxe"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kidnd"]
+
+[node name="Shooter" type="CharacterBody3D"]
+script = ExtResource("1_kidnd")
+stats = ExtResource("2_uryxe")
+
+[node name="Rogue" parent="." instance=ExtResource("2_gk4wi")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_kidnd")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="AutoAttackManager" parent="." instance=ExtResource("3_kidnd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+attack_pool = ExtResource("5_uryxe")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

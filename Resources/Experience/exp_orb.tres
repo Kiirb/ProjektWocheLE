@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ExpOrbData" load_steps=3 format=3 uid="uid://ckfk7j7amll3g"]
+
+[ext_resource type="Script" uid="uid://8skfm1t1jd15" path="res://Resources/Experience/Exp_orb_data.gd" id="1_55g8s"]
+[ext_resource type="PackedScene" uid="uid://x2qd7c457amm" path="res://Scenes/Experience/Exp_orb.tscn" id="1_pk1u6"]
+
+[resource]
+script = ExtResource("1_55g8s")
+scene = ExtResource("1_pk1u6")
+metadata/_custom_type_script = "uid://8skfm1t1jd15"

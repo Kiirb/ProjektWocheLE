@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://dgjiw8udooecr"]
+
+[ext_resource type="Texture2D" uid="uid://cfdch5r48fv0s" path="res://Assets/Textures/Stylized_Grass_003_SD-20250725T084906Z-1-001/Stylized_Grass_003_basecolor.jpg" id="1_gnx7p"]
+[ext_resource type="Texture2D" uid="uid://vl56wlpawvqe" path="res://Assets/Textures/Stylized_Grass_003_SD-20250725T084906Z-1-001/Stylized_Grass_003_roughness.jpg" id="2_4udg1"]
+[ext_resource type="Texture2D" uid="uid://b1k2wvdvx0os6" path="res://Assets/Textures/Stylized_Grass_003_SD-20250725T084906Z-1-001/Stylized_Grass_003_ambientOcclusion.jpg" id="2_gp75e"]
+[ext_resource type="Texture2D" uid="uid://ggy8i58inohw" path="res://Assets/Textures/Stylized_Grass_003_SD-20250725T084906Z-1-001/Stylized_Grass_003_height.png" id="3_w3fg1"]
+[ext_resource type="Texture2D" uid="uid://dnsbq6fnhrmo1" path="res://Assets/Textures/Stylized_Grass_003_SD-20250725T084906Z-1-001/Stylized_Grass_003_normal.jpg" id="4_8dah6"]
+
+[resource]
+albedo_texture = ExtResource("1_gnx7p")
+roughness_texture = ExtResource("2_4udg1")
+normal_enabled = true
+normal_texture = ExtResource("4_8dah6")
+ao_enabled = true
+ao_texture = ExtResource("2_gp75e")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_w3fg1")
+uv1_scale = Vector3(10, 10, 10)
+uv1_triplanar = true

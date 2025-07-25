@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://x2qd7c457amm"]
+
+[ext_resource type="Script" uid="uid://1f8rd3vi2pue" path="res://Scripts/Player/LevelUp/Exp_orb.gd" id="1_rderv"]
+[ext_resource type="Texture2D" uid="uid://d16w1hq3kwu6o" path="res://Assets/Textures/xp_orb.png" id="2_s21f2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ge5br"]
+radius = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rderv"]
+radius = 16.0
+
+[node name="Exp_orb" type="RigidBody3D"]
+axis_lock_linear_y = true
+script = ExtResource("1_rderv")
+move_speed = 12.0
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+billboard = 1
+texture = ExtResource("2_s21f2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ge5br")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_rderv")
+debug_color = Color(0, 0.647123, 0.219603, 0.42)
+
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]

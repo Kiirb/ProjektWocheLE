@@ -1,0 +1,703 @@
+[gd_scene load_steps=28 format=3 uid="uid://d3hshv12metye"]
+
+[ext_resource type="Texture2D" uid="uid://b3ajfoif1wsk6" path="res://Assets/GUI/PNG/Double/panel_brown.png" id="1_du73k"]
+[ext_resource type="Script" uid="uid://ccck364vwh5h" path="res://Scripts/UI/user_interface_upgrade_hub.gd" id="1_hhnax"]
+[ext_resource type="Texture2D" uid="uid://cobl7i1r8xcj3" path="res://Assets/GUI/PNG/Double/banner_modern.png" id="2_00iy6"]
+[ext_resource type="Texture2D" uid="uid://cslt1evrq1ulj" path="res://Assets/GUI/PNG/Double/panel_grey_bolts_red.png" id="2_4em1a"]
+[ext_resource type="Texture2D" uid="uid://ce0635mepouls" path="res://Assets/GUI/PNG/Double/panel_grey.png" id="2_43kdr"]
+[ext_resource type="Texture2D" uid="uid://dg4ta0da3jcqi" path="res://Assets/GUI/PNG/Double/progress_red_small_border.png" id="3_00iy6"]
+[ext_resource type="Texture2D" uid="uid://de7atyxljgunr" path="res://Assets/GUI/PNG/Double/button_grey.png" id="3_grlth"]
+[ext_resource type="FontFile" uid="uid://drgujvxy82f6u" path="res://Assets/fonts/antiquity-print.ttf" id="4_cy74l"]
+[ext_resource type="FontFile" uid="uid://b6uuvkcdwghv4" path="res://Assets/fonts/DungeonFont.ttf" id="5_440in"]
+[ext_resource type="Texture2D" uid="uid://r3og6vfxc3er" path="res://Assets/GUI/PNG/Double/panel_brown_dark_corners_a.png" id="7_vc7h8"]
+[ext_resource type="Texture2D" uid="uid://dikrw2hkxdgsv" path="res://Assets/GUI/PNG/Double/button_brown.png" id="8_hhnax"]
+[ext_resource type="FontFile" uid="uid://cse3n6cowjrkn" path="res://Assets/fonts/Not Jam Old Style 11/NotJamOldStyle14.ttf" id="8_wgprc"]
+[ext_resource type="LabelSettings" uid="uid://cg6ervdfalxep" path="res://Resources/Fonts/info_fomt_settings.tres" id="10_iqn6i"]
+[ext_resource type="Texture2D" uid="uid://ckc5q5b04fnej" path="res://Assets/GUI/wood.png" id="10_sbed8"]
+[ext_resource type="LabelSettings" uid="uid://bhljvf016dur5" path="res://Resources/Fonts/semi_title_font_settings.tres" id="14_u3ylb"]
+[ext_resource type="FontVariation" uid="uid://mh5mwe417mh0" path="res://Resources/Fonts/info_font.tres" id="15_mypw5"]
+
+[sub_resource type="FontVariation" id="FontVariation_f58hc"]
+base_font = ExtResource("4_cy74l")
+spacing_glyph = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_vc7h8"]
+font = SubResource("FontVariation_f58hc")
+font_size = 28
+outline_size = 16
+outline_color = Color(0.160784, 0.223529, 0.278431, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_b6fsj"]
+base_font = ExtResource("5_440in")
+
+[sub_resource type="LabelSettings" id="LabelSettings_hhnax"]
+font = SubResource("FontVariation_b6fsj")
+font_size = 28
+outline_size = 9
+outline_color = Color(0.161038, 0.224169, 0.276899, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_qpfa8"]
+base_font = ExtResource("8_wgprc")
+
+[sub_resource type="LabelSettings" id="LabelSettings_llddy"]
+font = SubResource("FontVariation_qpfa8")
+font_size = 28
+outline_size = 8
+outline_color = Color(0.411352, 0.127777, 0.109696, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cy74l"]
+font = ExtResource("15_mypw5")
+font_size = 28
+outline_size = 8
+outline_color = Color(0.427451, 0.294118, 0.152941, 1)
+
+[sub_resource type="Animation" id="Animation_sbed8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-4, 1000)]
+}
+
+[sub_resource type="Animation" id="Animation_hhnax"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-4, 76), Vector2(-4, 1000)]
+}
+
+[sub_resource type="Animation" id="Animation_vc7h8"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-4, 1000), Vector2(-4, 70)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_odggi"]
+_data = {
+&"RESET": SubResource("Animation_sbed8"),
+&"close": SubResource("Animation_hhnax"),
+&"open": SubResource("Animation_vc7h8")
+}
+
+[node name="UserInterfaceUpgradeHub" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hhnax")
+
+[node name="Base" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = 1000.0
+offset_right = 20.0
+offset_bottom = 935.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.192157, 0.192157, 0.192157, 0.780392)
+
+[node name="name" type="NinePatchRect" parent="Base"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 96.0
+grow_horizontal = 2
+texture = ExtResource("1_du73k")
+patch_margin_left = 40
+patch_margin_top = 29
+patch_margin_right = 40
+
+[node name="name" type="Label" parent="Base/name"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = 18.0
+offset_right = -467.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+text = "HUB"
+label_settings = SubResource("LabelSettings_vc7h8")
+vertical_alignment = 1
+
+[node name="Name_bg" type="NinePatchRect" parent="Base/name"]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 31.0
+offset_top = -30.0
+offset_right = 323.0
+offset_bottom = 33.0
+grow_vertical = 2
+texture = ExtResource("2_00iy6")
+
+[node name="lvl_bg" type="NinePatchRect" parent="Base/name"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = -30.0
+offset_right = -31.0
+offset_bottom = 35.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_00iy6")
+
+[node name="lvl" type="Label" parent="Base/name/lvl_bg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 11.0
+offset_right = -52.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.4, 1.4)
+text = "LvL : 5"
+label_settings = SubResource("LabelSettings_hhnax")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="heal" type="NinePatchRect" parent="Base"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -102.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_du73k")
+patch_margin_left = 40
+patch_margin_top = 29
+patch_margin_right = 40
+
+[node name="hp_bg" type="TextureProgressBar" parent="Base/heal"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 27.0
+offset_top = -35.0
+offset_right = 908.0
+offset_bottom = 39.0
+grow_vertical = 2
+nine_patch_stretch = true
+stretch_margin_left = 43
+stretch_margin_top = 37
+stretch_margin_right = 43
+stretch_margin_bottom = 37
+texture_under = ExtResource("2_4em1a")
+
+[node name="hp" type="TextureProgressBar" parent="Base/heal/hp_bg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 18.0
+offset_right = -22.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 19
+stretch_margin_top = 11
+stretch_margin_right = 19
+stretch_margin_bottom = 11
+texture_progress = ExtResource("3_00iy6")
+
+[node name="hp_value" type="Label" parent="Base/heal/hp_bg/hp"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = -16.5
+offset_right = 54.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "100 / 100"
+label_settings = SubResource("LabelSettings_llddy")
+
+[node name="heal_button_bg" type="TextureRect" parent="Base/heal"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -257.0
+offset_top = -32.0
+offset_right = -26.0
+offset_bottom = 36.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("3_grlth")
+
+[node name="heal_button" type="Button" parent="Base/heal/heal_button_bg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Label" type="Label" parent="Base/heal/heal_button_bg"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.077
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.213
+offset_right = -89.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Heal"
+label_settings = ExtResource("10_iqn6i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Base/heal/heal_button_bg"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -20.0
+offset_right = 145.0
+offset_bottom = 188.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("10_sbed8")
+
+[node name="st_fr_lvl" type="Control" parent="Base"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 96.0
+offset_bottom = -102.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="stats" type="NinePatchRect" parent="Base/st_fr_lvl"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 196.0
+grow_horizontal = 2
+texture = ExtResource("2_43kdr")
+patch_margin_left = 40
+patch_margin_top = 29
+patch_margin_right = 40
+
+[node name="Info" type="NinePatchRect" parent="Base/st_fr_lvl/stats"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 19.0
+offset_right = 509.0
+offset_bottom = 163.0
+texture = ExtResource("7_vc7h8")
+patch_margin_left = 33
+patch_margin_top = 9
+patch_margin_right = 33
+patch_margin_bottom = 9
+
+[node name="Title" type="NinePatchRect" parent="Base/st_fr_lvl/stats/Info"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 69.0
+offset_top = 25.0
+offset_right = -69.0
+offset_bottom = 61.0
+grow_horizontal = 2
+texture = ExtResource("2_00iy6")
+
+[node name="Label" type="Label" parent="Base/st_fr_lvl/stats/Info/Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 4.0
+offset_right = 71.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+text = "HUB Stats"
+label_settings = ExtResource("14_u3ylb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="stats" type="Label" parent="Base/st_fr_lvl/stats/Info"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 70.0
+offset_right = 558.0
+offset_bottom = 131.0
+scale = Vector2(0.8, 0.8)
+text = "hp             Armor             Recovery
+"
+label_settings = ExtResource("10_iqn6i")
+horizontal_alignment = 1
+
+[node name="hp" type="Label" parent="Base/st_fr_lvl/stats/Info/stats"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -29.0
+offset_right = 55.0
+offset_bottom = -1.0
+grow_vertical = 0
+text = "5"
+label_settings = SubResource("LabelSettings_cy74l")
+horizontal_alignment = 1
+
+[node name="armor" type="Label" parent="Base/st_fr_lvl/stats/Info/stats"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -69.5
+offset_top = -28.0
+offset_right = 5.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "5"
+label_settings = SubResource("LabelSettings_cy74l")
+horizontal_alignment = 1
+
+[node name="recovery" type="Label" parent="Base/st_fr_lvl/stats/Info/stats"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -29.0
+offset_right = -22.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "5"
+label_settings = SubResource("LabelSettings_cy74l")
+horizontal_alignment = 1
+
+[node name="Upgrade" type="NinePatchRect" parent="Base/st_fr_lvl/stats"]
+layout_mode = 0
+offset_left = 729.0
+offset_top = 19.0
+offset_right = 1092.0
+offset_bottom = 163.0
+texture = ExtResource("7_vc7h8")
+patch_margin_left = 35
+patch_margin_top = 20
+patch_margin_right = 35
+patch_margin_bottom = 20
+
+[node name="lvl_combat" type="Label" parent="Base/st_fr_lvl/stats/Upgrade"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 45.0
+offset_top = 18.0
+offset_right = -47.0
+offset_bottom = 59.0
+grow_horizontal = 2
+text = "lvl 5 -> 6"
+label_settings = ExtResource("10_iqn6i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="upgrade_button_combat" type="TextureRect" parent="Base/st_fr_lvl/stats/Upgrade"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 45.0
+offset_top = -77.0
+offset_right = -47.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("8_hhnax")
+
+[node name="button_label" type="Label" parent="Base/st_fr_lvl/stats/Upgrade/upgrade_button_combat"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = 1.0
+offset_right = -5.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "level up"
+label_settings = ExtResource("10_iqn6i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lvl_combat_button" type="Button" parent="Base/st_fr_lvl/stats/Upgrade/upgrade_button_combat"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Base/st_fr_lvl/stats/Upgrade/upgrade_button_combat"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -24.0
+offset_right = 133.0
+offset_bottom = 184.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.220661, 0.202802)
+texture = ExtResource("10_sbed8")
+
+[node name="farming" type="NinePatchRect" parent="Base/st_fr_lvl"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -196.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_43kdr")
+patch_margin_left = 40
+patch_margin_top = 29
+patch_margin_right = 40
+
+[node name="Info" type="NinePatchRect" parent="Base/st_fr_lvl/farming"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 19.0
+offset_right = 509.0
+offset_bottom = 163.0
+texture = ExtResource("7_vc7h8")
+patch_margin_left = 33
+patch_margin_top = 9
+patch_margin_right = 33
+patch_margin_bottom = 9
+
+[node name="Title" type="NinePatchRect" parent="Base/st_fr_lvl/farming/Info"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 69.0
+offset_top = 25.0
+offset_right = -69.0
+offset_bottom = 61.0
+grow_horizontal = 2
+texture = ExtResource("2_00iy6")
+
+[node name="Label" type="Label" parent="Base/st_fr_lvl/farming/Info/Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 7.0
+offset_right = 71.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+text = "Farming Stats"
+label_settings = ExtResource("14_u3ylb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="stats" type="Label" parent="Base/st_fr_lvl/farming/Info"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 76.0
+offset_right = 560.0
+offset_bottom = 127.0
+scale = Vector2(0.8, 0.8)
+text = "Wood Gain                    Tree Spawn"
+label_settings = ExtResource("10_iqn6i")
+horizontal_alignment = 1
+
+[node name="Wood" type="Label" parent="Base/st_fr_lvl/farming/Info/stats"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -21.0
+offset_right = 97.0
+offset_bottom = 7.0
+grow_vertical = 0
+text = "5"
+label_settings = SubResource("LabelSettings_cy74l")
+horizontal_alignment = 1
+
+[node name="tree" type="Label" parent="Base/st_fr_lvl/farming/Info/stats"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -106.0
+offset_top = -21.0
+offset_right = -19.0
+offset_bottom = 7.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "5"
+label_settings = SubResource("LabelSettings_cy74l")
+horizontal_alignment = 1
+
+[node name="Upgrade" type="NinePatchRect" parent="Base/st_fr_lvl/farming"]
+layout_mode = 0
+offset_left = 729.0
+offset_top = 19.0
+offset_right = 1092.0
+offset_bottom = 163.0
+texture = ExtResource("7_vc7h8")
+patch_margin_left = 35
+patch_margin_top = 20
+patch_margin_right = 35
+patch_margin_bottom = 20
+
+[node name="lvl_farming" type="Label" parent="Base/st_fr_lvl/farming/Upgrade"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 45.0
+offset_top = 18.0
+offset_right = -47.0
+offset_bottom = 59.0
+grow_horizontal = 2
+text = "lvl 0 -> 1"
+label_settings = ExtResource("10_iqn6i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="upgrade_button_farming" type="TextureRect" parent="Base/st_fr_lvl/farming/Upgrade"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 45.0
+offset_top = -77.0
+offset_right = -47.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("8_hhnax")
+
+[node name="button_label" type="Label" parent="Base/st_fr_lvl/farming/Upgrade/upgrade_button_farming"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "level up"
+label_settings = ExtResource("10_iqn6i")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lvl_farming_button" type="Button" parent="Base/st_fr_lvl/farming/Upgrade/upgrade_button_farming"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="Base/st_fr_lvl/farming/Upgrade/upgrade_button_farming"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -24.0
+offset_right = 133.0
+offset_bottom = 184.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.220661, 0.202802)
+texture = ExtResource("10_sbed8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_odggi")
+}
+
+[connection signal="pressed" from="Base/heal/heal_button_bg/heal_button" to="." method="_on_heal_button_pressed"]
+[connection signal="pressed" from="Base/st_fr_lvl/stats/Upgrade/upgrade_button_combat/lvl_combat_button" to="." method="_on_lvl_combat_button_pressed"]
+[connection signal="pressed" from="Base/st_fr_lvl/farming/Upgrade/upgrade_button_farming/lvl_farming_button" to="." method="_on_lvl_farming_button_pressed"]

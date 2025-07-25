@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PoolData" load_steps=7 format=3 uid="uid://dh1nnd2mxb1c5"]
+
+[ext_resource type="Script" uid="uid://c1qbsh24ylc7y" path="res://Resources/Wave/Enemies/Enemy_data.gd" id="1_54dtv"]
+[ext_resource type="Resource" uid="uid://bcusep2jyy3f0" path="res://Resources/Wave/Enemies/SkeletonRanged.tres" id="2_abwg7"]
+[ext_resource type="Script" uid="uid://c8k17djxtbopg" path="res://Resources/Wave/Pools/Enemy_pool_data.gd" id="2_t0wek"]
+[ext_resource type="Resource" uid="uid://c4x1d8mdthtwh" path="res://Resources/Wave/Enemies/Barbarian.tres" id="3_x58td"]
+[ext_resource type="Resource" uid="uid://l1iai2ldtfxl" path="res://Resources/Wave/Enemies/Shooter.tres" id="4_ixofc"]
+[ext_resource type="Resource" uid="uid://d0uhgplaweqf4" path="res://Resources/Wave/Enemies/Skeleton.tres" id="5_87w60"]
+
+[resource]
+script = ExtResource("2_t0wek")
+pool = Array[ExtResource("1_54dtv")]([ExtResource("2_abwg7"), ExtResource("3_x58td"), ExtResource("4_ixofc"), ExtResource("5_87w60")])
+metadata/_custom_type_script = "uid://c8k17djxtbopg"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=3 format=3 uid="uid://c1tgx3e4ih2jr"]
+
+[ext_resource type="Script" uid="uid://bllnbwgra7276" path="res://Scripts/Collectable/Resource_item_m.gd" id="1_vbea0"]
+[ext_resource type="Texture2D" uid="uid://d16w1hq3kwu6o" path="res://Assets/Textures/xp_orb.png" id="2_ou07d"]
+
+[resource]
+script = ExtResource("1_vbea0")
+display_name = "xp"
+texture = ExtResource("2_ou07d")
+metadata/_custom_type_script = "uid://bllnbwgra7276"

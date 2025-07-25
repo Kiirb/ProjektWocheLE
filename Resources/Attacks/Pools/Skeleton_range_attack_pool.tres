@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AttackPoolData" load_steps=4 format=3 uid="uid://mmop8entu5xl"]
+
+[ext_resource type="Resource" uid="uid://eso3rf2dn7yp" path="res://Resources/Attacks/AutoAttack/Range/Range_auto_attack.tres" id="1_m0wt8"]
+[ext_resource type="Script" uid="uid://b1l4s28r3yii2" path="res://Resources/Attacks/Attack_data.gd" id="1_x5rro"]
+[ext_resource type="Script" uid="uid://cx3s048w3no4f" path="res://Resources/Attacks/Pools/Attack_pool_data.gd" id="2_m0wt8"]
+
+[resource]
+script = ExtResource("2_m0wt8")
+auto_attack = ExtResource("1_m0wt8")
+pool = Array[ExtResource("1_x5rro")]([])
+metadata/_custom_type_script = "uid://cx3s048w3no4f"

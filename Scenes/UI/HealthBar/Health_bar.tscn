@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6g5fn0pohw1v"]
+
+[ext_resource type="Script" uid="uid://c0copfhdapjp2" path="res://Scripts/UI/HealthBar/Health_bar.gd" id="1_7kv2e"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_phu7s"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_357lx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_357lx"]
+bg_color = Color(0.101494, 0.0128253, 0.0175878, 1)
+border_width_bottom = 3
+border_color = Color(0.192655, 0.0381859, 0.0512718, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 16
+expand_margin_bottom = 3.0
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajecy"]
+bg_color = Color(0.567216, 0.185035, 0.216459, 1)
+border_width_bottom = 3
+border_color = Color(0.192157, 0.0392157, 0.0509804, 1)
+corner_radius_top_left = 4
+corner_radius_bottom_left = 4
+corner_detail = 16
+expand_margin_bottom = 3.0
+
+[node name="Sprite3D" type="Sprite3D"]
+billboard = 1
+texture = SubResource("ViewportTexture_phu7s")
+script = ExtResource("1_7kv2e")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(369, 44)
+
+[node name="Panel" type="Panel" parent="SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_357lx")
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019
+anchor_top = 0.5
+anchor_right = 0.979
+anchor_bottom = 0.5
+offset_left = -0.144001
+offset_top = -13.0
+offset_right = -2.10406
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_357lx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ajecy")
+value = 50.0

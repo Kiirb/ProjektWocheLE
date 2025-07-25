@@ -1,0 +1,512 @@
+[gd_scene load_steps=20 format=3 uid="uid://bh0jyedjqkw04"]
+
+[ext_resource type="PackedScene" uid="uid://c4m6vi88ejfgn" path="res://Scenes/Structures/Hub.tscn" id="2_bymt7"]
+[ext_resource type="PackedScene" uid="uid://bjibdmlo2r31k" path="res://Scenes/Player/Player.tscn" id="2_ktc8h"]
+[ext_resource type="PackedScene" uid="uid://ds2ixlr60smuk" path="res://Scenes/UI/Mouse/Mouse.tscn" id="2_mdq8r"]
+[ext_resource type="PackedScene" uid="uid://bge08ascceh15" path="res://Scenes/Spawner/spawner.tscn" id="6_6s21f"]
+[ext_resource type="PackedScene" uid="uid://cepoajispgkfx" path="res://Scenes/Structures/Tree.tscn" id="6_oc00i"]
+[ext_resource type="PackedScene" uid="uid://clp1psnfiq56r" path="res://Scenes/Camera/Camera.tscn" id="7_a6e1y"]
+[ext_resource type="PackedScene" uid="uid://ri8cj2kg5cdd" path="res://Scenes/Spawner/structure_spawner.tscn" id="7_sbwux"]
+[ext_resource type="PackedScene" uid="uid://bpnc1i6pnpudx" path="res://Scenes/UI/user_interface_HUD.tscn" id="8_6s21f"]
+[ext_resource type="PackedScene" uid="uid://dbdwu1rmi1bif" path="res://Scenes/UI/in_game_menu.tscn" id="9_mvo2x"]
+[ext_resource type="PackedScene" uid="uid://bls1cnk5r4jj6" path="res://Scenes/Player_spawn_point.tscn" id="10_tv6un"]
+[ext_resource type="PackedScene" uid="uid://dd22u00tbdr5j" path="res://Scenes/Structures/Bäume/map.tscn" id="11_a6e1y"]
+[ext_resource type="Script" uid="uid://d0sq5278x3kr7" path="res://Scripts/Player/LevelUp/BaseItem.gd" id="12_w8hpt"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5cxf6"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_8ksou"]
+sky_material = SubResource("ProceduralSkyMaterial_5cxf6")
+
+[sub_resource type="Environment" id="Environment_xl4iq"]
+background_mode = 2
+sky = SubResource("Sky_8ksou")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Animation" id="Animation_tv6un"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight3D:light_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.998889, 0.983185, 0.917909, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DirectionalLight3D:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DirectionalLight3D:light_volumetric_fog_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DirectionalLight3D:light_angular_distance")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DirectionalLight3D:shadow_enabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player/SpotLight3D:light_energy")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Player/SpotLight3D:light_indirect_energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player/SpotLight3D:light_volumetric_fog_energy")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [8.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Player/SpotLight3D:spot_range")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [7.715]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Player/SpotLight3D:spot_angle")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [82.385]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Player/SpotLight3D:spot_angle_attenuation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0490366]
+}
+
+[sub_resource type="Animation" id="Animation_mvo2x"]
+resource_name = "to_dark"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight3D:light_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.545098, 0.596078, 0.843137, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DirectionalLight3D:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DirectionalLight3D:light_volumetric_fog_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 5.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DirectionalLight3D:light_angular_distance")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 50.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DirectionalLight3D:shadow_enabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player/SpotLight3D:light_energy")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 8.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Player/SpotLight3D:light_indirect_energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 8.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player/SpotLight3D:light_volumetric_fog_energy")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 8.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Player/SpotLight3D:spot_range")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [5.0, 7.715]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Player/SpotLight3D:spot_angle")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [45.0, 82.385]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Player/SpotLight3D:spot_angle_attenuation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0490366]
+}
+
+[sub_resource type="Animation" id="Animation_a6e1y"]
+resource_name = "to_day"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight3D:light_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.546223, 0.596183, 0.843757, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DirectionalLight3D:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DirectionalLight3D:light_volumetric_fog_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [5.0, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DirectionalLight3D:light_angular_distance")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [50.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DirectionalLight3D:shadow_enabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player/SpotLight3D:spot_range")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [7.715, 5.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Player/SpotLight3D:spot_angle")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [82.385, 45.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player/SpotLight3D:spot_angle_attenuation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0490366, 1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Player/SpotLight3D:light_energy")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [8.0, 0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Player/SpotLight3D:light_indirect_energy")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [8.0, 1.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Player/SpotLight3D:light_volumetric_fog_energy")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [8.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tv6un"]
+_data = {
+&"RESET": SubResource("Animation_tv6un"),
+&"to_dark": SubResource("Animation_mvo2x"),
+&"to_day": SubResource("Animation_a6e1y")
+}
+
+[node name="MainGame" type="Node3D"]
+
+[node name="Hub" parent="." instance=ExtResource("2_bymt7")]
+transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 0, -1, 0)
+
+[node name="Mouse" parent="." instance=ExtResource("2_mdq8r")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xl4iq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.998889, 0.983185, 0.917909, 1)
+shadow_enabled = true
+
+[node name="timer_wave" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="resource_tree_spawner" parent="." instance=ExtResource("7_sbwux")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.815, 0, -100.289)
+inner_spawn_radius = 2.0
+outer_spawn_radius = 40.0
+structure = ExtResource("6_oc00i")
+
+[node name="Spawner" parent="." node_paths=PackedStringArray("user_interface", "player_ref") instance=ExtResource("6_6s21f")]
+min_distance = 350.0
+max_distance = 360.0
+user_interface = NodePath("../UserInterface")
+player_ref = NodePath("../Player")
+
+[node name="Camera" parent="." instance=ExtResource("7_a6e1y")]
+
+[node name="Player" parent="." node_paths=PackedStringArray("ui", "spawn_point", "spawner_ref") instance=ExtResource("2_ktc8h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.205482, 0, 30.6628)
+ui = NodePath("../UserInterface")
+spawn_point = NodePath("../PlayerSpawnPoint")
+spawner_ref = NodePath("../Spawner")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.18427, 0)
+light_energy = 0.0
+light_indirect_energy = 8.0
+light_volumetric_fog_energy = 8.0
+spot_range = 7.715
+spot_angle = 82.385
+spot_angle_attenuation = 0.0490366
+
+[node name="UserInterface" parent="." node_paths=PackedStringArray("light_anim", "day_night_cycle_node", "player", "hub", "spawner", "structure_spawner") instance=ExtResource("8_6s21f")]
+light_anim = NodePath("../AnimationPlayer")
+day_night_cycle_node = NodePath("../DirectionalLight3D")
+player = NodePath("../Player")
+hub = NodePath("../Hub")
+spawner = NodePath("../Spawner")
+structure_spawner = NodePath("../resource_tree_spawner")
+
+[node name="InGameMenu" parent="." instance=ExtResource("9_mvo2x")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_tv6un")
+}
+
+[node name="PlayerSpawnPoint" parent="." instance=ExtResource("10_tv6un")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0121384, -1.52588e-05, 30.0632)
+
+[node name="Map" parent="." instance=ExtResource("11_a6e1y")]
+
+[node name="BaseItemHolder" type="Node" parent="."]
+script = ExtResource("12_w8hpt")

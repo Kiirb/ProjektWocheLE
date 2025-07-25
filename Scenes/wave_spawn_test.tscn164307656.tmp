@@ -1,0 +1,69 @@
+[gd_scene load_steps=12 format=3 uid="uid://bh0jyedjqkw04"]
+
+[ext_resource type="Script" uid="uid://t4fq3qk4canh" path="res://Scenes/wave_spawn_test.gd" id="1_xl4iq"]
+[ext_resource type="PackedScene" uid="uid://bjibdmlo2r31k" path="res://Scenes/Player/Player.tscn" id="2_ktc8h"]
+[ext_resource type="PackedScene" uid="uid://bge08ascceh15" path="res://Scenes/Spawner/spawner.tscn" id="3_1l272"]
+[ext_resource type="PackedScene" uid="uid://cmlomxew8sprq" path="res://Scenes/Enemies/NormalEnemies/Barbarian/barbarian.tscn" id="4_fcpe1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5cxf6"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_8ksou"]
+sky_material = SubResource("ProceduralSkyMaterial_5cxf6")
+
+[sub_resource type="Environment" id="Environment_xl4iq"]
+background_mode = 2
+sky = SubResource("Sky_8ksou")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1l272"]
+albedo_color = Color(0.219207, 0.644833, 0.34773, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1l272"]
+material = SubResource("StandardMaterial3D_1l272")
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_1l272"]
+vertices = PackedVector3Array(-49.5, 0.5, -49.5, -49.5, 0.5, 49.5, 49.5, 0.5, 49.5, 49.5, 0.5, -49.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fcpe1"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="WaveSpawnTest" type="Node3D"]
+script = ExtResource("1_xl4iq")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xl4iq")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(125, 0, 0, 0, 50, 0, 0, 0, 123.5, 0, 0, 0)
+mesh = SubResource("PlaneMesh_1l272")
+
+[node name="timer_wave" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Spawner" parent="." instance=ExtResource("3_1l272")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+enemy_scene = ExtResource("4_fcpe1")
+spawn_radius = 30.0
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(2.565, 0, 0, 0, 0.9, 0, 0, 0, 2.565, 0, 0, 0)
+navigation_mesh = SubResource("NavigationMesh_1l272")
+
+[node name="Floor_static_body" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+
+[node name="Colissions_shape" type="CollisionShape3D" parent="NavigationRegion3D/Floor_static_body"]
+shape = SubResource("ConcavePolygonShape3D_fcpe1")
+debug_fill = false
+
+[node name="Player" parent="." instance=ExtResource("2_ktc8h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

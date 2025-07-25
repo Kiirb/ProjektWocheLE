@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=3 uid="uid://do3uyc5gpwdkd"]
+
+[ext_resource type="Script" uid="uid://dmm5u4wm701e7" path="res://Scripts/UI/start_menu.gd" id="1_g18el"]
+[ext_resource type="PackedScene" uid="uid://bh0jyedjqkw04" path="res://Scenes/MainGame/Main_game_scene.tscn" id="2_k44vq"]
+[ext_resource type="Texture2D" uid="uid://dip66adwavsk3" path="res://Assets/Textures/PNG/Default/panel_grey.png" id="3_ghpp4"]
+[ext_resource type="Texture2D" uid="uid://b4nfpexv165r5" path="res://Assets/Textures/PNG/Default/Cover2.png" id="3_uhw4i"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g18el")
+main_game = ExtResource("2_k44vq")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.290123
+anchor_right = 1.0
+anchor_bottom = 1.29012
+offset_top = 188.0
+offset_bottom = -188.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_uhw4i")
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+texture = ExtResource("3_ghpp4")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/NinePatchRect"]
+custom_minimum_size = Vector2(250, 115)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.166667
+anchor_top = 0.105
+anchor_right = 0.833333
+anchor_bottom = 0.895
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Play" type="Button" parent="CenterContainer/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "PLAY"
+
+[node name="Settings" type="Button" parent="CenterContainer/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="Quit" type="Button" parent="CenterContainer/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "QUIT"
+
+[node name="SettingsPanal" type="NinePatchRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.369792
+anchor_top = 0.345679
+anchor_right = 0.630208
+anchor_bottom = 0.654321
+offset_bottom = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ghpp4")
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="SettingsPanal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanal/CenterContainer"]
+layout_mode = 2
+
+[node name="MusicToggle" type="CheckBox" parent="SettingsPanal/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "MUSIK AUS"
+
+[node name="VolumeSlider" type="HSlider" parent="SettingsPanal/CenterContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="Back" type="Button" parent="SettingsPanal/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "BACK"
+
+[connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="toggled" from="SettingsPanal/CenterContainer/VBoxContainer/MusicToggle" to="." method="_on_music_toggle_toggled"]
+[connection signal="value_changed" from="SettingsPanal/CenterContainer/VBoxContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="pressed" from="SettingsPanal/CenterContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

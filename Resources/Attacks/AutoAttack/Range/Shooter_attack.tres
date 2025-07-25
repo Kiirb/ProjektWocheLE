@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://bct1133fav28b"]
+
+[ext_resource type="Script" uid="uid://b1l4s28r3yii2" path="res://Resources/Attacks/Attack_data.gd" id="1_pijj3"]
+[ext_resource type="PackedScene" uid="uid://btukuopxd6mwa" path="res://Scenes/Attack/AutoAttack/Range/Auto_attack_projectile.tscn" id="1_sossh"]
+
+[resource]
+script = ExtResource("1_pijj3")
+scene = ExtResource("1_sossh")
+is_range = true
+name = "Shooter Range Attack"
+cool_down = 2.0
+prj_range = 5.0
+prj_speed = 5.0
+basic_dmg = 10
+metadata/_custom_type_script = "uid://b1l4s28r3yii2"

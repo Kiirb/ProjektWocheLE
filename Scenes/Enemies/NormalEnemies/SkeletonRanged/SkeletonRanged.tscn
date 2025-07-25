@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://d18n5h82x3wmc"]
+
+[ext_resource type="Script" uid="uid://22lb6amiu78i" path="res://Scripts/Enemies/NormalEnemies/SkeletonRanged/SkeletonRanged.gd" id="1_q8p1m"]
+[ext_resource type="PackedScene" uid="uid://beipkkgcoydvr" path="res://Assets/Models/Enemies/Normal Enemies/Skeleton_Rogue.glb" id="2_378vm"]
+[ext_resource type="Resource" uid="uid://b1bdr6yl2ltud" path="res://Resources/Stats/Enemies/NormalEnemies/SkeletonRanged_stats.tres" id="2_babbx"]
+[ext_resource type="PackedScene" uid="uid://dq7ndfqs5ik6k" path="res://Scenes/Attack/AutoAttack/Auto_attack_manager.tscn" id="4_vgmm5"]
+[ext_resource type="Resource" uid="uid://mmop8entu5xl" path="res://Resources/Attacks/Pools/Skeleton_range_attack_pool.tres" id="5_babbx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4c1ud"]
+
+[node name="SkeletonRanged" type="CharacterBody3D"]
+script = ExtResource("1_q8p1m")
+stats = ExtResource("2_babbx")
+
+[node name="Skeleton_Rogue" parent="." instance=ExtResource("2_378vm")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_4c1ud")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="AutoAttackManager" parent="." instance=ExtResource("4_vgmm5")]
+attack_pool = ExtResource("5_babbx")
+
+[node name="Timer" type="Timer" parent="."]

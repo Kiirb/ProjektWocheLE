@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwldh7ygaxf34"]
+
+[ext_resource type="Script" uid="uid://uosg42qqu7nu" path="res://Scripts/Buildings/woodBuilding.gd" id="1_f4vta"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_f4vta"]
+size = Vector3(2.085, 1.19, 2.505)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_12ugd"]
+size = Vector3(2.07727, 1.19634, 2.52362)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_f4vta"]
+radius = 10.0
+
+[node name="WoodBuilding" type="Node3D"]
+script = ExtResource("1_f4vta")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.625452, 0)
+mesh = SubResource("BoxMesh_f4vta")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0034203, 0.627151, -0.00507438)
+shape = SubResource("BoxShape3D_12ugd")
+
+[node name="Ray2" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00994, 0.104744, 1.19882)
+target_position = Vector3(0, -0.12, 0)
+
+[node name="Ray3" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.913577, 0.100212, -1.16793)
+target_position = Vector3(0, -0.12, 0)
+
+[node name="Ray4" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.988663, 0.100212, -1.16793)
+target_position = Vector3(0, -0.12, 0)
+
+[node name="Ray1" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99986, 0.104744, 1.19884)
+target_position = Vector3(0, -0.12, 0)
+
+[node name="treeDetector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="treeDetector"]
+shape = SubResource("SphereShape3D_f4vta")

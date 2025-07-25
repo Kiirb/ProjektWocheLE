@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://c34y2ca70oj7w"]
+
+[ext_resource type="PackedScene" uid="uid://c7sirs0570l81" path="res://Assets/Nature/Walls&Trees/kenney_mini-dungeon/Models/GLB format/wall-narrow.glb" id="1_4icl3"]
+[ext_resource type="PackedScene" uid="uid://ciyelxckm4c85" path="res://Assets/Nature/Walls&Trees/kenney_mini-dungeon/Models/GLB format/wall-opening.glb" id="2_fho2p"]
+[ext_resource type="PackedScene" uid="uid://dvrnvrhkayr3v" path="res://Assets/Nature/Walls&Trees/kenney_mini-dungeon/Models/GLB format/wall.glb" id="3_2yode"]
+[ext_resource type="PackedScene" uid="uid://cffqjkkapbgo2" path="res://Assets/Nature/Walls&Trees/kenney_mini-dungeon/Models/GLB format/barrel.glb" id="4_pux6r"]
+[ext_resource type="PackedScene" uid="uid://yklsfgcgy528" path="res://Assets/Nature/Walls&Trees/kenney_mini-dungeon/Models/GLB format/coin.glb" id="5_vky6b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4icl3"]
+size = Vector3(8.47516, 1.96295, 1.3183)
+
+[node name="WallMiddle" type="StaticBody3D"]
+
+[node name="wall-narrow2" parent="." instance=ExtResource("1_4icl3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+
+[node name="wall-narrow3" parent="." instance=ExtResource("1_4icl3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5)
+
+[node name="wall-narrow4" parent="." instance=ExtResource("1_4icl3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0.5)
+
+[node name="wall-opening2" parent="." instance=ExtResource("2_fho2p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0.5)
+
+[node name="wall-narrow5" parent="." instance=ExtResource("1_4icl3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.5)
+
+[node name="wall-narrow6" parent="." instance=ExtResource("1_4icl3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0.5)
+
+[node name="wall2" parent="." instance=ExtResource("3_2yode")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 0.5)
+
+[node name="wall3" parent="." instance=ExtResource("3_2yode")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0.5)
+
+[node name="barrel2" parent="." instance=ExtResource("4_pux6r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.631, 0.9, 0.56)
+
+[node name="barrel3" parent="." instance=ExtResource("4_pux6r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.09741, 0.9, 0.445)
+
+[node name="coin3" parent="." instance=ExtResource("5_vky6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.527, 1, 0.478748)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.955752, 0.693451, 0.500544)
+shape = SubResource("BoxShape3D_4icl3")

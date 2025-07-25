@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2r37xyh2nack"]
+
+[ext_resource type="PackedScene" uid="uid://defkbgffi81pw" path="res://Scenes/structures/Bäume/Baumkette.tscn" id="1_i55mk"]
+
+[node name="BaumketteHd" type="Node3D"]
+
+[node name="Baumkette" parent="." instance=ExtResource("1_i55mk")]
+transform = Transform3D(19.9984, 0, 0.255509, 0, 20, 0, -0.255509, 0, 19.9984, 0, 0, 0)
+
+[node name="Baumkette2" parent="." instance=ExtResource("1_i55mk")]
+transform = Transform3D(19.8779, 0, -2.20683, 0, 20, 0, 2.20683, 0, 19.8779, 75.967, 0, 3.12914)
+
+[node name="Baumkette3" parent="." instance=ExtResource("1_i55mk")]
+transform = Transform3D(-19.2081, 0, 5.57211, 0, 20, 0, -5.57211, 0, -19.2081, 161.095, 0, -20.0412)

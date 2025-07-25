@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AttackPoolData" load_steps=4 format=3 uid="uid://c1pkh82afxtem"]
+
+[ext_resource type="Resource" uid="uid://b28yvbdsr2uu" path="res://Resources/Attacks/AutoAttack/Melee/Barbarian_attack.tres" id="1_40qn1"]
+[ext_resource type="Script" uid="uid://b1l4s28r3yii2" path="res://Resources/Attacks/Attack_data.gd" id="1_c4q72"]
+[ext_resource type="Script" uid="uid://cx3s048w3no4f" path="res://Resources/Attacks/Pools/Attack_pool_data.gd" id="2_40qn1"]
+
+[resource]
+script = ExtResource("2_40qn1")
+auto_attack = ExtResource("1_40qn1")
+pool = Array[ExtResource("1_c4q72")]([])
+metadata/_custom_type_script = "uid://cx3s048w3no4f"

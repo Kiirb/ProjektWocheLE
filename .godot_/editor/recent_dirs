@@ -1,0 +1,8 @@
+res://scripts/Camera
+res://Scenes
+res://scripts/Spawner
+res://scripts/Player
+res://scripts/Enemies
+res://scripts/Enemies/NormalEnemies/Skeleton
+res://scripts/Enemies/NormalEnemies/Barbarian
+res://scripts/Enemies/Bosses/Yeti

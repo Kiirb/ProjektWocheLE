@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ri8cj2kg5cdd"]
+
+[ext_resource type="Script" uid="uid://d4dejcreun8t8" path="res://Scripts/Spawner/structure_spawner.gd" id="1_btg3v"]
+
+[node name="tree_spawner" type="Node3D"]
+script = ExtResource("1_btg3v")
+outer_spawn_radius = 20.0

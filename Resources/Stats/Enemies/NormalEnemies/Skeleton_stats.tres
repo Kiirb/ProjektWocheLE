@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="StatsData" load_steps=2 format=3 uid="uid://cfuj8cabyfoxh"]
+
+[ext_resource type="Script" uid="uid://deehu6tojvlep" path="res://Resources/Stats/Stats_data.gd" id="1_xljve"]
+
+[resource]
+script = ExtResource("1_xljve")
+hp = 20.0
+max_health = 40.0
+basic_dmg = 3.0
+recovery = 1
+armor = 4.0
+dmg_multiplyer = 1.0
+move_speed = 2.0
+melee_range = 5.0
+area_modifier = 1.0
+speed_modifier = 1.5
+auto_cd_modifier = 1.0
+metadata/_custom_type_script = "uid://deehu6tojvlep"

@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://mbim0lxo31bb"]
+
+[ext_resource type="Script" uid="uid://dgv0rs868geru" path="res://Scripts/Attack/AutoAttack/Yeti_snow_ball_projectile.gd" id="1_khr74"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f8j0k"]
+albedo_color = Color(0.787604, 0.852938, 0.875436, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_vk6bp"]
+material = SubResource("StandardMaterial3D_f8j0k")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yp3an"]
+radius = 0.383106
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1jxut"]
+radius = 0.286993
+
+[sub_resource type="Curve" id="Curve_r81ny"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.434109, 0.618271), -2.25035, -2.25035, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_r81ny"]
+curve = SubResource("Curve_r81ny")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r81ny"]
+lifetime_randomness = 0.14
+flatness = 0.68
+initial_velocity_max = 27.0
+scale_min = 0.5
+scale_max = 1.1
+scale_curve = SubResource("CurveTexture_r81ny")
+
+[sub_resource type="SphereMesh" id="SphereMesh_gld14"]
+
+[node name="SnowAttack" type="CharacterBody3D" node_paths=PackedStringArray("particles")]
+script = ExtResource("1_khr74")
+particles = NodePath("GPUParticles3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0186857, 0.0285375, -0.00966459)
+mesh = SubResource("SphereMesh_vk6bp")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(3.61077, 0, 0, 0, 3.61077, 0, 0, 0, 3.61077, -0.000127167, 0.000194214, -6.5773e-05)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_yp3an")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(3.61077, 0, 0, 0, 3.61077, 0, 0, 0, 3.61077, -0.000127167, 0.000194214, -6.5773e-05)
+shape = SubResource("SphereShape3D_1jxut")
+disabled = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 15
+amount_ratio = 0.7883
+sub_emitter = NodePath(".")
+lifetime = 0.5
+interpolate = false
+process_material = SubResource("ParticleProcessMaterial_r81ny")
+draw_passes = 2
+draw_pass_1 = SubResource("SphereMesh_gld14")
+draw_pass_2 = null
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

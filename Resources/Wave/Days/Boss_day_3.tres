@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DaysData" load_steps=3 format=3 uid="uid://dnfxyuh87w6px"]
+
+[ext_resource type="Resource" uid="uid://bx1p0rt7u8714" path="res://Resources/Wave/Pools/Boss_pool.tres" id="1_ffb1l"]
+[ext_resource type="Script" uid="uid://dmnkaqm525ahl" path="res://Resources/Wave/Days/Days_data.gd" id="2_63tg0"]
+
+[resource]
+script = ExtResource("2_63tg0")
+normal_enemies_pool = ExtResource("1_ffb1l")
+normal_enemies_amount = 0
+normal_enemies_spawn_interval = 0.0
+boss_pool = ExtResource("1_ffb1l")
+boss_spawn_delay = 1.0
+metadata/_custom_type_script = "uid://dmnkaqm525ahl"

@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://djsxgi1pdqk7t"]
+
+[ext_resource type="Script" uid="uid://dictav20coeo5" path="res://Scripts/Enemies/Bosses/Yeti/yeti.gd" id="1_kah3x"]
+[ext_resource type="PackedScene" uid="uid://cv3bemtpp4ox5" path="res://Assets/Models/Enemies/Boss/Yeti.gltf" id="2_a7bo7"]
+[ext_resource type="Resource" uid="uid://fpfejif47g5b" path="res://Resources/Stats/Enemies/Bosses/Yeti_stats.tres" id="2_mdsj2"]
+[ext_resource type="PackedScene" uid="uid://dq7ndfqs5ik6k" path="res://Scenes/Attack/AutoAttack/Auto_attack_manager.tscn" id="4_fjpmi"]
+[ext_resource type="Resource" uid="uid://cv6q5a4mepb1l" path="res://Resources/Attacks/Pools/Yeti_attack_pool.tres" id="5_mdsj2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wa1wk"]
+radius = 1.0
+height = 4.0
+
+[node name="Boss1" type="CharacterBody3D"]
+collision_layer = 4
+script = ExtResource("1_kah3x")
+stats = ExtResource("2_mdsj2")
+
+[node name="Yeti2" parent="." instance=ExtResource("2_a7bo7")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.071, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0.00270081, 3.29104, 0.358475)
+shape = SubResource("CapsuleShape3D_wa1wk")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="AutoAttackManager" parent="." instance=ExtResource("4_fjpmi")]
+attack_pool = ExtResource("5_mdsj2")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

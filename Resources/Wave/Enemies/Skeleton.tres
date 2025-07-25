@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://d0uhgplaweqf4"]
+
+[ext_resource type="Script" uid="uid://c1qbsh24ylc7y" path="res://Resources/Wave/Enemies/Enemy_data.gd" id="1_5qmyq"]
+[ext_resource type="PackedScene" uid="uid://p2wjhjsxh6ju" path="res://Scenes/Enemies/NormalEnemies/Skeleton/Skeleton.tscn" id="1_qd0sr"]
+
+[resource]
+script = ExtResource("1_5qmyq")
+scene = ExtResource("1_qd0sr")
+weight = 1
+is_boss = false
+exp_on_dead = 20
+metadata/_custom_type_script = "uid://c1qbsh24ylc7y"

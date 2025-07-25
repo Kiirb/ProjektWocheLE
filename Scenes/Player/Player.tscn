@@ -1,0 +1,62 @@
+[gd_scene load_steps=13 format=3 uid="uid://bjibdmlo2r31k"]
+
+[ext_resource type="PackedScene" uid="uid://cd8whq15oo2x2" path="res://Assets/Models/Characters/Humans/Mage.glb" id="1_3qydi"]
+[ext_resource type="Script" uid="uid://bog6lsaqai05s" path="res://Scripts/Player/Player.gd" id="1_7whyj"]
+[ext_resource type="Resource" uid="uid://bxl43tsmhqkid" path="res://Resources/Stats/Player/Player_stats.tres" id="2_fk5o5"]
+[ext_resource type="Script" uid="uid://bsaxm7yvbayc5" path="res://Scripts/Player/inventory.gd" id="4_i8lqe"]
+[ext_resource type="PackedScene" uid="uid://dq7ndfqs5ik6k" path="res://Scenes/Attack/AutoAttack/Auto_attack_manager.tscn" id="5_jmcll"]
+[ext_resource type="Resource" uid="uid://by10yi703mpku" path="res://Resources/Attacks/Pools/Player_attack_pool.tres" id="6_t26db"]
+[ext_resource type="PackedScene" uid="uid://b6g5fn0pohw1v" path="res://Scenes/UI/HealthBar/Health_bar.tscn" id="9_825xp"]
+[ext_resource type="PackedScene" uid="uid://cf0jfu8syp5mi" path="res://Scenes/Experience/Exp_manager.tscn" id="9_ji083"]
+[ext_resource type="Resource" uid="uid://ckfk7j7amll3g" path="res://Resources/Experience/exp_orb.tres" id="10_ji083"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3qydi"]
+radius = 0.614528
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ved6o"]
+radius = 2.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_825xp"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Player" type="CharacterBody3D"]
+collision_mask = 4
+script = ExtResource("1_7whyj")
+stats = ExtResource("2_fk5o5")
+
+[node name="Mage_mesh" parent="." instance=ExtResource("1_3qydi")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.971558, 0)
+shape = SubResource("CapsuleShape3D_3qydi")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("4_i8lqe")
+
+[node name="respawn" type="Timer" parent="."]
+one_shot = true
+
+[node name="Interaction_area" type="Area3D" parent="."]
+transform = Transform3D(1.84677, 0, 0, 0, 1.84677, 0, 0, 0, 1.84677, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaction_area"]
+shape = SubResource("SphereShape3D_ved6o")
+debug_color = Color(0.24496, 0.636087, 5.77569e-07, 0.42)
+
+[node name="AutoAttackManager" parent="." instance=ExtResource("5_jmcll")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0176824, 0.0552667, 0)
+attack_pool = ExtResource("6_t26db")
+
+[node name="HealthBar" parent="." instance=ExtResource("9_825xp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+texture = SubResource("ViewportTexture_825xp")
+
+[node name="ExpManager" parent="." node_paths=PackedStringArray("player_ref") instance=ExtResource("9_ji083")]
+player_ref = NodePath("..")
+exp_orb_data = ExtResource("10_ji083")
+
+[node name="att" type="Timer" parent="."]
+
+[connection signal="timeout" from="respawn" to="." method="_on_respawn_timeout"]
+[connection signal="timeout" from="att" to="." method="_on_att_timeout"]

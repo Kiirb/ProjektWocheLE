@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://dqsv2hcixkgt6"]
+
+[ext_resource type="PackedScene" uid="uid://btukuopxd6mwa" path="res://Scenes/Attack/AutoAttack/Range/Auto_attack_projectile.tscn" id="1_v08a1"]
+[ext_resource type="Script" uid="uid://b1l4s28r3yii2" path="res://Resources/Attacks/Attack_data.gd" id="2_rshcr"]
+
+[resource]
+script = ExtResource("2_rshcr")
+scene = ExtResource("1_v08a1")
+is_range = false
+name = "Auto Attack"
+cool_down = 2.0
+basic_range = 80.0
+attack_speed = 0.0
+basic_dmg = 10
+metadata/_custom_type_script = "uid://b1l4s28r3yii2"

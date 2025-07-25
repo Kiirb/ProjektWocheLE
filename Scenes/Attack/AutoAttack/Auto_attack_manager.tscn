@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq7ndfqs5ik6k"]
+
+[ext_resource type="Script" uid="uid://dym5mmn3occf4" path="res://Scripts/Attack/AutoAttack/Auto_att_manager.gd" id="1_a3sm8"]
+[ext_resource type="PackedScene" uid="uid://d04vk2v6ufe5s" path="res://Scenes/Attack/AutoAttack/Melee/Melee_attack_scene.tscn" id="2_tmvbt"]
+
+[node name="AutoAttackManager" type="Node3D"]
+script = ExtResource("1_a3sm8")
+melee_angle_treshhold = 0.5
+metadata/_custom_type_script = "uid://mdl8sf7wpict"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="MeleeRangeArea" parent="." instance=ExtResource("2_tmvbt")]

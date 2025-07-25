@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://p2wjhjsxh6ju"]
+
+[ext_resource type="Script" uid="uid://dcblxh8hxfprs" path="res://Scripts/Enemies/NormalEnemies/Skeleton/skeleton.gd" id="1_k7w3m"]
+[ext_resource type="Resource" uid="uid://cfuj8cabyfoxh" path="res://Resources/Stats/Enemies/NormalEnemies/Skeleton_stats.tres" id="2_5s2os"]
+[ext_resource type="PackedScene" uid="uid://depy5d3cklb4p" path="res://Assets/Models/mobs/Skeleton/Skeleton_Minion.glb" id="2_bbu6b"]
+[ext_resource type="PackedScene" uid="uid://dq7ndfqs5ik6k" path="res://Scenes/Attack/AutoAttack/Auto_attack_manager.tscn" id="4_a43uj"]
+[ext_resource type="Resource" uid="uid://3qx3nfi6glbp" path="res://Resources/Attacks/Pools/Skeleton_attack_pool.tres" id="5_a43uj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ebnso"]
+
+[node name="Skeleton" type="CharacterBody3D"]
+collision_layer = 4
+script = ExtResource("1_k7w3m")
+stats = ExtResource("2_5s2os")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_ebnso")
+
+[node name="Skeleton_Minion" parent="." instance=ExtResource("2_bbu6b")]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="AutoAttackManager" parent="." instance=ExtResource("4_a43uj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+attack_pool = ExtResource("5_a43uj")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

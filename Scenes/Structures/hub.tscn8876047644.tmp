@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4m6vi88ejfgn"]
+
+[ext_resource type="Script" uid="uid://d1aii51xvmxoc" path="res://Scripts/Structures/Hub/hub.gd" id="1_qssp3"]
+[ext_resource type="Resource" uid="uid://xnaqqpf8hvkq" path="res://Resources/Stats/Hub/Hub_stats.tres" id="2_vcilq"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4uo4c"]
+top_radius = 5.0
+bottom_radius = 5.0
+height = 20.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_omryx"]
+height = 20.0
+radius = 5.0
+
+[node name="Hub" type="CharacterBody3D"]
+script = ExtResource("1_qssp3")
+stats = ExtResource("2_vcilq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.0985, 0)
+mesh = SubResource("CylinderMesh_4uo4c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.1375, 0)
+shape = SubResource("CylinderShape3D_omryx")

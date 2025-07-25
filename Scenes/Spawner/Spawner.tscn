@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bge08ascceh15"]
+
+[ext_resource type="Script" uid="uid://bvu63pugqp366" path="res://Scripts/Spawner/Spawner.gd" id="1_u4pts"]
+
+[node name="Spawner" type="Node3D"]
+script = ExtResource("1_u4pts")
+min_distance = 25.0
+max_distance = 35.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

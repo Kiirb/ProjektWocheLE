@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="DaysData" load_steps=7 format=3 uid="uid://ffo2rvl37f6m"]
+
+[ext_resource type="Resource" uid="uid://ddmf5qy8gk2t7" path="res://Resources/Wave/Pools/Week_1/d_2.tres" id="1_cwea7"]
+[ext_resource type="Script" uid="uid://c1qbsh24ylc7y" path="res://Resources/Wave/Enemies/Enemy_data.gd" id="1_qyt66"]
+[ext_resource type="Resource" uid="uid://ccp8areuay62n" path="res://Resources/Wave/Enemies/Zombie.tres" id="2_74ejc"]
+[ext_resource type="Script" uid="uid://dmnkaqm525ahl" path="res://Resources/Wave/Days/Days_data.gd" id="2_rioly"]
+[ext_resource type="Script" uid="uid://c8k17djxtbopg" path="res://Resources/Wave/Pools/Enemy_pool_data.gd" id="3_lwebe"]
+
+[sub_resource type="Resource" id="Resource_3whi4"]
+script = ExtResource("3_lwebe")
+pool = Array[ExtResource("1_qyt66")]([ExtResource("2_74ejc")])
+metadata/_custom_type_script = "uid://c8k17djxtbopg"
+
+[resource]
+script = ExtResource("2_rioly")
+normal_enemies_pool = ExtResource("1_cwea7")
+normal_enemies_amount = 7
+normal_enemies_spawn_interval = 2.0
+boss_pool = SubResource("Resource_3whi4")
+boss_enemies_amount = 0
+boss_spawn_delay = 0.0
+metadata/_custom_type_script = "uid://dmnkaqm525ahl"

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b86uxlvup6kqv"]
+
+[ext_resource type="Script" uid="uid://cjdrrsu65iyx4" path="res://Scripts/Player/LevelUp/Items/arrow.gd" id="1_j8vfe"]
+[ext_resource type="Texture2D" uid="uid://xg0hlfp1h4tb" path="res://Assets/Textures/Screenshot 2025-07-25 130453.png" id="2_8hdun"]
+
+[node name="Arrow" type="Node"]
+script = ExtResource("1_j8vfe")
+sprite = ExtResource("2_8hdun")
+item_name = "RailGun"
+disc = "Increace your Bullets Speed"

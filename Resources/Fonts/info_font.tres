@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://mh5mwe417mh0"]
+
+[ext_resource type="FontFile" uid="uid://cse3n6cowjrkn" path="res://Assets/fonts/Not Jam Old Style 11/NotJamOldStyle14.ttf" id="1_xbe42"]
+
+[resource]
+base_font = ExtResource("1_xbe42")

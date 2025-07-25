@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmv17qeq0cdxo"]
+
+[ext_resource type="Script" uid="uid://cr6sdra7q2geh" path="res://Scripts/Enemies/Bosses/Giant/Giant.gd" id="1_ov11a"]
+[ext_resource type="Resource" uid="uid://b6j73gm3yglhm" path="res://Resources/Stats/Enemies/Bosses/Giant_stats.tres" id="2_m2mt5"]
+[ext_resource type="PackedScene" uid="uid://6jbn66tmcvv8" path="res://Assets/Models/Enemies/Boss/Giant.gltf" id="2_roktq"]
+[ext_resource type="PackedScene" uid="uid://dq7ndfqs5ik6k" path="res://Scenes/Attack/AutoAttack/Auto_attack_manager.tscn" id="4_m2mt5"]
+[ext_resource type="Resource" uid="uid://dlkig0x5lqgwr" path="res://Resources/Attacks/Pools/Giant_attack_pool.tres" id="5_m2mt5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x23wa"]
+radius = 1.0
+height = 4.0
+
+[node name="Giant" type="CharacterBody3D"]
+script = ExtResource("1_ov11a")
+hub_dmg_multiplier = 2.0
+stats = ExtResource("2_m2mt5")
+
+[node name="Giant_mesh" parent="." instance=ExtResource("2_roktq")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("CapsuleShape3D_x23wa")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="AutoAttackManager" parent="." instance=ExtResource("4_m2mt5")]
+attack_pool = ExtResource("5_m2mt5")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://dm2nn04h7dxc8"]
+
+[ext_resource type="Script" uid="uid://c3d0on3ouddxt" path="res://Scripts/Enemies/Bosses/Zombie/Zombie.gd" id="1_s25ju"]
+[ext_resource type="Resource" uid="uid://dsk3fjjnew4au" path="res://Resources/Stats/Enemies/Bosses/Zombie_stats.tres" id="2_6l761"]
+[ext_resource type="PackedScene" uid="uid://c3vmpumvnt0ig" path="res://Assets/Models/Enemies/Boss/Zombie.gltf" id="2_ptp3f"]
+[ext_resource type="PackedScene" uid="uid://dq7ndfqs5ik6k" path="res://Scenes/Attack/AutoAttack/Auto_attack_manager.tscn" id="4_2lm0o"]
+[ext_resource type="Resource" uid="uid://dtafmxadb8q5t" path="res://Resources/Attacks/Pools/Zombie_attack_pool.tres" id="5_6l761"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wexgi"]
+radius = 1.0
+height = 4.0
+
+[node name="Zombie" type="CharacterBody3D"]
+script = ExtResource("1_s25ju")
+stats = ExtResource("2_6l761")
+
+[node name="Zombie_mesh" parent="." instance=ExtResource("2_ptp3f")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("CapsuleShape3D_wexgi")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="AutoAttackManager" parent="." instance=ExtResource("4_2lm0o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+attack_pool = ExtResource("5_6l761")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

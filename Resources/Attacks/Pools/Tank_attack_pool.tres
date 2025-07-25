@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AttackPoolData" load_steps=4 format=3 uid="uid://b5kt5pyq05pto"]
+
+[ext_resource type="Resource" uid="uid://bsspvpirghiqw" path="res://Resources/Attacks/AutoAttack/Melee/Tank_melee_attack.tres" id="1_8e5bf"]
+[ext_resource type="Script" uid="uid://b1l4s28r3yii2" path="res://Resources/Attacks/Attack_data.gd" id="1_asg7j"]
+[ext_resource type="Script" uid="uid://cx3s048w3no4f" path="res://Resources/Attacks/Pools/Attack_pool_data.gd" id="2_8e5bf"]
+
+[resource]
+script = ExtResource("2_8e5bf")
+auto_attack = ExtResource("1_8e5bf")
+pool = Array[ExtResource("1_asg7j")]([])
+metadata/_custom_type_script = "uid://cx3s048w3no4f"

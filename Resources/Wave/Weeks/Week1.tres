@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeekData" load_steps=11 format=3 uid="uid://bxwb4ogo7lxkp"]
+
+[ext_resource type="Resource" uid="uid://c062lgo1ryx62" path="res://Resources/Wave/Days/Boss_day_1.tres" id="1_iv7dn"]
+[ext_resource type="Script" uid="uid://dmnkaqm525ahl" path="res://Resources/Wave/Days/Days_data.gd" id="1_yumqd"]
+[ext_resource type="Script" uid="uid://cb2tgo4e0w4t8" path="res://Resources/Wave/Weeks/Week_data.gd" id="2_km13f"]
+[ext_resource type="Resource" uid="uid://b2ag8o53ym2y2" path="res://Resources/Wave/Days/Day_1.tres" id="3_iv7dn"]
+[ext_resource type="Resource" uid="uid://ffo2rvl37f6m" path="res://Resources/Wave/Days/Day_2.tres" id="4_j1nkq"]
+[ext_resource type="Resource" uid="uid://dmsafudyhk213" path="res://Resources/Wave/Days/Day_3.tres" id="5_muc6i"]
+[ext_resource type="Resource" uid="uid://bnrokdytlm4i6" path="res://Resources/Wave/Days/Day_4.tres" id="6_psj3y"]
+[ext_resource type="Resource" uid="uid://c8h0l6njqn0l5" path="res://Resources/Wave/Days/Day_5.tres" id="7_rxjg3"]
+[ext_resource type="Resource" uid="uid://lj22mqmjff3y" path="res://Resources/Wave/Days/Day_6.tres" id="8_4csqi"]
+[ext_resource type="Resource" uid="uid://bd28s8edqtbhp" path="res://Resources/Wave/Days/Day_7.tres" id="9_okb1e"]
+
+[resource]
+script = ExtResource("2_km13f")
+days = Array[ExtResource("1_yumqd")]([ExtResource("3_iv7dn"), ExtResource("4_j1nkq"), ExtResource("5_muc6i"), ExtResource("6_psj3y"), ExtResource("7_rxjg3"), ExtResource("8_4csqi"), ExtResource("9_okb1e")])
+boss_day = ExtResource("1_iv7dn")
+metadata/_custom_type_script = "uid://cb2tgo4e0w4t8"

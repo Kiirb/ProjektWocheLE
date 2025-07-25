@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://dwsy6gvnxlcnw"]
+
+[ext_resource type="Script" uid="uid://b1l4s28r3yii2" path="res://Resources/Attacks/Attack_data.gd" id="1_5k87e"]
+[ext_resource type="PackedScene" uid="uid://d04vk2v6ufe5s" path="res://Scenes/Attack/AutoAttack/Melee/Melee_attack_scene.tscn" id="1_nof7y"]
+
+[resource]
+script = ExtResource("1_5k87e")
+scene = ExtResource("1_nof7y")
+is_range = false
+name = "Giant Melee Attack"
+cool_down = 3.0
+basic_range = 15.0
+attack_speed = 0.0
+basic_dmg = 15
+metadata/_custom_type_script = "uid://b1l4s28r3yii2"

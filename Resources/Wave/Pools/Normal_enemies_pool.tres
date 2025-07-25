@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PoolData" load_steps=3 format=3 uid="uid://0ldq86xjvjc8"]
+
+[ext_resource type="Script" uid="uid://c1qbsh24ylc7y" path="res://Resources/Wave/Enemies/Enemy_data.gd" id="1_huxih"]
+[ext_resource type="Script" uid="uid://c8k17djxtbopg" path="res://Resources/Wave/Pools/Enemy_pool_data.gd" id="2_wus2d"]
+
+[resource]
+script = ExtResource("2_wus2d")
+pool = Array[ExtResource("1_huxih")]([])
+metadata/_custom_type_script = "uid://c8k17djxtbopg"

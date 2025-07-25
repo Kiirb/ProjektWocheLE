@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=4 format=3 uid="uid://bfrcawxx8lmbv"]
+
+[ext_resource type="Script" uid="uid://6xglwmmidv34" path="res://Resources/Attacks/Debuffs/Debuff_data.gd" id="1_g4351"]
+[ext_resource type="Script" uid="uid://b1l4s28r3yii2" path="res://Resources/Attacks/Attack_data.gd" id="1_mejkp"]
+[ext_resource type="PackedScene" uid="uid://btukuopxd6mwa" path="res://Scenes/Attack/AutoAttack/Range/Auto_attack_projectile.tscn" id="1_r8k6i"]
+
+[resource]
+script = ExtResource("1_mejkp")
+scene = ExtResource("1_r8k6i")
+is_range = true
+name = "Wizard Range Attack"
+cool_down = 10.0
+prj_range = 0.0
+prj_speed = 0.0
+basic_dmg = 10
+effects = Array[ExtResource("1_g4351")]([])
+metadata/_custom_type_script = "uid://b1l4s28r3yii2"

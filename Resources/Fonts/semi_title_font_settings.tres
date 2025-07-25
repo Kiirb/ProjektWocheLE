@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bhljvf016dur5"]
+
+[ext_resource type="FontVariation" uid="uid://tawfjd54m7wm" path="res://Resources/Fonts/semi_title.tres" id="1_dkh76"]
+
+[resource]
+font = ExtResource("1_dkh76")
+font_size = 28
+outline_size = 10
+outline_color = Color(0.160784, 0.223529, 0.278431, 1)

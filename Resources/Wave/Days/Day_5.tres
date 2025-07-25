@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="DaysData" load_steps=7 format=3 uid="uid://c8h0l6njqn0l5"]
+
+[ext_resource type="Resource" uid="uid://cqn7qjspeuf8r" path="res://Resources/Wave/Pools/Week_1/d_5.tres" id="1_d7b10"]
+[ext_resource type="Script" uid="uid://c1qbsh24ylc7y" path="res://Resources/Wave/Enemies/Enemy_data.gd" id="1_si5yb"]
+[ext_resource type="Resource" uid="uid://b5c5y5elqv0ms" path="res://Resources/Wave/Enemies/Hedgehog.tres" id="2_6ess5"]
+[ext_resource type="Script" uid="uid://dmnkaqm525ahl" path="res://Resources/Wave/Days/Days_data.gd" id="2_8fqvr"]
+[ext_resource type="Script" uid="uid://c8k17djxtbopg" path="res://Resources/Wave/Pools/Enemy_pool_data.gd" id="3_4ybfo"]
+
+[sub_resource type="Resource" id="Resource_o08u2"]
+script = ExtResource("3_4ybfo")
+pool = Array[ExtResource("1_si5yb")]([ExtResource("2_6ess5")])
+metadata/_custom_type_script = "uid://c8k17djxtbopg"
+
+[resource]
+script = ExtResource("2_8fqvr")
+normal_enemies_pool = ExtResource("1_d7b10")
+normal_enemies_amount = 14
+normal_enemies_spawn_interval = 2.0
+boss_pool = SubResource("Resource_o08u2")
+boss_enemies_amount = 0
+boss_spawn_delay = 0.0
+metadata/_custom_type_script = "uid://dmnkaqm525ahl"

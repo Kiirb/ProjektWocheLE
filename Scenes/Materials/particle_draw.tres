@@ -1,0 +1,61 @@
+[gd_resource type="SphereMesh" load_steps=8 format=3 uid="uid://dq8nwjm6oa82x"]
+
+[sub_resource type="Image" id="Image_6bdsl"]
+data = {
+"data": PackedByteArray(255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Image" id="Image_rh1dp"]
+data = {
+"data": PackedByteArray(0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Image" id="Image_mpqgo"]
+data = {
+"data": PackedByteArray(255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Image" id="Image_hevom"]
+data = {
+"data": PackedByteArray(0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="ImageTexture3D" id="ImageTexture3D_6asyy"]
+_images = Array[Image]([SubResource("Image_6bdsl"), SubResource("Image_rh1dp"), SubResource("Image_mpqgo"), SubResource("Image_hevom")])
+
+[sub_resource type="FogMaterial" id="FogMaterial_eesl0"]
+albedo = Color(0.233925, 0.233925, 0.233925, 1)
+height_falloff = 0.000139288
+edge_fade = 0.386375
+density_texture = SubResource("ImageTexture3D_6asyy")
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_yjvke"]
+next_pass = SubResource("FogMaterial_eesl0")
+transparency = 1
+albedo_color = Color(0.230315, 0.230315, 0.230315, 0.482353)
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+grow = true
+grow_amount = 0.185
+
+[resource]
+lightmap_size_hint = Vector2i(17, 9)
+material = SubResource("ORMMaterial3D_yjvke")

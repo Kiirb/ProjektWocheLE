@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://caa4xpblajca4"]
+
+[ext_resource type="Script" uid="uid://p7ov6c17dtmy" path="res://Scripts/Enemies/Bosses/Wizard/Wizard.gd" id="1_l06jh"]
+[ext_resource type="Resource" uid="uid://vidptyvdaeqb" path="res://Resources/Stats/Enemies/Bosses/Wizard_stats.tres" id="2_4mkj6"]
+[ext_resource type="PackedScene" uid="uid://dxvbuw44dj0y8" path="res://Assets/Models/Enemies/Boss/Wizard.gltf" id="2_5m7i2"]
+[ext_resource type="PackedScene" uid="uid://dq7ndfqs5ik6k" path="res://Scenes/Attack/AutoAttack/Auto_attack_manager.tscn" id="3_l06jh"]
+[ext_resource type="Resource" uid="uid://c246kokwycvwq" path="res://Resources/Attacks/Pools/Wizard_attack_pool.tres" id="4_5m7i2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l06jh"]
+radius = 1.0
+height = 4.0
+
+[node name="Wizard" type="CharacterBody3D"]
+script = ExtResource("1_l06jh")
+stats = ExtResource("2_4mkj6")
+
+[node name="Wizard_mesh" parent="." instance=ExtResource("2_5m7i2")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("CapsuleShape3D_l06jh")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="AutoAttackManager" parent="." instance=ExtResource("3_l06jh")]
+attack_pool = ExtResource("4_5m7i2")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

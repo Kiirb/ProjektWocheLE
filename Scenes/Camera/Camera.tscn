@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://clp1psnfiq56r"]
+
+[ext_resource type="Script" uid="uid://tvqscmew2s1t" path="res://Scripts/Camera/camera.gd" id="1_d7xdh"]
+
+[node name="Camera" type="Node3D"]
+script = ExtResource("1_d7xdh")
+max_zoom_out = 90
+drag_speed = 0.05
+
+[node name="CameraAnchor" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraAnchor"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 75.5406, 125.929)
+projection = 1
+size = 20.596

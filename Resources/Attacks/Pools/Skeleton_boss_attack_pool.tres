@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AttackPoolData" load_steps=4 format=3 uid="uid://b8o1ckev1twwf"]
+
+[ext_resource type="Script" uid="uid://b1l4s28r3yii2" path="res://Resources/Attacks/Attack_data.gd" id="1_iffeo"]
+[ext_resource type="Resource" uid="uid://ck1edr43wufej" path="res://Resources/Attacks/AutoAttack/Melee/Skeleton_boss_attack.tres" id="1_remrk"]
+[ext_resource type="Script" uid="uid://cx3s048w3no4f" path="res://Resources/Attacks/Pools/Attack_pool_data.gd" id="2_remrk"]
+
+[resource]
+script = ExtResource("2_remrk")
+auto_attack = ExtResource("1_remrk")
+pool = Array[ExtResource("1_iffeo")]([])
+metadata/_custom_type_script = "uid://cx3s048w3no4f"

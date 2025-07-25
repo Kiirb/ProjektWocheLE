@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8o38cht7ukcn"]
+
+[ext_resource type="Script" uid="uid://cebgp70kr0kyl" path="res://Scripts/Player/LevelUp/Items/strenght.gd" id="1_bu4r5"]
+[ext_resource type="Texture2D" uid="uid://bkgpsfavp164" path="res://Assets/Textures/Screenshot 2025-07-25 124900.png" id="2_l4hp5"]
+
+[node name="Strenght" type="Node"]
+script = ExtResource("1_bu4r5")
+sprite = ExtResource("2_l4hp5")
+item_name = "Gun"
+disc = "Increace your strenght"

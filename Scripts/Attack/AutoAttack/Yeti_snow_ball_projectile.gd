@@ -1,0 +1,2 @@
+extends AutoAttackProjectile
+class_name SnowAttack

@@ -1,0 +1,328 @@
+[gd_scene load_steps=13 format=3 uid="uid://do4pt6r262bia"]
+
+[ext_resource type="Script" uid="uid://b60aphtnpgebl" path="res://Scripts/UI/player_upgrades.gd" id="1_gh2vf"]
+[ext_resource type="Texture2D" uid="uid://c0ntp3icrbdtx" path="res://Assets/GUI/PNG/Double/panel_brown_damaged.png" id="1_qujdv"]
+[ext_resource type="Texture2D" uid="uid://d4luqyr7gj3jl" path="res://Assets/GUI/PNG/Double/panel_grey_bolts_green.png" id="2_8uvd6"]
+[ext_resource type="Texture2D" uid="uid://6uxo7hno8bdh" path="res://Assets/GUI/PNG/Double/panel_brown_corners_a.png" id="3_gh2vf"]
+[ext_resource type="Texture2D" uid="uid://de7atyxljgunr" path="res://Assets/GUI/PNG/Double/button_grey.png" id="4_brw4l"]
+[ext_resource type="Texture2D" uid="uid://bkgpsfavp164" path="res://Assets/Textures/Screenshot 2025-07-25 124900.png" id="5_brw4l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tg44v"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_n4lh3"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+
+[sub_resource type="Animation" id="Animation_brw4l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Window:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1288.62, 102)]
+}
+
+[sub_resource type="Animation" id="Animation_gh2vf"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Window:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(401, 102), Vector2(1260.91, 102)]
+}
+
+[sub_resource type="Animation" id="Animation_8uvd6"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Window:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1260.91, 102), Vector2(401, 102)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n4lh3"]
+_data = {
+&"RESET": SubResource("Animation_brw4l"),
+&"close": SubResource("Animation_gh2vf"),
+&"open": SubResource("Animation_8uvd6")
+}
+
+[node name="player_upgrades" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gh2vf")
+
+[node name="Window" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 712.62
+offset_top = -222.0
+offset_right = 1062.62
+offset_bottom = 222.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qujdv")
+patch_margin_left = 21
+patch_margin_top = 20
+patch_margin_right = 21
+patch_margin_bottom = 20
+
+[node name="Level_up" type="Label" parent="Window"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 29.0
+offset_bottom = 52.0
+grow_horizontal = 2
+text = "LEVEL UP!!!"
+label_settings = SubResource("LabelSettings_tg44v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item_picker" type="Control" parent="Window"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = 90.0
+offset_right = -16.0
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Item1" type="NinePatchRect" parent="Window/Item_picker"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 52.0
+grow_horizontal = 2
+scale = Vector2(1, 1.41056)
+texture = ExtResource("2_8uvd6")
+patch_margin_left = 36
+patch_margin_top = 30
+patch_margin_right = 36
+patch_margin_bottom = 30
+
+[node name="Item_frame" type="NinePatchRect" parent="Window/Item_picker/Item1"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 17.0145
+offset_right = 62.0
+offset_bottom = 44.0145
+texture = ExtResource("3_gh2vf")
+
+[node name="item_picture_1" type="TextureRect" parent="Window/Item_picker/Item1/Item_frame"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 36.0
+offset_bottom = 23.0
+expand_mode = 2
+
+[node name="Item_name_1" type="Label" parent="Window/Item_picker/Item1"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 19.0
+offset_right = 281.0
+offset_bottom = 42.0
+
+[node name="Button_item_1" type="Button" parent="Window/Item_picker/Item1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+action_mode = 0
+flat = true
+
+[node name="Item2" type="NinePatchRect" parent="Window/Item_picker"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 77.0
+offset_bottom = 129.0
+grow_horizontal = 2
+scale = Vector2(1, 1.41056)
+texture = ExtResource("2_8uvd6")
+patch_margin_left = 36
+patch_margin_top = 30
+patch_margin_right = 36
+patch_margin_bottom = 30
+
+[node name="Item_frame" type="NinePatchRect" parent="Window/Item_picker/Item2"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 17.0145
+offset_right = 62.0
+offset_bottom = 44.0145
+texture = ExtResource("3_gh2vf")
+
+[node name="item_picture_2" type="TextureRect" parent="Window/Item_picker/Item2/Item_frame"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 36.0
+offset_bottom = 23.0
+expand_mode = 2
+
+[node name="Item_name_2" type="Label" parent="Window/Item_picker/Item2"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 19.0
+offset_right = 281.0
+offset_bottom = 42.0
+
+[node name="Button_item_2" type="Button" parent="Window/Item_picker/Item2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+action_mode = 0
+flat = true
+
+[node name="Item3" type="NinePatchRect" parent="Window/Item_picker"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 156.0
+offset_bottom = 208.0
+grow_horizontal = 2
+scale = Vector2(1, 1.41056)
+texture = ExtResource("2_8uvd6")
+patch_margin_left = 36
+patch_margin_top = 30
+patch_margin_right = 36
+patch_margin_bottom = 30
+
+[node name="Item_frame" type="NinePatchRect" parent="Window/Item_picker/Item3"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 17.0145
+offset_right = 62.0
+offset_bottom = 44.0145
+texture = ExtResource("3_gh2vf")
+
+[node name="item_picture_3" type="TextureRect" parent="Window/Item_picker/Item3/Item_frame"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 36.0
+offset_bottom = 23.0
+texture = ExtResource("5_brw4l")
+
+[node name="Item_name_3" type="Label" parent="Window/Item_picker/Item3"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 19.0
+offset_right = 281.0
+offset_bottom = 42.0
+
+[node name="Button_item_3" type="Button" parent="Window/Item_picker/Item3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+action_mode = 0
+flat = true
+
+[node name="reroll" type="Control" parent="Window"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = -94.0
+offset_right = -22.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Window/reroll"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.0
+offset_top = -28.0
+offset_right = 73.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_brw4l")
+
+[node name="Button" type="Button" parent="Window/reroll/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+flat = true
+
+[node name="Label" type="Label" parent="Window/reroll/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "REROLL"
+label_settings = SubResource("LabelSettings_n4lh3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_n4lh3")
+}
+
+[connection signal="pressed" from="Window/Item_picker/Item1/Button_item_1" to="." method="_on_button_item_1_pressed"]
+[connection signal="pressed" from="Window/Item_picker/Item2/Button_item_2" to="." method="_on_button_item_2_pressed"]
+[connection signal="pressed" from="Window/Item_picker/Item3/Button_item_3" to="." method="_on_button_item_3_pressed"]
+[connection signal="pressed" from="Window/reroll/NinePatchRect/Button" to="." method="_on_button_reroll_pressed"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx6jquvm2jn7"]
+
+[ext_resource type="Script" uid="uid://c3qxsqbinbvpg" path="res://Scripts/Attack/AreaAttack/Energy_drain.gd" id="1_wn3xl"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i6jje"]
+radius = 2.62778
+
+[node name="EnergyDrain" type="Node3D"]
+script = ExtResource("1_wn3xl")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_i6jje")
+
+[node name="Timer" type="Timer" parent="."]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cepoajispgkfx"]
+
+[ext_resource type="Script" uid="uid://bkxq1qn544yxv" path="res://Scripts/structures/tree.gd" id="1_dxg2p"]
+[ext_resource type="Resource" uid="uid://chfdt8bscfi3o" path="res://Assets/resource_files/wood_resource.tres" id="2_d6110"]
+[ext_resource type="PackedScene" uid="uid://hgm1qrhcac63" path="res://Assets/Nature/tree-large.glb" id="3_x1qtk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lcdhv"]
+size = Vector3(0.339416, 1.07031, 0.328247)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_x1qtk"]
+radius = 1.24352
+
+[node name="Tree" type="StaticBody3D"]
+script = ExtResource("1_dxg2p")
+wood_resource = ExtResource("2_d6110")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0124207, 0.672415, 0.0487976)
+shape = SubResource("BoxShape3D_lcdhv")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00880814, 0.734991, 0)
+shape = SubResource("SphereShape3D_x1qtk")
+
+[node name="tree-large2" parent="." instance=ExtResource("3_x1qtk")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

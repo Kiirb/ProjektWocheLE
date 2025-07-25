@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://syih5cdcf17o"]
+
+[ext_resource type="PackedScene" uid="uid://bmv17qeq0cdxo" path="res://Scenes/Enemies/Bosses/Giant/Giant.tscn" id="1_si3at"]
+[ext_resource type="Script" uid="uid://c1qbsh24ylc7y" path="res://Resources/Wave/Enemies/Enemy_data.gd" id="1_xhqa0"]
+
+[resource]
+script = ExtResource("1_xhqa0")
+scene = ExtResource("1_si3at")
+weight = 1
+is_boss = true
+exp_on_dead = 400
+metadata/_custom_type_script = "uid://c1qbsh24ylc7y"

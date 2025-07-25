@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PoolData" load_steps=5 format=3 uid="uid://cqn7qjspeuf8r"]
+
+[ext_resource type="Script" uid="uid://c1qbsh24ylc7y" path="res://Resources/Wave/Enemies/Enemy_data.gd" id="1_lub7x"]
+[ext_resource type="Resource" uid="uid://bcusep2jyy3f0" path="res://Resources/Wave/Enemies/SkeletonRanged.tres" id="3_fwxkk"]
+[ext_resource type="Resource" uid="uid://l1iai2ldtfxl" path="res://Resources/Wave/Enemies/Shooter.tres" id="4_qr5cu"]
+[ext_resource type="Script" uid="uid://c8k17djxtbopg" path="res://Resources/Wave/Pools/Enemy_pool_data.gd" id="5_pwi38"]
+
+[resource]
+script = ExtResource("5_pwi38")
+pool = Array[ExtResource("1_lub7x")]([ExtResource("4_qr5cu"), ExtResource("3_fwxkk")])
+metadata/_custom_type_script = "uid://c8k17djxtbopg"

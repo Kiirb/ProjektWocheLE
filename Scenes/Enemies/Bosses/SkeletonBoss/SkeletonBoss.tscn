@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://g225uvn8k4vh"]
+
+[ext_resource type="Script" uid="uid://bx8k7c1j7l2dm" path="res://Scripts/Enemies/Bosses/SkeletonBoss/Skeleton.gd" id="1_q4wq4"]
+[ext_resource type="Resource" uid="uid://da1y1i0e43w2m" path="res://Resources/Stats/Enemies/Bosses/SkeletonBoss_stats.tres" id="2_2sxpt"]
+[ext_resource type="PackedScene" uid="uid://dbgnak422wrkw" path="res://Assets/Models/Enemies/Boss/Skeleton_Armor.gltf" id="2_b3whf"]
+[ext_resource type="PackedScene" uid="uid://dq7ndfqs5ik6k" path="res://Scenes/Attack/AutoAttack/Auto_attack_manager.tscn" id="3_b3whf"]
+[ext_resource type="Resource" uid="uid://b8o1ckev1twwf" path="res://Resources/Attacks/Pools/Skeleton_boss_attack_pool.tres" id="4_2sxpt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wr5kn"]
+radius = 1.0
+height = 4.0
+
+[node name="SkeletonBoss" type="CharacterBody3D"]
+script = ExtResource("1_q4wq4")
+minions_per_spawn = 5
+stats = ExtResource("2_2sxpt")
+
+[node name="SkeletonBoss_mesh" parent="." instance=ExtResource("2_b3whf")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("CapsuleShape3D_wr5kn")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="AutoAttackManager" parent="." instance=ExtResource("3_b3whf")]
+attack_pool = ExtResource("4_2sxpt")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Spawn_minions_timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

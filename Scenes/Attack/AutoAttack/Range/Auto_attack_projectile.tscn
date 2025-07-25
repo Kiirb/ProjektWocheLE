@@ -1,0 +1,126 @@
+[gd_scene load_steps=18 format=3 uid="uid://btukuopxd6mwa"]
+
+[ext_resource type="Script" uid="uid://dp2xpcjeo7i20" path="res://Scripts/Attack/AutoAttack/Auto_attack_projectile.gd" id="1_1pr0s"]
+
+[sub_resource type="Image" id="Image_0apsx"]
+data = {
+"data": PackedByteArray(255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Image" id="Image_hje2d"]
+data = {
+"data": PackedByteArray(0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Image" id="Image_4rufg"]
+data = {
+"data": PackedByteArray(255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Image" id="Image_mapti"]
+data = {
+"data": PackedByteArray(0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="ImageTexture3D" id="ImageTexture3D_yjvke"]
+_images = Array[Image]([SubResource("Image_0apsx"), SubResource("Image_hje2d"), SubResource("Image_4rufg"), SubResource("Image_mapti")])
+
+[sub_resource type="FogMaterial" id="FogMaterial_7r6me"]
+albedo = Color(1, 0.368627, 0.152941, 1)
+density_texture = SubResource("ImageTexture3D_yjvke")
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_wgpcp"]
+next_pass = SubResource("FogMaterial_7r6me")
+transparency = 1
+albedo_color = Color(1, 0.301961, 0.360784, 0.752941)
+emission_enabled = true
+emission = Color(0.847059, 0, 0, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_vk6bp"]
+material = SubResource("ORMMaterial3D_wgpcp")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yp3an"]
+radius = 0.582376
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1jxut"]
+radius = 0.292311
+
+[sub_resource type="Curve" id="Curve_yjvke"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.399225, 0.745514), -3.70647, -3.70647, 0, 0, Vector2(1, 0.989396), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_gld14"]
+curve = SubResource("Curve_yjvke")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7r6me"]
+lifetime_randomness = 1.0
+spread = 18.0
+initial_velocity_min = 1.0
+initial_velocity_max = 25.0
+scale_min = 0.5
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_gld14")
+
+[sub_resource type="FogMaterial" id="FogMaterial_wgpcp"]
+albedo = Color(0.235294, 0.235294, 0.235294, 1)
+height_falloff = 0.001
+edge_fade = 0.0386
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_qf554"]
+next_pass = SubResource("FogMaterial_wgpcp")
+transparency = 1
+albedo_color = Color(0.133333, 0.133333, 0.133333, 0.533333)
+
+[sub_resource type="SphereMesh" id="SphereMesh_6asyy"]
+material = SubResource("ORMMaterial3D_qf554")
+
+[node name="Node3D" type="CharacterBody3D"]
+script = ExtResource("1_1pr0s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01894, 0.0289259, -0.00979614)
+mesh = SubResource("SphereMesh_vk6bp")
+
+[node name="Hitbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("SphereShape3D_yp3an")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_1jxut")
+disabled = true
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
+amount = 18
+amount_ratio = 0.4811
+sub_emitter = NodePath(".")
+lifetime = 0.5
+interpolate = false
+process_material = SubResource("ParticleProcessMaterial_7r6me")
+draw_passes = 2
+draw_pass_1 = SubResource("SphereMesh_6asyy")
+draw_pass_2 = null
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.200342, 0.0659474, 1)
+light_volumetric_fog_energy = 1.9
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_shape_entered" from="Hitbox" to="." method="_on_hitbox_body_shape_entered"]

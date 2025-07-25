@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="AttackData" load_steps=3 format=3 uid="uid://cei2m2ed3y305"]
+
+[ext_resource type="PackedScene" uid="uid://btukuopxd6mwa" path="res://Scenes/Attack/AutoAttack/Range/Auto_attack_projectile.tscn" id="1_cvu4d"]
+[ext_resource type="Script" uid="uid://b1l4s28r3yii2" path="res://Resources/Attacks/Attack_data.gd" id="1_pfctp"]
+
+[resource]
+script = ExtResource("1_pfctp")
+scene = ExtResource("1_cvu4d")
+is_range = true
+name = "Skeleton Range Attack"
+cool_down = 1.0
+basic_range = 40.0
+attack_speed = 30.0
+basic_dmg = 15
+metadata/_custom_type_script = "uid://b1l4s28r3yii2"

@@ -1,0 +1,35 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://crio3v45w7q2j"
+path="res://.godot/imported/Not Jam Laika 14.ttf-ffb8c68020cb4e2afbe06c1d3d966767.fontdata"
+
+[deps]
+
+source_file="res://Assets/fonts/Not Jam Laika 11/Not Jam Laika 14.ttf"
+dest_files=["res://.godot/imported/Not Jam Laika 14.ttf-ffb8c68020cb4e2afbe06c1d3d966767.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

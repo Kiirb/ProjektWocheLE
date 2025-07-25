@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PoolData" load_steps=4 format=3 uid="uid://bx1p0rt7u8714"]
+
+[ext_resource type="Script" uid="uid://c1qbsh24ylc7y" path="res://Resources/Wave/Enemies/Enemy_data.gd" id="1_6oakx"]
+[ext_resource type="Script" uid="uid://c8k17djxtbopg" path="res://Resources/Wave/Pools/Enemy_pool_data.gd" id="2_sf7x2"]
+[ext_resource type="Resource" uid="uid://fft117an3y2s" path="res://Resources/Wave/Enemies/Yeti.tres" id="2_xrk2h"]
+
+[resource]
+script = ExtResource("2_sf7x2")
+pool = Array[ExtResource("1_6oakx")]([ExtResource("2_xrk2h")])
+metadata/_custom_type_script = "uid://c8k17djxtbopg"

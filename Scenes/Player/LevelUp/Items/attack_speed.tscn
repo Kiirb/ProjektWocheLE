@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceuk4umadwp88"]
+
+[ext_resource type="Script" uid="uid://b5qx70ua0xcpc" path="res://Scripts/Player/LevelUp/Items/attack_speed.gd" id="1_agytm"]
+[ext_resource type="Texture2D" uid="uid://carn2k8d47mc7" path="res://Assets/Textures/Screenshot 2025-07-25 125821.png" id="2_bb6hj"]
+
+[node name="AttackSpeed" type="Node"]
+script = ExtResource("1_agytm")
+sprite = ExtResource("2_bb6hj")
+item_name = "Automation"
+disc = "Increace your attack speed"

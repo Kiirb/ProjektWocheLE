@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccnt11cepvmmf"]
+
+[ext_resource type="Script" uid="uid://cyvepba51ahu0" path="res://Scripts/Player/LevelUp/Items/Leben.gd" id="1_uoacd"]
+[ext_resource type="Texture2D" uid="uid://bv2h1xwmdfjgo" path="res://Assets/Textures/Screenshot 2025-07-25 123909.png" id="2_6ewdh"]
+
+[node name="Leben" type="Node"]
+script = ExtResource("1_uoacd")
+sprite = ExtResource("2_6ewdh")
+item_name = "Leben"
+disc = "Increases your max ammount of health"

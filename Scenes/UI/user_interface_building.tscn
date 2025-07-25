@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8jf4rb8ba3o0"]
+
+[ext_resource type="Texture2D" uid="uid://dngixgi0rr1fj" path="res://Assets/Buildings/Previews/building-sample-house-a.png" id="1_l2bgj"]
+[ext_resource type="Script" uid="uid://1gxb3an80ocu" path="res://Scripts/Buildings/placement_controller.gd" id="1_y1h3b"]
+[ext_resource type="PackedScene" uid="uid://ch6vjmpv4pj2w" path="res://Scenes/buildings/TestBuilding_1.tscn" id="2_cufge"]
+[ext_resource type="Texture2D" uid="uid://vgnk8yaiwy8w" path="res://Assets/Buildings/Previews/building-sample-house-c.png" id="2_y1h3b"]
+[ext_resource type="PackedScene" uid="uid://beuliwy43hvui" path="res://Scenes/buildings/TestBuilding_2.tscn" id="3_lmgon"]
+
+[node name="UserInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_y1h3b")
+test_buildings = Array[PackedScene]([ExtResource("2_cufge"), ExtResource("3_lmgon")])
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -102.0
+offset_top = -92.0
+offset_right = 93.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+item_count = 3
+max_columns = 5
+item_0/icon = ExtResource("1_l2bgj")
+item_1/icon = ExtResource("2_y1h3b")
+item_2/text = "wood"
+
+[connection signal="item_selected" from="ItemList" to="." method="_on_item_list_item_selected"]

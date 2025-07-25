@@ -1,0 +1,112 @@
+[gd_scene load_steps=15 format=3 uid="uid://btukuopxd6mwa"]
+
+[ext_resource type="Script" uid="uid://dp2xpcjeo7i20" path="res://Scripts/Attack/AutoAttack/Auto_attack_projectile.gd" id="1_1pr0s"]
+[ext_resource type="SphereMesh" uid="uid://dq8nwjm6oa82x" path="res://Scenes/Materials/particle_draw.tres" id="2_hje2d"]
+
+[sub_resource type="Image" id="Image_hje2d"]
+data = {
+"data": PackedByteArray(255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Image" id="Image_4rufg"]
+data = {
+"data": PackedByteArray(0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Image" id="Image_mapti"]
+data = {
+"data": PackedByteArray(255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Image" id="Image_yjvke"]
+data = {
+"data": PackedByteArray(0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 255, 0, 255, 255, 0, 0, 0, 255, 255, 0, 255, 255, 0, 0, 0, 255),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="ImageTexture3D" id="ImageTexture3D_yjvke"]
+_images = Array[Image]([SubResource("Image_hje2d"), SubResource("Image_4rufg"), SubResource("Image_mapti"), SubResource("Image_yjvke")])
+
+[sub_resource type="FogMaterial" id="FogMaterial_7r6me"]
+albedo = Color(1, 0.368627, 0.152941, 1)
+density_texture = SubResource("ImageTexture3D_yjvke")
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_wgpcp"]
+next_pass = SubResource("FogMaterial_7r6me")
+transparency = 1
+albedo_color = Color(1, 0.301961, 0.360784, 0.752941)
+emission_enabled = true
+emission = Color(0.847059, 0, 0, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_vk6bp"]
+material = SubResource("ORMMaterial3D_wgpcp")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yp3an"]
+radius = 0.582376
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1jxut"]
+radius = 0.292311
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yjvke"]
+lifetime_randomness = 0.14
+flatness = 1.0
+initial_velocity_max = 27.67
+scale_min = 0.1
+scale_max = 0.1
+scale_over_velocity_min = 7.91
+scale_over_velocity_max = 59.29
+anim_speed_min = 1.01
+anim_speed_max = 1.01
+anim_offset_max = 0.0356
+collision_mode = 2
+collision_use_scale = true
+
+[sub_resource type="Skin" id="Skin_7r6me"]
+bind_count = 1
+bind/0/name = &""
+bind/0/bone = -1
+bind/0/pose = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Node3D" type="CharacterBody3D"]
+script = ExtResource("1_1pr0s")
+direction = null
+speed = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01894, 0.0289259, -0.00979614)
+mesh = SubResource("SphereMesh_vk6bp")
+
+[node name="Hitbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
+shape = SubResource("SphereShape3D_yp3an")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_1jxut")
+disabled = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+sub_emitter = NodePath(".")
+trail_lifetime = 0.7
+process_material = SubResource("ParticleProcessMaterial_yjvke")
+draw_pass_1 = ExtResource("2_hje2d")
+draw_skin = SubResource("Skin_7r6me")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_shape_entered" from="Hitbox" to="." method="_on_hitbox_body_shape_entered"]

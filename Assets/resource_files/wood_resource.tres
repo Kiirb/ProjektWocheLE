@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceItem" load_steps=3 format=3 uid="uid://chfdt8bscfi3o"]
+
+[ext_resource type="Script" uid="uid://bllnbwgra7276" path="res://Scripts/Collectable/Resource_item_m.gd" id="1_yn6ju"]
+[ext_resource type="Texture2D" uid="uid://ve76tvux8bed" path="res://Assets/wood.png" id="2_kby2u"]
+
+[resource]
+script = ExtResource("1_yn6ju")
+display_name = "wood"
+texture = ExtResource("2_kby2u")
+metadata/_custom_type_script = "uid://bllnbwgra7276"

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bge08ascceh15"]
+
+[ext_resource type="Script" uid="uid://bvu63pugqp366" path="res://Scripts/Spawner/Spawner.gd" id="1_u4pts"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_eoeca"]
+
+[node name="Spawner" type="Node3D"]
+script = ExtResource("1_u4pts")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Radius_mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 0.01, 0, 0, 0, 5, 0.0383186, -0.0179901, 0.0211105)
+visible = false
+mesh = SubResource("CylinderMesh_eoeca")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

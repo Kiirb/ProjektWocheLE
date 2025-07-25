@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccckb2mdjh8h0"]
+
+[ext_resource type="PackedScene" uid="uid://iliu4nof70mw" path="res://Assets/Nature/Walls&Trees/kenney_tower-defense-kit/Models/GLB format/tile-tree-quad.glb" id="1_mnjll"]
+[ext_resource type="PackedScene" uid="uid://7bp4mlewjxqf" path="res://Assets/Nature/Walls&Trees/kenney_tower-defense-kit/Models/GLB format/tile-tree.glb" id="2_rhvda"]
+[ext_resource type="PackedScene" uid="uid://c0ccfdqledk67" path="res://Assets/Nature/Walls&Trees/kenney_tower-defense-kit/Models/GLB format/tile-tree-double.glb" id="3_uny1k"]
+
+[node name="ManyTrees" type="Node3D"]
+
+[node name="tile-tree-quad2" parent="." instance=ExtResource("1_mnjll")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.2, 0.5)
+
+[node name="tile-tree-quad3" parent="." instance=ExtResource("1_mnjll")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.2, 0.5)
+
+[node name="tile-tree2" parent="." instance=ExtResource("2_rhvda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.2, -0.5)
+
+[node name="tile-tree-double2" parent="." instance=ExtResource("3_uny1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.2, -0.5)

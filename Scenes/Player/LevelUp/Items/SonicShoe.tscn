@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp25kdavu4pol"]
+
+[ext_resource type="Script" uid="uid://g052s0kmfxto" path="res://Scripts/Player/LevelUp/Items/sonic_shoe.gd" id="1_qtv1n"]
+[ext_resource type="Texture2D" uid="uid://sthy2gk1vl02" path="res://Assets/Textures/Sonic_Film_original_design.jpg" id="2_qr3j8"]
+
+[node name="SonicShoe" type="Node"]
+script = ExtResource("1_qtv1n")
+sprite = ExtResource("2_qr3j8")
+item_name = "Sonic Shoe"
+disc = "Increaces your movement-speed"

@@ -1,0 +1,168 @@
+[gd_scene load_steps=8 format=3 uid="uid://cccjy8ajl3smr"]
+
+[ext_resource type="Texture2D" uid="uid://b2wcr60iuqeer" path="res://Assets/Textures/st,small,507x507-pad,600x600,f8f8f8.u7.webp" id="2_1goxx"]
+[ext_resource type="Script" uid="uid://bsaxm7yvbayc5" path="res://Scripts/Player/inventory.gd" id="3_i0tme"]
+
+[sub_resource type="GDScript" id="GDScript_nrlup"]
+script/source = "extends CharacterBody3D
+
+#nodes
+@onready var projectile = load(\"res://scenes/attack/player_side_projectile.tscn\")
+@onready var camera
+@onready var respawn_timer = $respawn_timer
+@onready var attack_cooldown = $attack_cooldown
+@onready var projectile_spawn = $projectile_spawn
+
+#movement
+var mouse_position
+
+#damage
+var health: float = 100
+@export var strength: float = 1
+@export var defence: float = 0
+@export var attack_speed_sec: float = 1
+var spawn:Vector3
+var alive = true
+var can_attack = true
+
+#constants
+const SPEED:float = 20
+
+#Input constants
+const SHOOT = \"shoot\"
+const LEFT = \"move_left\"
+const RIGHT = \"move_right\"
+const UP = \"move_up\"
+const DOWN = \"move_down\"
+
+# get camera for looking at pointer
+func _ready() -> void:
+	spawn = global_position
+	camera = get_viewport().get_camera_3d()
+
+func _on_hitbox_body_entered(body: Node3D):
+	if body.is_in_group(\"enemy\"):
+		print(\"you took damage\")
+		health = 0
+		respawn()
+		
+#shoot an instance of the projectile scene
+func attack():
+	if can_attack == true:
+		var instance = projectile.instantiate()
+		instance.dir = rotation.y
+		instance.spawnPos = projectile_spawn.global_position
+		instance.spawnRot = projectile_spawn.rotation
+		instance.speed = 1
+		instance.despawn_time = .3
+		add_sibling(instance)
+		can_attack = false
+		attack_cooldown.start(attack_speed_sec)
+
+func respawn():
+	if health <= 0:
+		velocity.x = 0
+		velocity.z = 0
+		global_position = spawn
+		alive = false
+		# completely clear movement
+		velocity = Vector3.ZERO
+		respawn_timer.start(3)
+
+#always look at pointer
+func rotate_toward_mouse():
+	mouse_position = get_viewport().get_mouse_position()
+	var from = camera.project_ray_origin(mouse_position)
+	var dir = camera.project_ray_normal(mouse_position)
+	var plane_y = 0.0
+	var t = (plane_y - from.y) / dir.y
+	if t > 0:
+		var intersection = from + dir * t
+		var direction = (intersection - global_position)
+		direction.y = 0  # ignore vertical difference
+		direction = direction.normalized()
+		var target_rotation_y = atan2(-direction.x, -direction.z)
+		rotation.y = target_rotation_y
+
+#stop movement if key is released
+func move():
+	#TODO wait for new projtile functions
+	#if Input.is_action_pressed(SHOOT):
+		#attack()
+	var input_dir := Input.get_vector(LEFT, RIGHT, UP, DOWN)
+	var direction := Vector3(input_dir.x, 0, input_dir.y).normalized()
+
+	if direction:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
+
+
+#main physics loop
+func _physics_process(delta: float) -> void:	
+	if alive:
+		rotate_toward_mouse()
+		move_and_slide()
+		move()
+
+
+func _on_respawn_timer_timeout() -> void:
+	velocity.x = 0
+	velocity.z = 0
+	velocity = Vector3.ZERO
+	alive = true
+	health = 100
+
+
+func _on_attack_cooldown_timeout() -> void:
+	can_attack = true
+"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dqkch"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_g2els"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2els"]
+albedo_color = Color(0.65098, 0.768627, 1, 1)
+albedo_texture = ExtResource("2_1goxx")
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qhqgy"]
+material = SubResource("StandardMaterial3D_g2els")
+
+[node name="playerChar" type="CharacterBody3D"]
+script = SubResource("GDScript_nrlup")
+
+[node name="Hitbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_dqkch")
+
+[node name="projectile_spawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0939078, 0.00840402, -0.749122)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="projectile_spawn"]
+transform = Transform3D(0.187333, 0, 0, 0, 0.187333, 0, 0, 0, 0.187333, 0, 0, -0.307338)
+mesh = SubResource("SphereMesh_g2els")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_qhqgy")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_dqkch")
+
+[node name="respawn_timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="attack_cooldown" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("3_i0tme")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

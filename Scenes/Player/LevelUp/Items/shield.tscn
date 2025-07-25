@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://4unovcvr7cw6"]
+
+[ext_resource type="Script" uid="uid://bgyi06vfpuwjk" path="res://Scripts/Player/LevelUp/Items/shield.gd" id="1_u0dsa"]
+[ext_resource type="Texture2D" uid="uid://dokpcbxhrnwmd" path="res://Assets/Textures/shield-png-transparent-24.jpg" id="2_etrjb"]
+
+[node name="Shield" type="Node"]
+script = ExtResource("1_u0dsa")
+sprite = ExtResource("2_etrjb")
+item_name = "Shield"
+disc = "Increaces your armor"

@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cg6ervdfalxep"]
+
+[ext_resource type="FontVariation" uid="uid://mh5mwe417mh0" path="res://Resources/Fonts/info_font.tres" id="1_y7ex4"]
+
+[resource]
+font = ExtResource("1_y7ex4")
+font_size = 28
+outline_size = 8
+outline_color = Color(0.427451, 0.294118, 0.152941, 1)

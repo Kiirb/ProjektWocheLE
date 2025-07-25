@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://cwxf1w3uonki4"]
+
+[ext_resource type="PackedScene" uid="uid://c7sirs0570l81" path="res://Assets/Nature/Walls&Trees/kenney_mini-dungeon/Models/GLB format/wall-narrow.glb" id="1_del5n"]
+[ext_resource type="PackedScene" uid="uid://ciyelxckm4c85" path="res://Assets/Nature/Walls&Trees/kenney_mini-dungeon/Models/GLB format/wall-opening.glb" id="2_cyx73"]
+[ext_resource type="PackedScene" uid="uid://dvrnvrhkayr3v" path="res://Assets/Nature/Walls&Trees/kenney_mini-dungeon/Models/GLB format/wall.glb" id="3_x024f"]
+[ext_resource type="PackedScene" uid="uid://7kp3pcu2d4io" path="res://Assets/Nature/Walls&Trees/kenney_mini-dungeon/Models/GLB format/chest.glb" id="4_m1yai"]
+[ext_resource type="PackedScene" uid="uid://cffqjkkapbgo2" path="res://Assets/Nature/Walls&Trees/kenney_mini-dungeon/Models/GLB format/barrel.glb" id="5_lmmg7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_del5n"]
+size = Vector3(13.4975, 1.71384, 1.28613)
+
+[node name="WallLarge" type="StaticBody3D"]
+
+[node name="wall-narrow2" parent="." instance=ExtResource("1_del5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+
+[node name="wall-opening2" parent="." instance=ExtResource("2_cyx73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+
+[node name="wall-narrow3" parent="." instance=ExtResource("1_del5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
+
+[node name="wall-narrow4" parent="." instance=ExtResource("1_del5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.5)
+
+[node name="wall-narrow5" parent="." instance=ExtResource("1_del5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -0.5)
+
+[node name="wall-narrow6" parent="." instance=ExtResource("1_del5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -0.5)
+
+[node name="wall-narrow7" parent="." instance=ExtResource("1_del5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -0.5)
+
+[node name="wall-narrow8" parent="." instance=ExtResource("1_del5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -0.5)
+
+[node name="wall2" parent="." instance=ExtResource("3_x024f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -0.5)
+
+[node name="wall-narrow9" parent="." instance=ExtResource("1_del5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -0.5)
+
+[node name="wall-narrow10" parent="." instance=ExtResource("1_del5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -0.5)
+
+[node name="wall-narrow11" parent="." instance=ExtResource("1_del5n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, -0.5)
+
+[node name="wall3" parent="." instance=ExtResource("3_x024f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -0.5)
+
+[node name="chest2" parent="." instance=ExtResource("4_m1yai")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.78341, 0.9, -0.51467)
+
+[node name="barrel2" parent="." instance=ExtResource("5_lmmg7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.369, 0.9, -0.459)
+
+[node name="barrel3" parent="." instance=ExtResource("5_lmmg7")]
+transform = Transform3D(0.995636, 0, -0.0933264, 0, 1, 0, 0.0933264, 0, 0.995636, -1.86434, 0.9, -0.411009)
+
+[node name="barrel4" parent="." instance=ExtResource("5_lmmg7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.74514, 0.9, -0.630326)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.495663, 0.678177, -0.500307)
+shape = SubResource("BoxShape3D_del5n")
