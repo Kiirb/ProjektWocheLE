@@ -113,7 +113,8 @@ func _on_quit_pressed() -> void:
 
 
 func _on_retry_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/MainGame/Main_game_scene.tscn")
+	animation_player.play("RESET")
+	get_tree().reload_current_scene()
 
 
 func _on_wave_delay_timeout() -> void:
