@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c4m6vi88ejfgn" path="res://Scenes/Structures/Hub.tscn" id="2_bymt7"]
 [ext_resource type="PackedScene" uid="uid://bjibdmlo2r31k" path="res://Scenes/Player/Player.tscn" id="2_ktc8h"]
 [ext_resource type="PackedScene" uid="uid://ds2ixlr60smuk" path="res://Scenes/UI/Mouse/Mouse.tscn" id="2_mdq8r"]
-[ext_resource type="PackedScene" uid="uid://bge08ascceh15" path="res://Scenes/Spawner/spawner.tscn" id="6_6s21f"]
+[ext_resource type="PackedScene" uid="uid://bge08ascceh15" path="res://Scenes/Spawner/Spawner.tscn" id="6_6s21f"]
 [ext_resource type="PackedScene" uid="uid://cepoajispgkfx" path="res://Scenes/Structures/Tree.tscn" id="6_oc00i"]
 [ext_resource type="PackedScene" uid="uid://clp1psnfiq56r" path="res://Scenes/Camera/Camera.tscn" id="7_a6e1y"]
 [ext_resource type="PackedScene" uid="uid://ri8cj2kg5cdd" path="res://Scenes/Spawner/structure_spawner.tscn" id="7_sbwux"]
