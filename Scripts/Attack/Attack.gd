@@ -7,7 +7,7 @@ func do_effect():
 
 func do_dmg(from: CharacterBody3D, to: CharacterBody3D, raw_dmg: float):
 	var from_is_valid: bool = from is Player || from is Enemy
-	var to_is_valid: bool = to is Player || to is Enemy #|| to is Hub
+	var to_is_valid: bool = to is Player || to is Enemy || to is Hub
 	var player_to_hub: bool = from is Player && to is Hub || from is Hub && to is Player
 	#var stats_valid: bool = to.stats != null
 	

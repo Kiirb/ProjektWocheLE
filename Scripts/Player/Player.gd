@@ -38,6 +38,9 @@ var blue_mat = preload("res://assets/Textures/blue_mat.tres")
 var is_attacking: bool = false
 
 func _ready():
+	get_tree().paused = false
+	GameState.night = false
+	GameState.current_state = GameState.status.FARMING
 	animation_player = mage_mesh.get_node("AnimationPlayer")
 	interaction_collision.shape.radius = interaction_area_size;
 	auto_att_manager.conf_auto_attack()
