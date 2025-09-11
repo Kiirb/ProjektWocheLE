@@ -1,6 +1,6 @@
 extends Node
 
-enum status {FIGHTING, BUILDING, FARMING, RESPAWN, GAMEOVER}
+enum status {FIGHTING, FARMING, RESPAWN, GAMEOVER}
 static var current_state: status
 static var night: bool = false
 static  var temp_state_save: status
@@ -12,10 +12,7 @@ func _ready() -> void:
 #checks if you want to switch the curren mode
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("switch_state") and !night:
-		if current_state == status.BUILDING:
-			current_state = status.FARMING
-		elif current_state == status.FARMING:
-			current_state = status.BUILDING
+		pass
 	elif event.is_action_pressed("switch_state") and night:
 		print("cannot switch, cause its night")
 
@@ -36,12 +33,6 @@ func is_farming() -> bool:
 
 func is_fighting() -> bool:
 	if current_state == status.FIGHTING:
-		return true
-	else:
-		return false
-
-func is_building() -> bool:
-	if current_state == status.BUILDING:
 		return true
 	else:
 		return false

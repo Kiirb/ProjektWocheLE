@@ -1,8 +1,7 @@
-[gd_scene load_steps=81 format=3 uid="uid://bpnc1i6pnpudx"]
+[gd_scene load_steps=80 format=3 uid="uid://bpnc1i6pnpudx"]
 
 [ext_resource type="Theme" uid="uid://djspq8kbiyss5" path="res://Resources/Fonts/Default_theme.tres" id="1_e75uv"]
 [ext_resource type="Script" uid="uid://htnjqtajw2uv" path="res://Scripts/user_interface.gd" id="1_sdud1"]
-[ext_resource type="PackedScene" uid="uid://c8jf4rb8ba3o0" path="res://Scenes/UI/user_interface_building.tscn" id="2_sccpa"]
 [ext_resource type="PackedScene" uid="uid://do4pt6r262bia" path="res://Scenes/UI/player_upgrades.tscn" id="3_mb4ol"]
 [ext_resource type="Texture2D" uid="uid://r3og6vfxc3er" path="res://Assets/GUI/PNG/Double/panel_brown_dark_corners_a.png" id="3_sccpa"]
 [ext_resource type="Texture2D" uid="uid://bww1ld6eargi3" path="res://Assets/GUI/PNG/Default/progress_green_Hor.png" id="4_oyyxn"]
@@ -245,18 +244,6 @@ tracks/9/keys = {
 "update": 0,
 "values": [Vector2(1109, 31)]
 }
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("UserInterface:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(8, -58)]
-}
 
 [sub_resource type="Animation" id="Animation_tki8o"]
 resource_name = "Farming"
@@ -379,18 +366,6 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1109, 31)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("UserInterface:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(8, 122)]
 }
 
 [sub_resource type="Animation" id="Animation_vwxol"]
@@ -527,18 +502,6 @@ tracks/10/keys = {
 "update": 0,
 "values": [Vector2(2000, 31)]
 }
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("UserInterface:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(8, 122)]
-}
 
 [sub_resource type="Animation" id="Animation_sccpa"]
 length = 0.001
@@ -674,18 +637,6 @@ tracks/10/keys = {
 "update": 0,
 "values": [Vector2(1109, 31)]
 }
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("UserInterface:position")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(8, 125)]
-}
 
 [sub_resource type="Animation" id="Animation_ydax5"]
 resource_name = "Respawn"
@@ -809,18 +760,6 @@ tracks/9/keys = {
 "update": 0,
 "values": [Vector2(2000, 31)]
 }
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("UserInterface:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(8, 125)]
-}
 
 [sub_resource type="Animation" id="Animation_uaobn"]
 resource_name = "fighting"
@@ -932,18 +871,6 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1109, 31)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("UserInterface:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(8, 125)]
 }
 
 [sub_resource type="Animation" id="Animation_3vwkw"]
@@ -1068,18 +995,6 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-1171, 18), Vector2(0, 0), Vector2(0, 0), Vector2(1251, 0)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("UserInterface:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(8, 125)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ecxsd"]
@@ -1260,15 +1175,6 @@ grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("1_e75uv")
 script = ExtResource("1_sdud1")
-
-[node name="UserInterface" parent="." instance=ExtResource("2_sccpa")]
-layout_mode = 1
-offset_left = 8.0
-offset_top = 125.0
-offset_right = 8.0
-offset_bottom = 125.0
-scale = Vector2(1.00275, 0.983614)
-mouse_filter = 2
 
 [node name="player_upgrades" parent="." instance=ExtResource("3_mb4ol")]
 z_index = 1

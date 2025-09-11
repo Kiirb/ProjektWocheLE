@@ -49,10 +49,7 @@ func _on_skip_day_pressed():
 
 func _process(delta: float) -> void:
 	if !GameState.night:
-		
-		if GameState.is_building():
-			animation_player.play("Building")
-		elif GameState.is_farming():
+		if GameState.is_farming():
 			animation_player.play("Farming")
 		
 		
