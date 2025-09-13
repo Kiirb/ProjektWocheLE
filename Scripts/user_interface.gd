@@ -22,6 +22,7 @@ class_name HUD
 @onready var player_upgrades: Upgrade = $player_upgrades
 
 @onready var day_night_sprite = $DayAndNight
+@onready var enemies_left: Label = $EnemiesLeft
 
 var inventory: Inventory
 
@@ -48,6 +49,7 @@ func _on_skip_day_pressed():
 		print("not day")
 
 func _process(delta: float) -> void:
+	enemies_left.text = "enemies alive: " + str(spawner.enemies_alive)
 	if !GameState.night:
 		if GameState.is_farming():
 			animation_player.play("Farming")

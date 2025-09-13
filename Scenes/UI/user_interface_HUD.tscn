@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://bpnc1i6pnpudx"]
+[gd_scene load_steps=81 format=3 uid="uid://bpnc1i6pnpudx"]
 
 [ext_resource type="Theme" uid="uid://djspq8kbiyss5" path="res://Resources/Fonts/Default_theme.tres" id="1_e75uv"]
 [ext_resource type="Script" uid="uid://htnjqtajw2uv" path="res://Scripts/user_interface.gd" id="1_sdud1"]
@@ -367,6 +367,18 @@ tracks/9/keys = {
 "update": 0,
 "values": [Vector2(1109, 31)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("EnemiesLeft:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1173, 59)]
+}
 
 [sub_resource type="Animation" id="Animation_vwxol"]
 resource_name = "Game over"
@@ -637,6 +649,18 @@ tracks/10/keys = {
 "update": 0,
 "values": [Vector2(1109, 31)]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("EnemiesLeft:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1208, 55)]
+}
 
 [sub_resource type="Animation" id="Animation_ydax5"]
 resource_name = "Respawn"
@@ -872,6 +896,18 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector2(1109, 31)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("EnemiesLeft:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(916, 57)]
+}
 
 [sub_resource type="Animation" id="Animation_3vwkw"]
 resource_name = "wake up"
@@ -995,6 +1031,18 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-1171, 18), Vector2(0, 0), Vector2(0, 0), Vector2(1251, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("EnemiesLeft:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1173, 59)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ecxsd"]
@@ -1161,6 +1209,9 @@ animations = [{
 "name": &"Noon",
 "speed": 5.0
 }]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gbc4y"]
+font_size = 30
 
 [node name="UserInterface" type="Control"]
 process_mode = 3
@@ -1651,6 +1702,22 @@ position = Vector2(1109, 31)
 scale = Vector2(0.614583, 0.614583)
 sprite_frames = SubResource("SpriteFrames_vjkj2")
 animation = &"Day"
+
+[node name="EnemiesLeft" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.796
+anchor_top = 0.088
+anchor_right = 1.0
+anchor_bottom = 0.248
+offset_left = 291.008
+offset_top = -2.02401
+offset_right = 303.0
+offset_bottom = -1.70401
+grow_horizontal = 0
+text = "enemies left: 1"
+label_settings = SubResource("LabelSettings_gbc4y")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Pausebutton/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="ColorRect/Try again/Retry" to="." method="_on_retry_pressed"]
