@@ -123,7 +123,6 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floor_static_body/ground2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Floor_static_body/ground2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_tnscc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Floor_static_body"]
@@ -139,6 +138,7 @@ depth = 40.0
 polygon = PackedVector2Array(-76.469, 5.35858, -67.3708, 9.53634, -63.3787, 14.2711, -62.3575, 26.9901, -64.0286, 34.2316, -61.0577, 38.9664, -56.2301, 45.3723, -48.2254, 47.9977, -40.1226, 54.0379, -36.2922, 55.5112, -26.8634, 54.4799, -19.3499, 55.9532, -12.7203, 51.2388, -3.58617, 48.4396, 4.22202, 48.5869, 9.41255, 52.2932, 7.61871, 59.6993, 5.20946, 67.6612, -2.76795, 72.2847, -14.949, 76.9156, -24.598, 78.3569, -35.7947, 78.0622, -47.286, 74.8211, -60.9872, 68.3388, -66.7328, 61.8565, -72.9204, 60.9726, -77.9295, 55.8162, -82.2216, 47.768, -85.3418, 37.0992, -86.2257, 30.0276, -84.7525, 18.6837, -81.6587, 10.1389)
 
 [node name="Tree_border" type="Node3D" parent="."]
+transform = Transform3D(0.429486, 0, 0, 0, 1, 0, 0, 0, 0.352198, 0, 0, 0)
 
 [node name="ManyTrees2" parent="Tree_border" instance=ExtResource("4_vk8xu")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 530.853, 0, -2.67644)
@@ -245,6 +245,7 @@ transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.880105, 0, 0, 0, 1, 0, 0, 0, 0.698945, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_myvm1")
 
 [editable path="NavigationRegion3D/Floor_static_body/Sketchfab_Scene"]

@@ -466,8 +466,8 @@ outer_spawn_radius = 40.0
 structure = ExtResource("6_oc00i")
 
 [node name="Spawner" parent="." node_paths=PackedStringArray("user_interface", "player_ref") instance=ExtResource("6_6s21f")]
-min_distance = 350.0
-max_distance = 360.0
+min_distance = 200.0
+max_distance = 210.0
 user_interface = NodePath("../UserInterface")
 player_ref = NodePath("../Player")
 
