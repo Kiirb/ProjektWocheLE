@@ -38,6 +38,7 @@ var blue_mat = preload("res://assets/Textures/blue_mat.tres")
 var is_attacking: bool = false
 
 func _ready():
+	stats.hp = stats.max_health
 	get_tree().paused = false
 	GameState.night = false
 	GameState.current_state = GameState.status.FARMING
