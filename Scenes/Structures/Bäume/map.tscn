@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bltciarcooawa" path="res://Scenes/Structures/Bäume/Many_Trees2.tscn" id="4_vk8xu"]
 [ext_resource type="PackedScene" uid="uid://ccckb2mdjh8h0" path="res://Scenes/Structures/Bäume/Many_Trees.tscn" id="5_8bfut"]
 [ext_resource type="PackedScene" uid="uid://defkbgffi81pw" path="res://Scenes/Structures/Bäume/Baumkette.tscn" id="6_iaytm"]
-[ext_resource type="PackedScene" uid="uid://c4m6vi88ejfgn" path="res://Scenes/Structures/Hub.tscn" id="7_qbvr3"]
+[ext_resource type="PackedScene" uid="uid://c4m6vi88ejfgn" path="res://Scenes/Structures/hub.tscn" id="7_qbvr3"]
 [ext_resource type="PackedScene" uid="uid://b2r37xyh2nack" path="res://Scenes/Structures/Bäume/BaumketteHD.tscn" id="7_y8kr3"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ci6au"]
