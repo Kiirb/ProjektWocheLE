@@ -17,8 +17,8 @@ const EXP_CURVE = 1.8
 
 func _ready():
 	hub_ref = get_tree().current_scene.get_node("Hub")
-	spawner_ref = get_parent().spawner_ref
-#	spawner_ref.connect("day_cleared", Callable(self, "_on_day_cleared"))
+	spawner_ref = player_ref.spawner_ref
+	spawner_ref.connect("day_cleared", Callable(self, "_on_day_cleared"))
 	
 func get_exp_required(level: int):
 	return round(pow(level,EXP_CURVE) + lvl * 4)
@@ -38,6 +38,7 @@ func lvl_up():
 	player_ref.ui.player_upgrades.open()
 
 func _on_day_cleared(enemies_spawned: int) -> void:
+	print("hey")
 	var origin = hub_ref.global_position 
 	var spawn_count = max(enemies_spawned,1) + 10
 	for i in range(enemies_spawned):
@@ -47,6 +48,7 @@ func _on_day_cleared(enemies_spawned: int) -> void:
 		
 		
 		orb.xp_value = (exp_collected_in_round / spawn_count) * player_ref.stats.luck
+		print(i)
 
 		var a = 50.0
 		var b = 70.0

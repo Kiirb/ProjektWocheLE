@@ -212,7 +212,6 @@ func spawn_enemy(enemyData: EnemyData):
 			#spawn_timer.stop()
 		#enemies_spawn = false
 	
-	print("Spawned enemy: ", enemies_spawned, "/", current_day.normal_enemies_amount)
 	
 #SPAWNS the enemies / bossf
 func _on_timer_timeout():
@@ -290,6 +289,8 @@ func _on_timer_timeout():
 func spawn_boss() -> void:
 	if boss_pool == null or boss_pool.pool.is_empty():
 		push_error("no boss pool")
+		print("aaaaaaaaaaaaaaaa")
+		player_ref.exp_manager._on_day_cleared(enemies_spawned)
 		user_interface.advance_time()
 		return
 	if boss_i >= boss_pool.pool.size():
@@ -299,6 +300,8 @@ func spawn_boss() -> void:
 	
 	if boss_data_to_spawn == null or boss_data_to_spawn.scene == null:
 		push_error("Boss data or scene not found")
+		print("aaaaaaaaaaaaaaaa")
+		player_ref.exp_manager._on_day_cleared(enemies_spawned)
 		user_interface.advance_time()
 		return
 	boss_spawned = true
@@ -318,6 +321,8 @@ func _on_enemy_died(enemy_data : EnemyData):
 	if enemy_data.is_boss:
 		is_boss_alive = false
 		if enemies_alive <= 0:
+			print("aaaaaaaaaaaaaaaa")
+			player_ref.exp_manager._on_day_cleared(enemies_spawned)
 			user_interface.advance_time()
 		return
 	
@@ -330,6 +335,8 @@ func _on_enemy_died(enemy_data : EnemyData):
 	#if nothing left and no boss and no spawns then end day
 	if enemies_alive <= 0 and not enemies_spawn and not is_boss_alive and not boss_spawned:
 		user_interface.advance_time()
+		print("aaaaaaaaaaaaaaaa")
+		player_ref.exp_manager._on_day_cleared(enemies_spawned)
 	
 	#player_ref.exp_manager.exp_collected_in_round += enemy_data.exp_on_dead
 	#print(player_ref.exp_manager.exp_collected_in_round)

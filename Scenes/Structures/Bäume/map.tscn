@@ -227,7 +227,6 @@ polygon = PackedVector2Array(-76.469, 5.35858, -67.3708, 9.53634, -63.3787, 14.2
 
 [node name="Mountains" type="Node3D" parent="."]
 transform = Transform3D(2.565, 0, 0, 0, 0.9, 0, 0, 0, 2.565, 0, 0, 0)
-visible = false
 
 [node name="Sketchfab_Scene" parent="Mountains" instance=ExtResource("2_y8kr3")]
 transform = Transform3D(3.51, 0, -3.25, 0, 22.176, 0, 2.0265, 0, 5.62917, -78.9992, 0, -41.0497)
@@ -278,6 +277,7 @@ layers = 128
 transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 0, -1, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1.00108, 0, 0, 0, 1.00108, 0, 0, 0, 1.00108, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_myvm1")
