@@ -1,10 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://g225uvn8k4vh"]
+[gd_scene load_steps=15 format=3 uid="uid://g225uvn8k4vh"]
 
 [ext_resource type="Script" uid="uid://bx8k7c1j7l2dm" path="res://Scripts/Enemies/Bosses/SkeletonBoss/Skeleton.gd" id="1_q4wq4"]
 [ext_resource type="Resource" uid="uid://da1y1i0e43w2m" path="res://Resources/Stats/Enemies/Bosses/SkeletonBoss_stats.tres" id="2_2sxpt"]
 [ext_resource type="PackedScene" uid="uid://dbgnak422wrkw" path="res://Assets/Models/Enemies/Boss/Skeleton_Armor.gltf" id="2_b3whf"]
+[ext_resource type="Script" uid="uid://c1qbsh24ylc7y" path="res://Resources/Wave/Enemies/Enemy_data.gd" id="2_qrkro"]
+[ext_resource type="Resource" uid="uid://d0uhgplaweqf4" path="res://Resources/Wave/Enemies/Skeleton.tres" id="3_5ie5a"]
 [ext_resource type="PackedScene" uid="uid://dq7ndfqs5ik6k" path="res://Scenes/Attack/AutoAttack/Auto_attack_manager.tscn" id="3_b3whf"]
 [ext_resource type="Resource" uid="uid://b8o1ckev1twwf" path="res://Resources/Attacks/Pools/Skeleton_boss_attack_pool.tres" id="4_2sxpt"]
+[ext_resource type="Resource" uid="uid://bcusep2jyy3f0" path="res://Resources/Wave/Enemies/SkeletonRanged.tres" id="4_bek7d"]
+[ext_resource type="Script" uid="uid://c8k17djxtbopg" path="res://Resources/Wave/Pools/Enemy_pool_data.gd" id="5_c7ovs"]
+[ext_resource type="PackedScene" uid="uid://dji8gvf1qahag" path="res://Scenes/UI/TargetReticles.tscn" id="6_uwfoy"]
+[ext_resource type="Texture2D" uid="uid://chf16vu7iyla7" path="res://Resources/Textures/enemy_indicator_circle.tres" id="7_e1uxh"]
+[ext_resource type="Texture2D" uid="uid://cv5ju7j2834h8" path="res://Resources/Textures/enemy_indicator_arrow.tres" id="8_e06hp"]
+
+[sub_resource type="Resource" id="Resource_76pd2"]
+script = ExtResource("5_c7ovs")
+pool = Array[ExtResource("2_qrkro")]([ExtResource("3_5ie5a"), ExtResource("4_bek7d")])
+metadata/_custom_type_script = "uid://c8k17djxtbopg"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wr5kn"]
 radius = 1.0
@@ -12,7 +24,8 @@ height = 4.0
 
 [node name="SkeletonBoss" type="CharacterBody3D"]
 script = ExtResource("1_q4wq4")
-minions_per_spawn = 5
+minions_per_spawn = 40
+minion_pool = SubResource("Resource_76pd2")
 stats = ExtResource("2_2sxpt")
 
 [node name="SkeletonBoss_mesh" parent="." instance=ExtResource("2_b3whf")]
@@ -29,5 +42,10 @@ attack_pool = ExtResource("4_2sxpt")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Spawn_minions_timer" type="Timer" parent="."]
+
+[node name="TargetReticles" parent="." instance=ExtResource("6_uwfoy")]
+target_texture = ExtResource("7_e1uxh")
+offscreen_texture = ExtResource("8_e06hp")
+color = Color(0.905882, 0, 0.117647, 0.901961)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

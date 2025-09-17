@@ -80,6 +80,7 @@ func set_in_game_menu(menu: Control) -> void:
 
 func advance_time():
 	wave_start_security_check = true
+	##todo: use the days saves in spawner?
 	day += 1
 	if day > 7:
 		week += 1
@@ -92,7 +93,8 @@ func to_night():
 	GameState.night = true
 	day_night_sprite.play("Night")
 	
-		
+	wave_delay.start(5)
+	
 	#day_night.text = "night"
 	light_anim.play("to_dark")
 	animation_player.play("fighting")

@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dji8gvf1qahag"]
+
+[ext_resource type="Script" uid="uid://dspxmxw0lerdy" path="res://Scripts/UI/enemy_target.gd" id="1_ju25i"]
+[ext_resource type="Texture2D" uid="uid://chf16vu7iyla7" path="res://Resources/Textures/enemy_indicator_circle.tres" id="2_ju25i"]
+[ext_resource type="Texture2D" uid="uid://cv5ju7j2834h8" path="res://Resources/Textures/enemy_indicator_arrow.tres" id="3_ju25i"]
+
+[node name="TargetReticles" type="Node3D"]
+script = ExtResource("1_ju25i")
+
+[node name="TargetReticle" type="TextureRect" parent="."]
+z_index = 4096
+anchors_preset = -1
+anchor_right = 0.028
+anchor_bottom = 0.049
+offset_right = -0.256001
+offset_bottom = 0.247999
+pivot_offset = Vector2(16, 16)
+texture = ExtResource("2_ju25i")
+expand_mode = 1
+
+[node name="OffScreenReticle" type="TextureRect" parent="."]
+z_index = 4096
+anchors_preset = -1
+anchor_left = 0.007
+anchor_top = 0.012
+anchor_right = 0.021
+anchor_bottom = 0.037
+offset_left = -16.064
+offset_top = -23.776
+offset_right = -16.192
+offset_bottom = -23.976
+rotation = 3.14159
+pivot_offset = Vector2(16, 20)
+texture = ExtResource("3_ju25i")
+expand_mode = 1

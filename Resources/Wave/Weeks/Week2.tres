@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="WeekData" load_steps=3 format=3 uid="uid://dssrcikwwrgxi"]
+
+[ext_resource type="Script" uid="uid://dmnkaqm525ahl" path="res://Resources/Wave/Days/Days_data.gd" id="1_eea4t"]
+[ext_resource type="Script" uid="uid://cb2tgo4e0w4t8" path="res://Resources/Wave/Weeks/Week_data.gd" id="2_pni8i"]
+
+[resource]
+script = ExtResource("2_pni8i")
+days = Array[ExtResource("1_eea4t")]([])
+metadata/_custom_type_script = "uid://cb2tgo4e0w4t8"

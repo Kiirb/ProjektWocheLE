@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://bh0jyedjqkw04"]
+[gd_scene load_steps=21 format=3 uid="uid://bh0jyedjqkw04"]
 
-[ext_resource type="PackedScene" uid="uid://c4m6vi88ejfgn" path="res://Scenes/Structures/hub.tscn" id="2_bymt7"]
+[ext_resource type="PackedScene" uid="uid://c4m6vi88ejfgn" path="res://Scenes/Structures/Hub.tscn" id="2_bymt7"]
 [ext_resource type="PackedScene" uid="uid://bjibdmlo2r31k" path="res://Scenes/Player/Player.tscn" id="2_ktc8h"]
 [ext_resource type="PackedScene" uid="uid://ds2ixlr60smuk" path="res://Scenes/UI/Mouse/Mouse.tscn" id="2_mdq8r"]
-[ext_resource type="PackedScene" uid="uid://bge08ascceh15" path="res://Scenes/Spawner/spawner.tscn" id="6_6s21f"]
+[ext_resource type="PackedScene" uid="uid://bge08ascceh15" path="res://Scenes/Spawner/Spawner.tscn" id="6_6s21f"]
+[ext_resource type="Resource" uid="uid://ctau7gnmt2xri" path="res://Resources/Wave/Pools/boss_full_pool.tres" id="6_bxaok"]
 [ext_resource type="PackedScene" uid="uid://cepoajispgkfx" path="res://Scenes/Structures/Tree.tscn" id="6_oc00i"]
 [ext_resource type="PackedScene" uid="uid://clp1psnfiq56r" path="res://Scenes/Camera/Camera.tscn" id="7_a6e1y"]
 [ext_resource type="PackedScene" uid="uid://ri8cj2kg5cdd" path="res://Scenes/Spawner/structure_spawner.tscn" id="7_sbwux"]
@@ -469,12 +470,13 @@ structure = ExtResource("6_oc00i")
 min_distance = 200.0
 max_distance = 210.0
 user_interface = NodePath("../UserInterface")
+boss_pool = ExtResource("6_bxaok")
 player_ref = NodePath("../Player")
 
 [node name="Camera" parent="." instance=ExtResource("7_a6e1y")]
 
 [node name="Player" parent="." node_paths=PackedStringArray("ui", "spawn_point", "spawner_ref") instance=ExtResource("2_ktc8h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.205482, 0, 30.6628)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -13)
 ui = NodePath("../UserInterface")
 spawn_point = NodePath("../PlayerSpawnPoint")
 spawner_ref = NodePath("../Spawner")

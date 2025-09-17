@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cx230js0udgl4"]
+[gd_scene load_steps=10 format=3 uid="uid://cx230js0udgl4"]
 
 [ext_resource type="Script" uid="uid://c2vxrdbtk2kb" path="res://Scripts/Enemies/NormalEnemies/Shooter/Shooter.gd" id="1_kidnd"]
 [ext_resource type="PackedScene" uid="uid://xmccmn55yy4w" path="res://Assets/Models/Enemies/Normal Enemies/Rogue.glb" id="2_gk4wi"]
 [ext_resource type="Resource" uid="uid://bk0focwwt72pa" path="res://Resources/Stats/Enemies/NormalEnemies/Shooter_stats.tres" id="2_uryxe"]
 [ext_resource type="PackedScene" uid="uid://dq7ndfqs5ik6k" path="res://Scenes/Attack/AutoAttack/Auto_attack_manager.tscn" id="3_kidnd"]
 [ext_resource type="Resource" uid="uid://dcobyo7ke8god" path="res://Resources/Attacks/Pools/Shooter_attack_pool.tres" id="5_uryxe"]
+[ext_resource type="PackedScene" uid="uid://dji8gvf1qahag" path="res://Scenes/UI/TargetReticles.tscn" id="6_bp8rk"]
+[ext_resource type="Texture2D" uid="uid://chf16vu7iyla7" path="res://Resources/Textures/enemy_indicator_circle.tres" id="7_uyv50"]
+[ext_resource type="Texture2D" uid="uid://cv5ju7j2834h8" path="res://Resources/Textures/enemy_indicator_arrow.tres" id="8_6gdbj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kidnd"]
 
@@ -25,5 +28,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 attack_pool = ExtResource("5_uryxe")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="TargetReticles" parent="." instance=ExtResource("6_bp8rk")]
+target_texture = ExtResource("7_uyv50")
+offscreen_texture = ExtResource("8_6gdbj")
+color = Color(0.905882, 0, 0.117647, 0.901961)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

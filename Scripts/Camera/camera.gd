@@ -10,7 +10,7 @@ var offset: Vector3 = Vector3.ZERO
 # Reference to player input direction (to be updated externally)
 var player_input_dir: Vector3 = Vector3.ZERO	
 
-var lerp_speed:float = 8.0
+var lerp_speed:float = 5.0
 #The speed at which offset returns to zero when player stops moving
 var offset_return_speed: float = 2.0	
 #how far camera shifts from player movement direction	
@@ -48,7 +48,7 @@ func conf_camera():
 	initial_position = global_position
 	#initial_rotation = rotation_degrees
 	
-func _process(delta):
+func _physics_process(delta: float) -> void:
 	if player_ref and not dragging:
 		update_offset(delta)
 		target_position = player_ref.global_position + offset

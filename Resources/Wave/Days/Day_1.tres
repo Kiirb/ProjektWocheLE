@@ -1,22 +1,21 @@
-[gd_resource type="Resource" script_class="DaysData" load_steps=7 format=3 uid="uid://b2ag8o53ym2y2"]
+[gd_resource type="Resource" script_class="DaysData" load_steps=9 format=3 uid="uid://b2ag8o53ym2y2"]
 
 [ext_resource type="Script" uid="uid://c1qbsh24ylc7y" path="res://Resources/Wave/Enemies/Enemy_data.gd" id="1_605iu"]
-[ext_resource type="Resource" uid="uid://dh1nnd2mxb1c5" path="res://Resources/Wave/Pools/Week_1/d_1.tres" id="1_a6pc1"]
 [ext_resource type="Script" uid="uid://dmnkaqm525ahl" path="res://Resources/Wave/Days/Days_data.gd" id="1_f2y7w"]
-[ext_resource type="Resource" uid="uid://fft117an3y2s" path="res://Resources/Wave/Enemies/Yeti.tres" id="2_pfq08"]
+[ext_resource type="Resource" uid="uid://bcusep2jyy3f0" path="res://Resources/Wave/Enemies/SkeletonRanged.tres" id="3_0s2xl"]
 [ext_resource type="Script" uid="uid://c8k17djxtbopg" path="res://Resources/Wave/Pools/Enemy_pool_data.gd" id="3_5shdy"]
+[ext_resource type="Resource" uid="uid://c4x1d8mdthtwh" path="res://Resources/Wave/Enemies/Barbarian.tres" id="4_oftep"]
+[ext_resource type="Resource" uid="uid://l1iai2ldtfxl" path="res://Resources/Wave/Enemies/Shooter.tres" id="5_4dbf4"]
+[ext_resource type="Resource" uid="uid://d0uhgplaweqf4" path="res://Resources/Wave/Enemies/Skeleton.tres" id="6_er2rw"]
 
-[sub_resource type="Resource" id="Resource_cynt4"]
+[sub_resource type="Resource" id="Resource_e76bb"]
 script = ExtResource("3_5shdy")
-pool = Array[ExtResource("1_605iu")]([ExtResource("2_pfq08")])
+pool = Array[ExtResource("1_605iu")]([ExtResource("3_0s2xl"), ExtResource("4_oftep"), ExtResource("5_4dbf4"), ExtResource("6_er2rw")])
 metadata/_custom_type_script = "uid://c8k17djxtbopg"
 
 [resource]
 script = ExtResource("1_f2y7w")
-normal_enemies_pool = ExtResource("1_a6pc1")
+normal_enemies_pool = SubResource("Resource_e76bb")
 normal_enemies_amount = 10
-normal_enemies_spawn_interval = 2.0
-boss_pool = SubResource("Resource_cynt4")
-boss_enemies_amount = 0
-boss_spawn_delay = 0.0
+normal_enemies_spawn_interval = 0.1
 metadata/_custom_type_script = "uid://dmnkaqm525ahl"

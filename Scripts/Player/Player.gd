@@ -127,6 +127,7 @@ func  harvets_structures():
 
 # Movement
 func _physics_process(delta) -> void:
+	print(Engine.get_frames_per_second()  )
 	var input_dir = Vector3.ZERO
 		
 	# AUTO ATTACK CHECK (Cooldown + Target) NO INPUT NEEDED 
@@ -158,7 +159,6 @@ func _physics_process(delta) -> void:
 	var target_pos = AlignSystem.get_mouse_world_position()
 	if target_pos:
 		target_pos.y = global_position.y
-		print(target_pos)
 		look_at(target_pos, Vector3.UP)
 	
 	input_dir = input_dir.normalized()

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PoolData" load_steps=10 format=3 uid="uid://ctau7gnmt2xri"]
+
+[ext_resource type="Script" uid="uid://c1qbsh24ylc7y" path="res://Resources/Wave/Enemies/Enemy_data.gd" id="1_33xdb"]
+[ext_resource type="Resource" uid="uid://du2aljiwlhm13" path="res://Resources/Wave/Enemies/Demon.tres" id="2_k5xdm"]
+[ext_resource type="Resource" uid="uid://syih5cdcf17o" path="res://Resources/Wave/Enemies/Giant.tres" id="3_5bnhs"]
+[ext_resource type="Resource" uid="uid://b5c5y5elqv0ms" path="res://Resources/Wave/Enemies/Hedgehog.tres" id="4_ntfu8"]
+[ext_resource type="Resource" uid="uid://ccp8areuay62n" path="res://Resources/Wave/Enemies/Zombie.tres" id="5_pvul3"]
+[ext_resource type="Resource" uid="uid://bcsn8dnj71ygc" path="res://Resources/Wave/Enemies/Wizard.tres" id="6_ixkk1"]
+[ext_resource type="Resource" uid="uid://dbga11bjrplk7" path="res://Resources/Wave/Enemies/Tank.tres" id="7_1m50g"]
+[ext_resource type="Resource" uid="uid://b6p7kn0uari8n" path="res://Resources/Wave/Enemies/SkeletonBoss.tres" id="8_l3ilb"]
+[ext_resource type="Script" uid="uid://c8k17djxtbopg" path="res://Resources/Wave/Pools/Enemy_pool_data.gd" id="9_w64am"]
+
+[resource]
+script = ExtResource("9_w64am")
+pool = Array[ExtResource("1_33xdb")]([ExtResource("2_k5xdm"), ExtResource("3_5bnhs"), ExtResource("4_ntfu8"), ExtResource("5_pvul3"), ExtResource("6_ixkk1"), ExtResource("7_1m50g"), ExtResource("8_l3ilb")])
+metadata/_custom_type_script = "uid://c8k17djxtbopg"
