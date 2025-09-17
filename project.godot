@@ -16,9 +16,9 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
 
-AlignSystem="*res://Scripts/GridSystem/Align_system.gd"
 GameState="*res://Config/state_var.gd"
 Soundtrack2="*res://Scenes/Sound/Soundtrack2.tscn"
+AlignSystem="*res://Scripts/GridSystem/align_system.gd"
 
 [display]
 
@@ -141,6 +141,7 @@ jolt_physics_3d/simulation/areas_detect_static_bodies=true
 
 textures/canvas_textures/default_texture_filter=0
 textures/canvas_textures/default_texture_repeat=1
+textures/vram_compression/import_etc2_astc=true
 textures/default_filters/anisotropic_filtering_level=0
 textures/decals/filter=0
 textures/light_projectors/filter=0

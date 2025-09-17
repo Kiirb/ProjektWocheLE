@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ih1vfqumfg3p"
 path.s3tc="res://.godot/imported/prototype_purple.png-6eb31974f6b2658e4391ce97a509b77a.s3tc.ctex"
+path.etc2="res://.godot/imported/prototype_purple.png-6eb31974f6b2658e4391ce97a509b77a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Addons/prototype_mini_bundle/prototype_purple.png"
-dest_files=["res://.godot/imported/prototype_purple.png-6eb31974f6b2658e4391ce97a509b77a.s3tc.ctex"]
+dest_files=["res://.godot/imported/prototype_purple.png-6eb31974f6b2658e4391ce97a509b77a.s3tc.ctex", "res://.godot/imported/prototype_purple.png-6eb31974f6b2658e4391ce97a509b77a.etc2.ctex"]
 
 [params]
 

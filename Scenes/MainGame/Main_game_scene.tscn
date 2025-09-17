@@ -475,11 +475,11 @@ player_ref = NodePath("../Player")
 
 [node name="Camera" parent="." instance=ExtResource("7_a6e1y")]
 
-[node name="Player" parent="." node_paths=PackedStringArray("ui", "spawn_point", "spawner_ref") instance=ExtResource("2_ktc8h")]
+[node name="Player" parent="." node_paths=PackedStringArray("ui", "spawn_point") instance=ExtResource("2_ktc8h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -13)
 ui = NodePath("../UserInterface")
 spawn_point = NodePath("../PlayerSpawnPoint")
-spawner_ref = NodePath("../Spawner")
+spawner_ref_path = NodePath("../Spawner")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.18427, 0)

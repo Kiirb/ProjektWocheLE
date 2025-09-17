@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1lbom1fqgwe5"
 path.s3tc="res://.godot/imported/Goblin_Atlas.png-339099d0837ac811c0c9bde25d3975ac.s3tc.ctex"
+path.etc2="res://.godot/imported/Goblin_Atlas.png-339099d0837ac811c0c9bde25d3975ac.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/mobs/sort_enemies/Goblin_Atlas.png"
-dest_files=["res://.godot/imported/Goblin_Atlas.png-339099d0837ac811c0c9bde25d3975ac.s3tc.ctex"]
+dest_files=["res://.godot/imported/Goblin_Atlas.png-339099d0837ac811c0c9bde25d3975ac.s3tc.ctex", "res://.godot/imported/Goblin_Atlas.png-339099d0837ac811c0c9bde25d3975ac.etc2.ctex"]
 
 [params]
 

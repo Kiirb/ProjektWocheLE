@@ -51,6 +51,9 @@ func _physics_process(delta: float) -> void:
 		spawned_enemies.clear()
 
 func _ready():
+	if player_ref == null:
+		push_error("ExpManager: no player_ref in export")
+		return
 	day_nmr = 0
 	week_nmr = 1
 	is_boss_alive = false

@@ -16,6 +16,9 @@ var ex_required: float = get_exp_required(lvl+1)
 const EXP_CURVE = 1.8
 
 func _ready():
+	if player_ref == null:
+		push_error("ExpManager: no player_ref in export")
+		return
 	hub_ref = get_tree().current_scene.get_node("Hub")
 	spawner_ref = player_ref.spawner_ref
 	spawner_ref.connect("day_cleared", Callable(self, "_on_day_cleared"))

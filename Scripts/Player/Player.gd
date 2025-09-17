@@ -14,7 +14,8 @@ var animation_player: AnimationPlayer
 @export var ui: HUD
 @export var stats: PlayerStatsData
 @export var spawn_point: SpawnPoint
-@export var spawner_ref: Spawner
+@export var spawner_ref_path: NodePath
+var spawner_ref: Spawner
 var attacks: Array[Attack] = []
 @onready var att: Timer = $att
 
@@ -30,14 +31,18 @@ var base_speed: float = 100.0
 var slow_timer: Timer
 
 
-
+var blue_mat
 var shoot_held: bool = false
 var harvest_lvl: int = 1
 var alive: bool = true
-var blue_mat = preload("res://assets/Textures/blue_mat.tres")
 var is_attacking: bool = false
 
 func _ready():
+	if spawner_ref_path != null:
+		spawner_ref = get_node(spawner_ref_path)
+	var blue_mat = load("res://assets/Textures/blue_mat.tres")
+	if blue_mat == null:
+		push_warning("blue_mat missing, ghost override disabled in export")
 	stats.hp = stats.max_health
 	get_tree().paused = false
 	GameState.night = false
@@ -59,7 +64,8 @@ func _ready():
 	base_speed = stats.move_speed
 	slow_timer = Timer.new()
 	slow_timer.one_shot = true
-	slow_timer.connect("timeout", self._on_slow_timeout)
+	if not slow_timer.is_connected("timeout", self._on_slow_timeout):
+		slow_timer.connect("timeout", self._on_slow_timeout)
 	add_child(slow_timer)
 
 func _on_slow_timeout():

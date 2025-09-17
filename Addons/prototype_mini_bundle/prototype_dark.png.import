@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://wieqjuscswvh"
 path.s3tc="res://.godot/imported/prototype_dark.png-0389e1896c4cc9a4adc1897db311ad61.s3tc.ctex"
+path.etc2="res://.godot/imported/prototype_dark.png-0389e1896c4cc9a4adc1897db311ad61.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Addons/prototype_mini_bundle/prototype_dark.png"
-dest_files=["res://.godot/imported/prototype_dark.png-0389e1896c4cc9a4adc1897db311ad61.s3tc.ctex"]
+dest_files=["res://.godot/imported/prototype_dark.png-0389e1896c4cc9a4adc1897db311ad61.s3tc.ctex", "res://.godot/imported/prototype_dark.png-0389e1896c4cc9a4adc1897db311ad61.etc2.ctex"]
 
 [params]
 
