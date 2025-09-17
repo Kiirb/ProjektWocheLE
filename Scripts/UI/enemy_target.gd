@@ -1,6 +1,5 @@
 extends Node3D
 
-@export var target_texture: Texture2D
 @export var offscreen_texture: Texture2D
 @export var color: Color = Color.WHITE
 
@@ -16,13 +15,10 @@ var max_reticle_position := Vector2.ZERO
 
 func _ready() -> void:
 	# sanity checks
-	if not target_reticle or not off_screen_reticle:
+	if not off_screen_reticle:
 		push_error("TargetReticle or OffScreenReticle not found. Check node paths.")
 	# apply visuals
-	target_reticle.modulate = color
 	off_screen_reticle.modulate = color
-	if target_texture:
-		target_reticle.texture = target_texture
 	if offscreen_texture:
 		off_screen_reticle.texture = offscreen_texture
 
@@ -44,15 +40,12 @@ func _process(_delta: float) -> void:
 
 	if in_frustum and not behind:
 		# on-screen
-		target_reticle.show()
 		off_screen_reticle.hide()
 
 		# clamp inside the viewport (so the whole icon remains visible)
 		var clamped := screen_pos.clamp(border_offset, viewport_size - border_offset)
-		target_reticle.global_position = clamped - reticle_offset
 	else:
 		# off-screen
-		target_reticle.hide()
 		off_screen_reticle.show()
 
 		# direction from screen center to projected point
