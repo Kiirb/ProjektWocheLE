@@ -12,3 +12,4 @@ metadata/_custom_type_script = "uid://mdl8sf7wpict"
 one_shot = true
 
 [node name="MeleeRangeArea" parent="." instance=ExtResource("2_tmvbt")]
+transform = Transform3D(8.92422, 0, 0, 0, 8.92422, 0, 0, 0, 8.92422, 0, 0, 0)
