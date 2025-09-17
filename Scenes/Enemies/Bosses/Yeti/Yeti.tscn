@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://djsxgi1pdqk7t"]
+[gd_scene load_steps=10 format=3 uid="uid://djsxgi1pdqk7t"]
 
 [ext_resource type="Script" uid="uid://dictav20coeo5" path="res://Scripts/Enemies/Bosses/Yeti/yeti.gd" id="1_kah3x"]
 [ext_resource type="PackedScene" uid="uid://cv3bemtpp4ox5" path="res://Assets/Models/Enemies/Boss/Yeti.gltf" id="2_a7bo7"]
 [ext_resource type="Resource" uid="uid://fpfejif47g5b" path="res://Resources/Stats/Enemies/Bosses/Yeti_stats.tres" id="2_mdsj2"]
 [ext_resource type="PackedScene" uid="uid://dq7ndfqs5ik6k" path="res://Scenes/Attack/AutoAttack/Auto_attack_manager.tscn" id="4_fjpmi"]
 [ext_resource type="Resource" uid="uid://cv6q5a4mepb1l" path="res://Resources/Attacks/Pools/Yeti_attack_pool.tres" id="5_mdsj2"]
+[ext_resource type="PackedScene" uid="uid://dji8gvf1qahag" path="res://Scenes/UI/TargetReticles.tscn" id="6_rt4ak"]
+[ext_resource type="Texture2D" uid="uid://chf16vu7iyla7" path="res://Resources/Textures/enemy_indicator_circle.tres" id="7_jf4c2"]
+[ext_resource type="Texture2D" uid="uid://cv5ju7j2834h8" path="res://Resources/Textures/enemy_indicator_arrow.tres" id="8_147ho"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wa1wk"]
 radius = 1.0
@@ -28,5 +31,10 @@ shape = SubResource("CapsuleShape3D_wa1wk")
 attack_pool = ExtResource("5_mdsj2")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="TargetReticles" parent="." instance=ExtResource("6_rt4ak")]
+target_texture = ExtResource("7_jf4c2")
+offscreen_texture = ExtResource("8_147ho")
+color = Color(0.905882, 0, 0.117647, 0.901961)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

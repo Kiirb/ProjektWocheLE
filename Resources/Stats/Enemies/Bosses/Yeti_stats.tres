@@ -4,17 +4,15 @@
 
 [resource]
 script = ExtResource("1_m7d2k")
-hp = 100.0
-max_health = 100.0
+hp = 2600.0
+max_health = 2600.0
 basic_dmg = 20.0
 recovery = 5
-armor = 20.0
-dmg_multiplyer = 1.1
-move_speed = 2.0
-range = 20.0
-max_range = 100.0
+armor = 35.0
+dmg_multiplyer = 1.0
+move_speed = 4.0
+melee_range = 10.0
 area_modifier = 1.0
 speed_modifier = 1.0
 auto_cd_modifier = 1.0
-detection_range = 0.0
 metadata/_custom_type_script = "uid://deehu6tojvlep"

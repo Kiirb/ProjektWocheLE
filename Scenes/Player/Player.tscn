@@ -20,7 +20,7 @@ radius = 2.0
 viewport_path = NodePath("SubViewport")
 
 [node name="Player" type="CharacterBody3D"]
-collision_mask = 4
+collision_mask = 132
 script = ExtResource("1_7whyj")
 stats = ExtResource("2_fk5o5")
 

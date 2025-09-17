@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://d20gkea72ig85"]
+[gd_scene load_steps=10 format=3 uid="uid://d20gkea72ig85"]
 
 [ext_resource type="Script" uid="uid://fyc5fncm1abv" path="res://Scripts/Enemies/NormalEnemies/Tank/Tank.gd" id="1_w5hja"]
 [ext_resource type="Resource" uid="uid://c8w14m44kucmy" path="res://Resources/Stats/Enemies/NormalEnemies/Tank_stats.tres" id="2_rbm5g"]
 [ext_resource type="PackedScene" uid="uid://cblis4exoa4hp" path="res://Assets/Models/Characters/Humans/Knight.glb" id="2_wdgo2"]
 [ext_resource type="PackedScene" uid="uid://dq7ndfqs5ik6k" path="res://Scenes/Attack/AutoAttack/Auto_attack_manager.tscn" id="3_w5hja"]
 [ext_resource type="Resource" uid="uid://b5kt5pyq05pto" path="res://Resources/Attacks/Pools/Tank_attack_pool.tres" id="4_rbm5g"]
+[ext_resource type="PackedScene" uid="uid://dji8gvf1qahag" path="res://Scenes/UI/TargetReticles.tscn" id="6_c6m80"]
+[ext_resource type="Texture2D" uid="uid://chf16vu7iyla7" path="res://Resources/Textures/enemy_indicator_circle.tres" id="7_eu4nj"]
+[ext_resource type="Texture2D" uid="uid://cv5ju7j2834h8" path="res://Resources/Textures/enemy_indicator_arrow.tres" id="8_ri0ck"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c6m80"]
 
@@ -25,5 +28,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0595184, 0.271898, 0.49644)
 attack_pool = ExtResource("4_rbm5g")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="TargetReticles" parent="." instance=ExtResource("6_c6m80")]
+target_texture = ExtResource("7_eu4nj")
+offscreen_texture = ExtResource("8_ri0ck")
+color = Color(0.905882, 0, 0.117647, 0.901961)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

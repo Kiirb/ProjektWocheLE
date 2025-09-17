@@ -17,7 +17,6 @@ func attack(from: CharacterBody3D):
 
 #signals
 func _on_collision_detection_body_entered(body: Node3D) -> void:
-	print(body)
 	super.do_dmg(me, body, damage)
 
 func _on_despawn_timer_timeout() -> void:

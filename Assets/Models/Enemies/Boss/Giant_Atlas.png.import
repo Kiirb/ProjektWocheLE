@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dfit71tu7y2t7"
 path.s3tc="res://.godot/imported/Giant_Atlas.png-f8503b4037473ceb28d0720a2122d72e.s3tc.ctex"
+path.etc2="res://.godot/imported/Giant_Atlas.png-f8503b4037473ceb28d0720a2122d72e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/Enemies/Boss/Giant_Atlas.png"
-dest_files=["res://.godot/imported/Giant_Atlas.png-f8503b4037473ceb28d0720a2122d72e.s3tc.ctex"]
+dest_files=["res://.godot/imported/Giant_Atlas.png-f8503b4037473ceb28d0720a2122d72e.s3tc.ctex", "res://.godot/imported/Giant_Atlas.png-f8503b4037473ceb28d0720a2122d72e.etc2.ctex"]
 
 [params]
 

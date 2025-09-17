@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmpng3q2uj613"
 path.s3tc="res://.godot/imported/Skeleton_Atlas.png-107dcacef6ab7cd226c351ef3013c68d.s3tc.ctex"
+path.etc2="res://.godot/imported/Skeleton_Atlas.png-107dcacef6ab7cd226c351ef3013c68d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/mobs/sort_enemies/Skeleton_Atlas.png"
-dest_files=["res://.godot/imported/Skeleton_Atlas.png-107dcacef6ab7cd226c351ef3013c68d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Skeleton_Atlas.png-107dcacef6ab7cd226c351ef3013c68d.s3tc.ctex", "res://.godot/imported/Skeleton_Atlas.png-107dcacef6ab7cd226c351ef3013c68d.etc2.ctex"]
 
 [params]
 

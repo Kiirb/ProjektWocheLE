@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dteeucsxgodqw"]
+[gd_scene load_steps=10 format=3 uid="uid://dteeucsxgodqw"]
 
 [ext_resource type="Script" uid="uid://c7bn554osvtqx" path="res://Scripts/Enemies/Bosses/Demon/Demon.gd" id="1_g410d"]
 [ext_resource type="Resource" uid="uid://ccldbc1pvdy0v" path="res://Resources/Stats/Enemies/Bosses/Demon_stats.tres" id="2_1037i"]
 [ext_resource type="PackedScene" uid="uid://dodt888vi14mf" path="res://Assets/Models/Enemies/Boss/Demon.gltf" id="2_g410d"]
 [ext_resource type="PackedScene" uid="uid://dq7ndfqs5ik6k" path="res://Scenes/Attack/AutoAttack/Auto_attack_manager.tscn" id="4_p5dbe"]
 [ext_resource type="Resource" uid="uid://de0onawtnrt52" path="res://Resources/Attacks/Pools/Demon_attack_pool.tres" id="5_p5dbe"]
+[ext_resource type="PackedScene" uid="uid://dji8gvf1qahag" path="res://Scenes/UI/TargetReticles.tscn" id="6_p5dbe"]
+[ext_resource type="Texture2D" uid="uid://chf16vu7iyla7" path="res://Resources/Textures/enemy_indicator_circle.tres" id="7_gghfd"]
+[ext_resource type="Texture2D" uid="uid://cv5ju7j2834h8" path="res://Resources/Textures/enemy_indicator_arrow.tres" id="8_o8erd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j63je"]
 radius = 0.657386
@@ -27,5 +30,10 @@ shape = SubResource("CapsuleShape3D_j63je")
 attack_pool = ExtResource("5_p5dbe")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="TargetReticles" parent="." instance=ExtResource("6_p5dbe")]
+target_texture = ExtResource("7_gghfd")
+offscreen_texture = ExtResource("8_o8erd")
+color = Color(0.905882, 0, 0.117647, 0.901961)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

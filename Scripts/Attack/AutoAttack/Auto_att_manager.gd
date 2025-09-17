@@ -82,6 +82,8 @@ func _on_attack_cd_timeout():
 			perform_melee_attack()
 			
 func perform_range_attack():
+	if body_ref is Enemy:
+		body_ref.stats.move_speed = 0
 	if not attack_scene:
 		push_error("No attack Scene")
 		return
@@ -120,7 +122,7 @@ func perform_range_attack():
 			return
 	direction.y = 0
 	direction = direction.normalized()
-
+	
 	var att = attack_scene.instantiate()
 	att.body_ref = body_ref
 	att.speed = speed
@@ -132,6 +134,9 @@ func perform_range_attack():
 	att.manager = self
 	att.direction = direction
 	att.connect("hit_target",Callable(self,"_on_projectile_hit"))
+	if body_ref is Enemy:
+		await get_tree().create_timer(cd).timeout
+		body_ref.stats.move_speed = body_ref.base_speed
 
 func perform_melee_attack():
 	if not melee_area:

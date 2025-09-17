@@ -1,14 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmlomxew8sprq"]
+[gd_scene load_steps=9 format=3 uid="uid://cmlomxew8sprq"]
 
 [ext_resource type="Script" uid="uid://c02ml202pehec" path="res://Scripts/Enemies/NormalEnemies/Barbarian/barbarian.gd" id="1_63uht"]
 [ext_resource type="PackedScene" uid="uid://c76xspyyxejn4" path="res://Assets/Models/Characters/Humans/Barbarian.glb" id="2_6a1nm"]
 [ext_resource type="Resource" uid="uid://ccqh5u31r4ifd" path="res://Resources/Stats/Enemies/NormalEnemies/Barbarian_stats.tres" id="2_bn2v2"]
 [ext_resource type="PackedScene" uid="uid://dq7ndfqs5ik6k" path="res://Scenes/Attack/AutoAttack/Auto_attack_manager.tscn" id="4_bubne"]
 [ext_resource type="Resource" uid="uid://c1pkh82afxtem" path="res://Resources/Attacks/Pools/Barbarian_attack_pool.tres" id="5_6b63y"]
+[ext_resource type="PackedScene" uid="uid://dji8gvf1qahag" path="res://Scenes/UI/TargetReticles.tscn" id="6_bv5cf"]
+[ext_resource type="Texture2D" uid="uid://cv5ju7j2834h8" path="res://Resources/Textures/enemy_indicator_arrow.tres" id="8_k0hup"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_skw4k"]
 
 [node name="Barbarian" type="CharacterBody3D"]
+transform = Transform3D(1.0034, 0, 0, 0, 1.0034, 0, 0, 0, 1.0034, 0, 0, 0)
 collision_layer = 4
 script = ExtResource("1_63uht")
 stats = ExtResource("2_bn2v2")
@@ -25,5 +28,9 @@ shape = SubResource("CapsuleShape3D_skw4k")
 attack_pool = ExtResource("5_6b63y")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="TargetReticles" parent="." instance=ExtResource("6_bv5cf")]
+offscreen_texture = ExtResource("8_k0hup")
+color = Color(0.905882, 0, 0.117647, 0.901961)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmv17qeq0cdxo"]
+[gd_scene load_steps=10 format=3 uid="uid://bmv17qeq0cdxo"]
 
 [ext_resource type="Script" uid="uid://cr6sdra7q2geh" path="res://Scripts/Enemies/Bosses/Giant/Giant.gd" id="1_ov11a"]
 [ext_resource type="Resource" uid="uid://b6j73gm3yglhm" path="res://Resources/Stats/Enemies/Bosses/Giant_stats.tres" id="2_m2mt5"]
 [ext_resource type="PackedScene" uid="uid://6jbn66tmcvv8" path="res://Assets/Models/Enemies/Boss/Giant.gltf" id="2_roktq"]
 [ext_resource type="PackedScene" uid="uid://dq7ndfqs5ik6k" path="res://Scenes/Attack/AutoAttack/Auto_attack_manager.tscn" id="4_m2mt5"]
 [ext_resource type="Resource" uid="uid://dlkig0x5lqgwr" path="res://Resources/Attacks/Pools/Giant_attack_pool.tres" id="5_m2mt5"]
+[ext_resource type="PackedScene" uid="uid://dji8gvf1qahag" path="res://Scenes/UI/TargetReticles.tscn" id="6_fr66h"]
+[ext_resource type="Texture2D" uid="uid://chf16vu7iyla7" path="res://Resources/Textures/enemy_indicator_circle.tres" id="7_2ll8h"]
+[ext_resource type="Texture2D" uid="uid://cv5ju7j2834h8" path="res://Resources/Textures/enemy_indicator_arrow.tres" id="8_qvgc1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x23wa"]
 radius = 1.0
@@ -27,5 +30,10 @@ shape = SubResource("CapsuleShape3D_x23wa")
 attack_pool = ExtResource("5_m2mt5")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="TargetReticles" parent="." instance=ExtResource("6_fr66h")]
+target_texture = ExtResource("7_2ll8h")
+offscreen_texture = ExtResource("8_qvgc1")
+color = Color(0.905882, 0, 0.117647, 0.901961)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

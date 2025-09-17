@@ -1,22 +1,20 @@
-[gd_resource type="Resource" script_class="DaysData" load_steps=7 format=3 uid="uid://dmsafudyhk213"]
+[gd_resource type="Resource" script_class="DaysData" load_steps=8 format=3 uid="uid://dmsafudyhk213"]
 
-[ext_resource type="Resource" uid="uid://egx7gxcmvywd" path="res://Resources/Wave/Pools/Week_1/d_3.tres" id="1_caavq"]
 [ext_resource type="Script" uid="uid://c1qbsh24ylc7y" path="res://Resources/Wave/Enemies/Enemy_data.gd" id="1_i0123"]
 [ext_resource type="Script" uid="uid://dmnkaqm525ahl" path="res://Resources/Wave/Days/Days_data.gd" id="2_7swk2"]
-[ext_resource type="Resource" uid="uid://syih5cdcf17o" path="res://Resources/Wave/Enemies/Giant.tres" id="2_vhq0o"]
+[ext_resource type="Resource" uid="uid://d0uhgplaweqf4" path="res://Resources/Wave/Enemies/Skeleton.tres" id="3_temh6"]
 [ext_resource type="Script" uid="uid://c8k17djxtbopg" path="res://Resources/Wave/Pools/Enemy_pool_data.gd" id="3_yiih1"]
+[ext_resource type="Resource" uid="uid://bcusep2jyy3f0" path="res://Resources/Wave/Enemies/SkeletonRanged.tres" id="4_3g7ex"]
+[ext_resource type="Resource" uid="uid://dbga11bjrplk7" path="res://Resources/Wave/Enemies/Tank.tres" id="5_clb77"]
 
-[sub_resource type="Resource" id="Resource_temh6"]
+[sub_resource type="Resource" id="Resource_7cdln"]
 script = ExtResource("3_yiih1")
-pool = Array[ExtResource("1_i0123")]([ExtResource("2_vhq0o")])
+pool = Array[ExtResource("1_i0123")]([ExtResource("3_temh6"), ExtResource("4_3g7ex"), ExtResource("5_clb77")])
 metadata/_custom_type_script = "uid://c8k17djxtbopg"
 
 [resource]
 script = ExtResource("2_7swk2")
-normal_enemies_pool = ExtResource("1_caavq")
-normal_enemies_amount = 10
+normal_enemies_pool = SubResource("Resource_7cdln")
+normal_enemies_amount = 20
 normal_enemies_spawn_interval = 2.0
-boss_pool = SubResource("Resource_temh6")
-boss_enemies_amount = 0
-boss_spawn_delay = 0.0
 metadata/_custom_type_script = "uid://dmnkaqm525ahl"

@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dm2nn04h7dxc8"]
+[gd_scene load_steps=10 format=3 uid="uid://dm2nn04h7dxc8"]
 
 [ext_resource type="Script" uid="uid://c3d0on3ouddxt" path="res://Scripts/Enemies/Bosses/Zombie/Zombie.gd" id="1_s25ju"]
 [ext_resource type="Resource" uid="uid://dsk3fjjnew4au" path="res://Resources/Stats/Enemies/Bosses/Zombie_stats.tres" id="2_6l761"]
 [ext_resource type="PackedScene" uid="uid://c3vmpumvnt0ig" path="res://Assets/Models/Enemies/Boss/Zombie.gltf" id="2_ptp3f"]
 [ext_resource type="PackedScene" uid="uid://dq7ndfqs5ik6k" path="res://Scenes/Attack/AutoAttack/Auto_attack_manager.tscn" id="4_2lm0o"]
 [ext_resource type="Resource" uid="uid://dtafmxadb8q5t" path="res://Resources/Attacks/Pools/Zombie_attack_pool.tres" id="5_6l761"]
+[ext_resource type="PackedScene" uid="uid://dji8gvf1qahag" path="res://Scenes/UI/TargetReticles.tscn" id="6_a04u3"]
+[ext_resource type="Texture2D" uid="uid://chf16vu7iyla7" path="res://Resources/Textures/enemy_indicator_circle.tres" id="7_l4k4t"]
+[ext_resource type="Texture2D" uid="uid://gjtrgtni72oa" path="res://Resources/Textures/enemy_indicator_boss.tres" id="8_a04u3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wexgi"]
 radius = 1.0
@@ -27,5 +30,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 attack_pool = ExtResource("5_6l761")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="TargetReticles" parent="." instance=ExtResource("6_a04u3")]
+target_texture = ExtResource("7_l4k4t")
+offscreen_texture = ExtResource("8_a04u3")
+color = Color(0.905882, 0, 0.117647, 0.901961)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

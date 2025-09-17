@@ -1,6 +1,5 @@
-[gd_resource type="Resource" script_class="WeekData" load_steps=11 format=3 uid="uid://bxwb4ogo7lxkp"]
+[gd_resource type="Resource" script_class="WeekData" load_steps=10 format=3 uid="uid://bxwb4ogo7lxkp"]
 
-[ext_resource type="Resource" uid="uid://c062lgo1ryx62" path="res://Resources/Wave/Days/Boss_day_1.tres" id="1_iv7dn"]
 [ext_resource type="Script" uid="uid://dmnkaqm525ahl" path="res://Resources/Wave/Days/Days_data.gd" id="1_yumqd"]
 [ext_resource type="Script" uid="uid://cb2tgo4e0w4t8" path="res://Resources/Wave/Weeks/Week_data.gd" id="2_km13f"]
 [ext_resource type="Resource" uid="uid://b2ag8o53ym2y2" path="res://Resources/Wave/Days/Day_1.tres" id="3_iv7dn"]
@@ -14,5 +13,4 @@
 [resource]
 script = ExtResource("2_km13f")
 days = Array[ExtResource("1_yumqd")]([ExtResource("3_iv7dn"), ExtResource("4_j1nkq"), ExtResource("5_muc6i"), ExtResource("6_psj3y"), ExtResource("7_rxjg3"), ExtResource("8_4csqi"), ExtResource("9_okb1e")])
-boss_day = ExtResource("1_iv7dn")
 metadata/_custom_type_script = "uid://cb2tgo4e0w4t8"

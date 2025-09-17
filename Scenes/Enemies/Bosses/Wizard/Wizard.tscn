@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://caa4xpblajca4"]
+[gd_scene load_steps=10 format=3 uid="uid://caa4xpblajca4"]
 
 [ext_resource type="Script" uid="uid://p7ov6c17dtmy" path="res://Scripts/Enemies/Bosses/Wizard/Wizard.gd" id="1_l06jh"]
 [ext_resource type="Resource" uid="uid://vidptyvdaeqb" path="res://Resources/Stats/Enemies/Bosses/Wizard_stats.tres" id="2_4mkj6"]
 [ext_resource type="PackedScene" uid="uid://dxvbuw44dj0y8" path="res://Assets/Models/Enemies/Boss/Wizard.gltf" id="2_5m7i2"]
 [ext_resource type="PackedScene" uid="uid://dq7ndfqs5ik6k" path="res://Scenes/Attack/AutoAttack/Auto_attack_manager.tscn" id="3_l06jh"]
 [ext_resource type="Resource" uid="uid://c246kokwycvwq" path="res://Resources/Attacks/Pools/Wizard_attack_pool.tres" id="4_5m7i2"]
+[ext_resource type="PackedScene" uid="uid://dji8gvf1qahag" path="res://Scenes/UI/TargetReticles.tscn" id="6_kljv5"]
+[ext_resource type="Texture2D" uid="uid://chf16vu7iyla7" path="res://Resources/Textures/enemy_indicator_circle.tres" id="7_oseey"]
+[ext_resource type="Texture2D" uid="uid://cv5ju7j2834h8" path="res://Resources/Textures/enemy_indicator_arrow.tres" id="8_bp888"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l06jh"]
 radius = 1.0
@@ -27,5 +30,10 @@ shape = SubResource("CapsuleShape3D_l06jh")
 attack_pool = ExtResource("4_5m7i2")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="TargetReticles" parent="." instance=ExtResource("6_kljv5")]
+target_texture = ExtResource("7_oseey")
+offscreen_texture = ExtResource("8_bp888")
+color = Color(0.905882, 0, 0.117647, 0.901961)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

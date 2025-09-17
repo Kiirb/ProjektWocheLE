@@ -4,14 +4,14 @@
 
 [resource]
 script = ExtResource("1_t5br0")
-hp = 100.0
-max_health = 100.0
-basic_dmg = 10.0
+hp = 180.0
+max_health = 180.0
+basic_dmg = 6.0
 recovery = 1
-armor = 10.0
+armor = 12.0
 dmg_multiplyer = 1.0
-move_speed = 4.0
-melee_range = 5.0
+move_speed = 10.0
+melee_range = 12.0
 area_modifier = 1.0
 speed_modifier = 1.0
 auto_cd_modifier = 1.0

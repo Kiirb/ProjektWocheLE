@@ -1,22 +1,11 @@
-[gd_resource type="Resource" script_class="DaysData" load_steps=7 format=3 uid="uid://bd28s8edqtbhp"]
+[gd_resource type="Resource" script_class="DaysData" load_steps=3 format=3 uid="uid://bd28s8edqtbhp"]
 
-[ext_resource type="Script" uid="uid://c1qbsh24ylc7y" path="res://Resources/Wave/Enemies/Enemy_data.gd" id="1_8ooia"]
 [ext_resource type="Resource" uid="uid://0ldq86xjvjc8" path="res://Resources/Wave/Pools/Normal_enemies_pool.tres" id="1_m4mgh"]
 [ext_resource type="Script" uid="uid://dmnkaqm525ahl" path="res://Resources/Wave/Days/Days_data.gd" id="2_46k0g"]
-[ext_resource type="Resource" uid="uid://du2aljiwlhm13" path="res://Resources/Wave/Enemies/Demon.tres" id="2_oqfq0"]
-[ext_resource type="Script" uid="uid://c8k17djxtbopg" path="res://Resources/Wave/Pools/Enemy_pool_data.gd" id="3_lp51d"]
-
-[sub_resource type="Resource" id="Resource_iydgx"]
-script = ExtResource("3_lp51d")
-pool = Array[ExtResource("1_8ooia")]([ExtResource("2_oqfq0")])
-metadata/_custom_type_script = "uid://c8k17djxtbopg"
 
 [resource]
 script = ExtResource("2_46k0g")
 normal_enemies_pool = ExtResource("1_m4mgh")
-normal_enemies_amount = 15
+normal_enemies_amount = 30
 normal_enemies_spawn_interval = 2.0
-boss_pool = SubResource("Resource_iydgx")
-boss_enemies_amount = 0
-boss_spawn_delay = 0.0
 metadata/_custom_type_script = "uid://dmnkaqm525ahl"
